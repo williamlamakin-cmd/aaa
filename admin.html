@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - 全球优选</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: calc(100vh - 80px);
+        }
+
+        .admin-sidebar {
+            background: #001529;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .admin-menu {
+            list-style: none;
+        }
+
+        .admin-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-menu a {
+            display: block;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .admin-menu a:hover,
+        .admin-menu a.active {
+            background: #1890ff;
+            color: white;
+        }
+
+        .admin-content {
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1890ff;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .admin-table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .admin-table th {
+            background: #fafafa;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-badge.pending { background: #fff7e6; color: #fa8c16; }
+        .status-badge.processing { background: #e6f7ff; color: #1890ff; }
+        .status-badge.purchased { background: #f9f0ff; color: #722ed1; }
+        .status-badge.shipped { background: #f6ffed; color: #52c41a; }
+        .status-badge.delivered { background: #f6ffed; color: #52c41a; }
+        .status-badge.cancelled { background: #fff1f0; color: #ff4d4f; }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid #d9d9d9;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+
+        .btn-small:hover {
+            border-color: #1890ff;
+            color: #1890ff;
+        }
+
+        .btn-primary {
+            background: #1890ff;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #40a9ff;
+            color: white;
+        }
+
+        .modal-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .modal-form label {
+            font-weight: 500;
+        }
+
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">全球优选 - 管理后台</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">返回前台</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="admin-layout">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li><a href="#" class="active" onclick="showAdminPage('dashboard')">仪表盘</a></li>
+                    <li><a href="#" onclick="showAdminPage('products')">产品管理</a></li>
+                    <li><a href="#" onclick="showAdminPage('orders')">订单管理</a></li>
+                    <li><a href="#" onclick="showAdminPage('suppliers')">供应商管理</a></li>
+                    <li><a href="#" onclick="showAdminPage('analytics')">数据分析</a></li>
+                </ul>
+            </div>
+
+            <div class="admin-content">
+                <!-- 仪表盘 -->
+                <div id="admin-dashboard" class="admin-page">
+                    <div class="admin-header">
+                        <h2>仪表盘</h2>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-orders">0</div>
+                            <div class="stat-label">总订单数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-revenue">$0</div>
+                            <div class="stat-label">总营收</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-products">0</div>
+                            <div class="stat-label">产品数量</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-pending">0</div>
+                            <div class="stat-label">待处理订单</div>
+                        </div>
+                    </div>
+
+                    <h3>最新订单</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>订单号</th>
+                                <th>客户</th>
+                                <th>金额</th>
+                                <th>状态</th>
+                                <th>日期</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 产品管理 -->
+                <div id="admin-products" class="admin-page" style="display: none;">
+                    <div class="admin-header">
+                        <h2>产品管理</h2>
+                        <button class="btn-small btn-primary" onclick="openProductModal()">+ 添加产品</button>
+                    </div>
+
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>图片</th>
+                                <th>产品名称</th>
+                                <th>分类</th>
+                                <th>价格</th>
+                                <th>供应商</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 订单管理 -->
+                <div id="admin-orders" class="admin-page" style="display: none;">
+                    <div class="admin-header">
+                        <h2>订单管理</h2>
+                    </div>
+
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>订单号</th>
+                                <th>客户</th>
+                                <th>国家</th>
+                                <th>金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 供应商管理 -->
+                <div id="admin-suppliers" class="admin-page" style="display: none;">
+                    <div class="admin-header">
+                        <h2>供应商管理</h2>
+                    </div>
+
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>供应商ID</th>
+                                <th>供应商名称</th>
+                                <th>平台</th>
+                                <th>评分</th>
+                                <th>成交订单</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="suppliers-table">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 数据分析 -->
+                <div id="admin-analytics" class="admin-page" style="display: none;">
+                    <div class="admin-header">
+                        <h2>数据分析</h2>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>销售分布</h3>
+                            <div id="sales-chart" style="height: 200px; display: flex; align-items: flex-end; gap: 10px; margin-top: 1rem;">
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>分类销售占比</h3>
+                            <div id="category-chart" style="margin-top: 1rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 产品编辑模态框 -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="product-modal-title">添加产品</h3>
+            <form id="product-form" class="modal-form" onsubmit="saveProduct(event)">
+                <input type="hidden" id="product-id">
+                <div>
+                    <label>产品名称 *</label>
+                    <input type="text" id="product-title" required>
+                </div>
+                <div>
+                    <label>分类 *</label>
+                    <select id="product-category" required>
+                        <option value="electronics">电子产品</option>
+                        <option value="clothing">服装配饰</option>
+                        <option value="home">家居生活</option>
+                        <option value="beauty">美妆个护</option>
+                    </select>
+                </div>
+                <div>
+                    <label>价格 (USD) *</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                </div>
+                <div>
+                    <label>原价 (USD) *</label>
+                    <input type="number" id="product-original-price" step="0.01" required>
+                </div>
+                <div>
+                    <label>供应商平台 *</label>
+                    <select id="product-supplier" required>
+                        <option value="1688">1688</option>
+                        <option value="taobao">淘宝</option>
+                        <option value="alibaba">Alibaba</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div>
+                    <label>供应商ID *</label>
+                    <input type="text" id="product-supplier-id" required>
+                </div>
+                <div>
+                    <label>供应商名称 *</label>
+                    <input type="text" id="product-supplier-name" required>
+                </div>
+                <div>
+                    <label>供应商评分 *</label>
+                    <input type="number" id="product-supplier-rating" step="0.1" min="1" max="5" required>
+                </div>
+                <div>
+                    <label>供应商成交订单</label>
+                    <input type="number" id="product-supplier-orders" min="0">
+                </div>
+                <div>
+                    <label>产品描述</label>
+                    <textarea id="product-description" rows="3"></textarea>
+                </div>
+                <div>
+                    <label>产品图片URL</label>
+                    <input type="text" id="product-image" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn-small btn-primary" style="padding: 0.75rem;">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

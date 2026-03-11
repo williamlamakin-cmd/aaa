@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球优选 - 跨国代购平台</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">全球优选</div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('home')">首页</a></li>
+                <li><a href="#" onclick="showPage('products')">产品</a></li>
+                <li><a href="#" onclick="showPage('orders')">我的订单</a></li>
+                <li><a href="#" onclick="showPage('tracking')">订单追踪</a></li>
+                <li class="cart-icon">
+                    <span onclick="showPage('cart')">🛒</span>
+                    <span id="cart-count">0</span>
+                </li>
+                <li class="language-selector">
+                    <select id="language-select" onchange="changeLanguage()">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- 首页 -->
+        <div id="page-home" class="page active">
+            <section class="hero">
+                <h1 data-translate="hero_title">发现优质好货，享全球优惠</h1>
+                <p data-translate="hero_subtitle">直接从1688等优质供应商采购，为您节省最多60%的费用</p>
+                <button class="cta-button" onclick="showPage('products')" data-translate="start_shopping">开始购物</button>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <h3 data-translate="feature_quality">品质保证</h3>
+                    <p data-translate="feature_quality_desc">精选优质供应商，严格品控</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-translate="feature_price">价格优势</h3>
+                    <p data-translate="feature_price_desc">源头直采，价格更优惠</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-translate="feature_tracking">全程追踪</h3>
+                    <p data-translate="feature_tracking_desc">透明化订单流程，实时更新</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-translate="feature_shipping">全球配送</h3>
+                    <p data-translate="feature_shipping_desc">覆盖全球200+国家和地区</p>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2 data-translate="how_it_works">购物流程</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 data-translate="step1_title">浏览选购</h3>
+                        <p data-translate="step1_desc">在平台浏览精选产品</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 data-translate="step2_title">下单支付</h3>
+                        <p data-translate="step2_desc">安全支付，价格透明</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 data-translate="step3_title">代购采购</h3>
+                        <p data-translate="step3_desc">我们从1688等平台采购</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3 data-translate="step4_title">配送收货</h3>
+                        <p data-translate="step4_desc">全球直邮，实时追踪</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 产品页面 -->
+        <div id="page-products" class="page">
+            <div class="products-header">
+                <h2 data-translate="products_title">精选产品</h2>
+                <div class="filters">
+                    <select id="category-filter" onchange="filterProducts()">
+                        <option value="all" data-translate="filter_all">全部分类</option>
+                        <option value="electronics" data-translate="filter_electronics">电子产品</option>
+                        <option value="clothing" data-translate="filter_clothing">服装配饰</option>
+                        <option value="home" data-translate="filter_home">家居生活</option>
+                        <option value="beauty" data-translate="filter_beauty">美妆个护</option>
+                    </select>
+                    <select id="price-filter" onchange="filterProducts()">
+                        <option value="all" data-translate="price_all">全部价格</option>
+                        <option value="0-50" data-translate="price_low">$0 - $50</option>
+                        <option value="50-100" data-translate="price_medium">$50 - $100</option>
+                        <option value="100+" data-translate="price_high">$100+</option>
+                    </select>
+                </div>
+            </div>
+            <div id="products-grid" class="products-grid"></div>
+        </div>
+
+        <!-- 产品详情 -->
+        <div id="page-product-detail" class="page">
+            <div id="product-detail-content"></div>
+        </div>
+
+        <!-- 购物车 -->
+        <div id="page-cart" class="page">
+            <h2 data-translate="cart_title">购物车</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span data-translate="cart_total">总计:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="checkout-button" onclick="proceedToCheckout()" data-translate="checkout">去结算</button>
+            </div>
+        </div>
+
+        <!-- 结算页面 -->
+        <div id="page-checkout" class="page">
+            <h2 data-translate="checkout_title">结算</h2>
+            <form id="checkout-form" class="checkout-form" onsubmit="submitOrder(event)">
+                <div class="form-section">
+                    <h3 data-translate="shipping_info">收货信息</h3>
+                    <div class="form-group">
+                        <label data-translate="label_name">姓名 *</label>
+                        <input type="text" id="checkout-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_email">邮箱 *</label>
+                        <input type="email" id="checkout-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_phone">电话 *</label>
+                        <input type="tel" id="checkout-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_address">地址 *</label>
+                        <input type="text" id="checkout-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_city">城市 *</label>
+                        <input type="text" id="checkout-city" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_country">国家 *</label>
+                        <select id="checkout-country" required onchange="updateCurrencyByCountry()">
+                            <option value="">选择国家</option>
+                            <option value="CN">中国</option>
+                            <option value="HK">香港</option>
+                            <option value="SG">新加坡</option>
+                            <option value="MY">马来西亚</option>
+                            <option value="TH">泰国</option>
+                            <option value="VN">越南</option>
+                            <option value="PH">菲律宾</option>
+                            <option value="ID">印度尼西亚</option>
+                            <option value="US">美国</option>
+                            <option value="GB">英国</option>
+                            <option value="JP">日本</option>
+                            <option value="KR">韩国</option>
+                            <option value="AU">澳大利亚</option>
+                            <option value="CA">加拿大</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 data-translate="payment_info">支付信息</h3>
+                    <div class="form-group">
+                        <label data-translate="label_currency">币种</label>
+                        <select id="checkout-currency">
+                            <option value="USD">USD ($)</option>
+                            <option value="CNY">CNY (¥)</option>
+                            <option value="HKD">HKD (HK$)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="JPY">JPY (¥)</option>
+                            <option value="KRW">KRW (₩)</option>
+                            <option value="SGD">SGD (S$)</option>
+                            <option value="MYR">MYR (RM)</option>
+                            <option value="THB">THB (฿)</option>
+                            <option value="VND">VND (₫)</option>
+                            <option value="PHP">PHP (₱)</option>
+                            <option value="IDR">IDR (Rp)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3 data-translate="order_summary">订单摘要</h3>
+                    <div id="checkout-items"></div>
+                    <div class="summary-row">
+                        <span data-translate="subtotal">小计:</span>
+                        <span id="checkout-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span data-translate="shipping_fee">运费:</span>
+                        <span id="checkout-shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span data-translate="total">总计:</span>
+                        <span id="checkout-total">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="form-section" id="payment-methods">
+                    <h3 data-translate="payment_method">支付方式</h3>
+                    <div class="payment-option">
+                        <input type="radio" name="payment" id="payment-bank" value="bank" checked onchange="showBankInfo()">
+                        <label for="payment-bank">银行转账</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" name="payment" id="payment-alipay" value="alipay" onchange="showBankInfo()">
+                        <label for="payment-alipay">支付宝</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" name="payment" id="payment-wechat" value="wechat" onchange="showBankInfo()">
+                        <label for="payment-wechat">微信支付</label>
+                    </div>
+                </div>
+
+                <div id="bank-info" class="bank-info" style="display: block;">
+                    <div id="bank-details"></div>
+                </div>
+
+                <button type="submit" class="submit-button" data-translate="submit_order">提交订单</button>
+            </form>
+
+            <div id="payment-instruction" class="payment-instruction" style="display: none;">
+                <h3>订单提交成功！</h3>
+                <p>请将款项转账到以下银行账户：</p>
+                <div id="final-bank-info"></div>
+                <p><strong>重要提示：</strong></p>
+                <ul>
+                    <li>请在转账时备注订单号：<span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
+                    <li>转账完成后，您的订单将进入处理流程</li>
+                    <li>我们将从国内平台采购商品并安排发货</li>
+                </ul>
+                <button class="cta-button" onclick="continueShopping()">继续购物</button>
+            </div>
+        </div>
+
+        <!-- 我的订单 -->
+        <div id="page-orders" class="page">
+            <h2 data-translate="my_orders">我的订单</h2>
+            <div id="orders-list" class="orders-list"></div>
+        </div>
+
+        <!-- 订单追踪 -->
+        <div id="page-tracking" class="page">
+            <h2 data-translate="order_tracking">订单追踪</h2>
+            <div class="tracking-search">
+                <input type="text" id="tracking-input" placeholder="请输入订单号">
+                <button onclick="trackOrder()" data-translate="track">追踪</button>
+            </div>
+            <div id="tracking-result"></div>
+        </div>
+    </main>
+
+    <!-- 产品详情模态框 -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-product-detail"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4 data-translate="about_us">关于我们</h4>
+                <p data-translate="about_desc">全球优选致力于为您提供最优质的跨国代购服务</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="contact_us">联系我们</h4>
+                <p>Email: support@globalchoice.com</p>
+                <p>Tel: +86 123-4567-8900</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="follow_us">关注我们</h4>
+                <p>WeChat, Instagram, Twitter</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 全球优选. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
