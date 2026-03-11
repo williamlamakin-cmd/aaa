@@ -13,6 +13,7 @@
             <ul class="nav-menu">
                 <li><a href="#" onclick="showPage('home')">首页</a></li>
                 <li><a href="#" onclick="showPage('products')">产品</a></li>
+                <li><a href="#" onclick="showPage('find-product')">代找产品</a></li>
                 <li><a href="#" onclick="showPage('orders')">我的订单</a></li>
                 <li><a href="#" onclick="showPage('tracking')">订单追踪</a></li>
                 <li class="cart-icon">
@@ -264,6 +265,104 @@
                 <button onclick="trackOrder()" data-translate="track">追踪</button>
             </div>
             <div id="tracking-result"></div>
+        </div>
+
+        <!-- 代找产品 -->
+        <div id="page-find-product" class="page">
+            <h2 data-translate="find_product_title">代找产品</h2>
+            <div class="find-product-intro">
+                <p data-translate="find_product_desc">找不到想要的产品？上传图片，我们帮您找到最优质、最优惠的商品！</p>
+            </div>
+
+            <form id="find-product-form" class="find-product-form" onsubmit="submitFindProduct(event)">
+                <div class="form-section">
+                    <h3 data-translate="product_images">产品图片</h3>
+                    <div class="image-upload-area" id="image-upload-area">
+                        <div class="upload-placeholder" onclick="document.getElementById('product-images').click()">
+                            <div class="upload-icon">📷</div>
+                            <p data-translate="click_upload">点击上传产品图片</p>
+                            <p class="upload-hint" data-translate="upload_hint">支持 JPG、PNG 格式，最多3张</p>
+                        </div>
+                        <input type="file" id="product-images" accept="image/*" multiple style="display: none;" onchange="handleImageUpload(event)">
+                        <div id="image-preview-container" class="image-preview-container"></div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 data-translate="product_requirements">产品需求</h3>
+                    <div class="form-group">
+                        <label data-translate="product_description">产品描述 *</label>
+                        <textarea id="product-description" rows="4" required placeholder="请描述您想要的产品，如：功能、用途、尺寸、材质等"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="quantity_required">数量要求</label>
+                        <input type="number" id="product-quantity" min="1" value="1" placeholder="您需要多少件？">
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="budget_range">预算范围</label>
+                        <input type="text" id="budget-range" placeholder="例如：$10-50 USD">
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="additional_notes">其他要求</label>
+                        <textarea id="additional-notes" rows="3" placeholder="如：颜色偏好、品牌偏好、发货时间要求等"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 data-translate="contact_info">联系方式</h3>
+                    <div class="form-group">
+                        <label data-translate="label_name">姓名 *</label>
+                        <input type="text" id="find-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_email">邮箱 *</label>
+                        <input type="email" id="find-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_phone">电话 *</label>
+                        <input type="tel" id="find-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_country">国家 *</label>
+                        <select id="find-country" required>
+                            <option value="">选择国家</option>
+                            <option value="CN">中国</option>
+                            <option value="HK">香港</option>
+                            <option value="SG">新加坡</option>
+                            <option value="MY">马来西亚</option>
+                            <option value="TH">泰国</option>
+                            <option value="VN">越南</option>
+                            <option value="PH">菲律宾</option>
+                            <option value="ID">印度尼西亚</option>
+                            <option value="US">美国</option>
+                            <option value="GB">英国</option>
+                            <option value="JP">日本</option>
+                            <option value="KR">韩国</option>
+                            <option value="AU">澳大利亚</option>
+                            <option value="CA">加拿大</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button" data-translate="submit_request">提交请求</button>
+            </form>
+
+            <div id="find-product-result" style="display: none;">
+                <h3 data-translate="request_submitted">请求已提交！</h3>
+                <div class="result-content">
+                    <p data-translate="request_number">您的请求编号：<span id="find-request-number" style="color: #1890ff; font-weight: bold;"></span></p>
+                    <p data-translate="we_will_contact">我们将在24小时内联系您，为您提供最优的产品方案和报价。</p>
+                    <div class="next-steps">
+                        <h4 data-translate="next_steps">接下来：</h4>
+                        <ul>
+                            <li data-translate="step_find">我们的采购团队将根据您的需求寻找最优质的产品</li>
+                            <li data-translate="step_quote">我们会提供多个选项和报价供您选择</li>
+                            <li data-translate="step_confirm">您确认后，我们立即安排采购和发货</li>
+                        </ul>
+                    </div>
+                    <button class="cta-button" onclick="resetFindProduct()" data-translate="submit_another">继续提交新请求</button>
+                </div>
+            </div>
         </div>
     </main>
 

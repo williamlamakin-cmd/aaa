@@ -69,7 +69,7 @@ function renderProducts() {
                 </div>
                 <div class="product-tags">
                     <span class="product-tag">节省${Math.round((1 - product.price / product.originalPrice) * 100)}%</span>
-                    <span class="product-tag">${product.supplierRating}★</span>
+                    <span class="product-tag">品质保证</span>
                 </div>
                 <button class="add-to-cart-button" onclick="event.stopPropagation(); addToCart(${product.id})">
                     ${translate('add_to_cart')}
@@ -103,14 +103,6 @@ function showProductDetail(productId) {
                         </span>
                     </div>
                     <p class="product-detail-description">${product.description}</p>
-
-                    <div class="product-supplier-info">
-                        <h3>${translate('supplier_info')}</h3>
-                        <p><strong>${translate('supplier_name')}</strong> ${product.supplierName}</p>
-                        <p><strong>${translate('supplier_rating')}</strong> ${product.supplierRating} ★</p>
-                        <p><strong>${translate('supplier_orders')}</strong> ${product.supplierOrders.toLocaleString()}</p>
-                        <p><strong>供应商ID:</strong> ${product.supplierId}</p>
-                    </div>
 
                     <div class="quantity-selector">
                         <span>${translate('quantity')}</span>
@@ -685,3 +677,110 @@ document.getElementById('product-modal').addEventListener('click', (e) => {
         closeModal();
     }
 });
+
+// 代找产品功能
+let uploadedImages = [];
+
+function handleImageUpload(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById('image-preview-container');
+
+    if (files.length + uploadedImages.length > 3) {
+        showToast('最多只能上传3张图片');
+        return;
+    }
+
+    for (let file of files) {
+        if (uploadedImages.length >= 3) break;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const imageData = e.target.result;
+            uploadedImages.push(imageData);
+
+            const previewDiv = document.createElement('div');
+            previewDiv.className = 'image-preview';
+            previewDiv.innerHTML = `
+                <img src="${imageData}" alt="产品图片">
+                <button type="button" class="remove-image" onclick="removeImage(${uploadedImages.length - 1})">×</button>
+            `;
+            previewContainer.appendChild(previewDiv);
+
+            // 隐藏上传占位符
+            if (uploadedImages.length >= 3) {
+                document.querySelector('.upload-placeholder').style.display = 'none';
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function removeImage(index) {
+    uploadedImages.splice(index, 1);
+    renderImagePreviews();
+
+    // 显示上传占位符
+    if (uploadedImages.length < 3) {
+        document.querySelector('.upload-placeholder').style.display = 'block';
+    }
+}
+
+function renderImagePreviews() {
+    const previewContainer = document.getElementById('image-preview-container');
+    previewContainer.innerHTML = '';
+
+    uploadedImages.forEach((imageData, index) => {
+        const previewDiv = document.createElement('div');
+        previewDiv.className = 'image-preview';
+        previewDiv.innerHTML = `
+            <img src="${imageData}" alt="产品图片">
+            <button type="button" class="remove-image" onclick="removeImage(${index})">×</button>
+        `;
+        previewContainer.appendChild(previewDiv);
+    });
+}
+
+function submitFindProduct(event) {
+    event.preventDefault();
+
+    const requestId = 'FP' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substr(2, 4).toUpperCase();
+
+    const requestData = {
+        id: requestId,
+        date: new Date().toISOString(),
+        status: 'pending',
+        images: uploadedImages,
+        description: document.getElementById('product-description').value,
+        quantity: document.getElementById('product-quantity').value,
+        budget: document.getElementById('budget-range').value,
+        notes: document.getElementById('additional-notes').value,
+        customer: {
+            name: document.getElementById('find-name').value,
+            email: document.getElementById('find-email').value,
+            phone: document.getElementById('find-phone').value,
+            country: document.getElementById('find-country').value
+        }
+    };
+
+    // 保存到localStorage
+    let findProductRequests = JSON.parse(localStorage.getItem('findProductRequests')) || [];
+    findProductRequests.unshift(requestData);
+    localStorage.setItem('findProductRequests', JSON.stringify(findProductRequests));
+
+    // 显示结果
+    document.getElementById('find-product-form').style.display = 'none';
+    document.getElementById('find-product-result').style.display = 'block';
+    document.getElementById('find-request-number').textContent = requestId;
+
+    showToast('请求提交成功！');
+}
+
+function resetFindProduct() {
+    uploadedImages = [];
+    document.getElementById('find-product-form').reset();
+    document.getElementById('image-preview-container').innerHTML = '';
+    document.querySelector('.upload-placeholder').style.display = 'block';
+    document.getElementById('find-product-form').style.display = 'block';
+    document.getElementById('find-product-result').style.display = 'none';
+}
+

@@ -371,3 +371,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // 初始化订单
 let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+// 初始化代找产品请求
+let findProductRequests = JSON.parse(localStorage.getItem('findProductRequests')) || [];
+
