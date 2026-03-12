@@ -1,14 +1,14 @@
-// 产品数据
+// 产品数据 - 电子产品、医疗辅助、五金产品
 const products = [
+    // ========== 电子产品类 ==========
     {
         id: 1,
         title: { zh: "无线蓝牙耳机 Pro", en: "Wireless Bluetooth Headphones Pro" },
         price: 29.99,
         originalPrice: 59.99,
         category: "electronics",
-        supplier: "1688",
-        supplierId: "1688_SUP001",
-        image: "https://via.placeholder.com/280x250/1890ff/ffffff?text=Wireless+Headphones",
+        subcategory: "phone_accessories",
+        image: "https://picsum.photos/seed/headphones/280/250",
         description: { 
             zh: "高品质无线蓝牙耳机，支持主动降噪，30小时续航，快速充电，舒适佩戴体验。", 
             en: "High-quality wireless Bluetooth headphones with active noise cancellation, 30-hour battery life, fast charging, and comfortable wearing experience." 
@@ -28,10 +28,7 @@ const products = [
                 "Weight": "45g",
                 "Water Resistance": "IPX5"
             }
-        },
-        supplierRating: 4.8,
-        supplierOrders: 50000,
-        supplierName: "深圳市音悦电子科技有限公司"
+        }
     },
     {
         id: 2,
@@ -39,9 +36,8 @@ const products = [
         price: 45.99,
         originalPrice: 99.99,
         category: "electronics",
-        supplier: "1688",
-        supplierId: "1688_SUP002",
-        image: "https://via.placeholder.com/280x250/52c41a/ffffff?text=Smart+Watch",
+        subcategory: "wearable",
+        image: "https://picsum.photos/seed/smartwatch/280/250",
         description: { 
             zh: "多功能智能手表，支持心率监测、血氧检测、睡眠分析，50米防水，14天续航。", 
             en: "Multi-functional smartwatch with heart rate monitoring, blood oxygen detection, sleep analysis, 50m water resistance, and 14-day battery life." 
@@ -61,53 +57,16 @@ const products = [
                 "Weight": "48g",
                 "Sensors": "Heart rate, SpO2, Sleep"
             }
-        },
-        supplierRating: 4.7,
-        supplierOrders: 35000,
-        supplierName: "杭州智科科技有限公司"
+        }
     },
     {
         id: 3,
-        title: { zh: "时尚简约背包", en: "Fashion Simple Backpack" },
-        price: 22.99,
-        originalPrice: 49.99,
-        category: "clothing",
-        supplier: "1688",
-        supplierId: "1688_SUP003",
-        image: "https://via.placeholder.com/280x250/fa8c16/ffffff?text=Backpack",
-        description: { 
-            zh: "大容量多功能背包，防水材质，人体工学设计，适合通勤、旅行、上学。", 
-            en: "Large capacity multi-functional backpack, waterproof material, ergonomic design, suitable for commuting, travel, and school." 
-        },
-        specs: {
-            zh: {
-                "材质": "防水尼龙",
-                "容量": "25L",
-                "重量": "550g",
-                "颜色": "黑色、灰色、蓝色",
-                "尺寸": "45cm x 30cm x 15cm"
-            },
-            en: {
-                "Material": "Waterproof Nylon",
-                "Capacity": "25L",
-                "Weight": "550g",
-                "Colors": "Black, Gray, Blue",
-                "Dimensions": "45cm x 30cm x 15cm"
-            }
-        },
-        supplierRating: 4.6,
-        supplierOrders: 42000,
-        supplierName: "义乌市佳品箱包厂"
-    },
-    {
-        id: 4,
         title: { zh: "便携式充电宝 20000mAh", en: "Portable Power Bank 20000mAh" },
         price: 18.99,
         originalPrice: 39.99,
         category: "electronics",
-        supplier: "1688",
-        supplierId: "1688_SUP004",
-        image: "https://via.placeholder.com/280x250/722ed1/ffffff?text=Power+Bank",
+        subcategory: "phone_accessories",
+        image: "https://picsum.photos/seed/powerbank/280/250",
         description: { 
             zh: "大容量移动电源，支持PD快充，双USB输出，LED电量显示，安全多重保护。", 
             en: "High capacity power bank with PD fast charging, dual USB output, LED display, and multi-protection safety features." 
@@ -127,152 +86,16 @@ const products = [
                 "Weight": "420g",
                 "Input Power": "18W"
             }
-        },
-        supplierRating: 4.9,
-        supplierOrders: 68000,
-        supplierName: "深圳市创联电子有限公司"
+        }
     },
     {
-        id: 5,
-        title: { zh: "LED台灯护眼灯", en: "LED Eye-Care Desk Lamp" },
-        price: 25.99,
-        originalPrice: 59.99,
-        category: "home",
-        supplier: "1688",
-        supplierId: "1688_SUP005",
-        image: "https://via.placeholder.com/280x250/eb2f96/ffffff?text=LED+Lamp",
-        description: { 
-            zh: "护眼LED台灯，无频闪，多档亮度调节，USB充电，可折叠便携设计。", 
-            en: "Eye-care LED desk lamp, flicker-free, multi-level brightness adjustment, USB charging, foldable portable design." 
-        },
-        specs: {
-            zh: {
-                "光源": "LED无频闪",
-                "亮度档位": "5档",
-                "续航时间": "4-20小时",
-                "充电接口": "USB",
-                "色温": "3000K-6000K"
-            },
-            en: {
-                "Light Source": "Flicker-free LED",
-                "Brightness Levels": "5 levels",
-                "Battery Life": "4-20 hours",
-                "Charging Port": "USB",
-                "Color Temperature": "3000K-6000K"
-            }
-        },
-        supplierRating: 4.5,
-        supplierOrders: 28000,
-        supplierName: "中山市光明灯饰厂"
-    },
-    {
-        id: 6,
-        title: { zh: "纯棉T恤 多色可选", en: "Pure Cotton T-Shirt Multi-Color" },
-        price: 9.99,
-        originalPrice: 24.99,
-        category: "clothing",
-        supplier: "1688",
-        supplierId: "1688_SUP006",
-        image: "https://via.placeholder.com/280x250/13c2c2/ffffff?text=T-Shirt",
-        description: { 
-            zh: "100%纯棉T恤，透气舒适，多色可选，经典版型，适合日常穿着。", 
-            en: "100% pure cotton t-shirt, breathable and comfortable, multiple colors available, classic fit, perfect for daily wear." 
-        },
-        specs: {
-            zh: {
-                "材质": "100%纯棉",
-                "颜色": "白色、黑色、灰色、蓝色、红色",
-                "尺码": "S-XXL",
-                "厚度": "220g",
-                "工艺": "精梳棉"
-            },
-            en: {
-                "Material": "100% Cotton",
-                "Colors": "White, Black, Gray, Blue, Red",
-                "Sizes": "S-XXL",
-                "Thickness": "220g",
-                "Process": "Combed Cotton"
-            }
-        },
-        supplierRating: 4.7,
-        supplierOrders: 78000,
-        supplierName: "广州时尚制衣厂"
-    },
-    {
-        id: 7,
-        title: { zh: "面部精华液 30ml", en: "Facial Serum 30ml" },
-        price: 15.99,
-        originalPrice: 35.99,
-        category: "beauty",
-        supplier: "1688",
-        supplierId: "1688_SUP007",
-        image: "https://via.placeholder.com/280x250/f759ab/ffffff?text=Serum",
-        description: { 
-            zh: "保湿抗皱面部精华，含透明质酸和维生素C，滋养肌肤，改善细纹。", 
-            en: "Moisturizing anti-wrinkle facial serum with hyaluronic acid and vitamin C, nourishes skin and reduces fine lines." 
-        },
-        specs: {
-            zh: {
-                "容量": "30ml",
-                "主要成分": "透明质酸、维生素C",
-                "功效": "保湿、抗皱、提亮",
-                "适用肌肤": "所有肤质",
-                "保质期": "3年"
-            },
-            en: {
-                "Volume": "30ml",
-                "Key Ingredients": "Hyaluronic Acid, Vitamin C",
-                "Benefits": "Moisturizing, Anti-wrinkle, Brightening",
-                "Skin Type": "All skin types",
-                "Shelf Life": "3 years"
-            }
-        },
-        supplierRating: 4.8,
-        supplierOrders: 45000,
-        supplierName: "上海美妆生物科技有限公司"
-    },
-    {
-        id: 8,
-        title: { zh: "厨房多用刀具套装", en: "Kitchen Knife Set Multi-Purpose" },
-        price: 34.99,
-        originalPrice: 79.99,
-        category: "home",
-        supplier: "1688",
-        supplierId: "1688_SUP008",
-        image: "https://via.placeholder.com/280x250/faad14/ffffff?text=Knife+Set",
-        description: { 
-            zh: "5件套厨房刀具，不锈钢材质，锋利耐用，包含菜刀、水果刀、面包刀等。", 
-            en: "5-piece kitchen knife set, stainless steel, sharp and durable, includes chef knife, fruit knife, bread knife, etc." 
-        },
-        specs: {
-            zh: {
-                "材质": "440C不锈钢",
-                "套件数量": "5件",
-                "包含刀具": "菜刀、水果刀、面包刀、剪刀、磨刀棒",
-                "硬度": "HRC58-60",
-                "手柄材质": "防滑ABS"
-            },
-            en: {
-                "Material": "440C Stainless Steel",
-                "Pieces": "5 pieces",
-                "Includes": "Chef knife, Fruit knife, Bread knife, Scissors, Sharpening rod",
-                "Hardness": "HRC58-60",
-                "Handle Material": "Non-slip ABS"
-            }
-        },
-        supplierRating: 4.6,
-        supplierOrders: 32000,
-        supplierName: "阳江市鑫华刀具厂"
-    },
-    {
-        id: 9,
+        id: 4,
         title: { zh: "便携式蓝牙音箱", en: "Portable Bluetooth Speaker" },
         price: 27.99,
         originalPrice: 59.99,
         category: "electronics",
-        supplier: "1688",
-        supplierId: "1688_SUP009",
-        image: "https://via.placeholder.com/280x250/2f54eb/ffffff?text=Bluetooth+Speaker",
+        subcategory: "audio",
+        image: "https://picsum.photos/seed/speaker/280/250",
         description: { 
             zh: "便携式无线音箱，360度环绕音效，防水设计，12小时续航，支持TWS连接。", 
             en: "Portable wireless speaker with 360° surround sound, waterproof design, 12-hour battery life, TWS pairing support." 
@@ -292,109 +115,415 @@ const products = [
                 "Connectivity": "Bluetooth 5.0",
                 "Weight": "320g"
             }
+        }
+    },
+    {
+        id: 5,
+        title: { zh: "平板电脑支架 铝合金", en: "Tablet Stand Aluminum Alloy" },
+        price: 19.99,
+        originalPrice: 39.99,
+        category: "electronics",
+        subcategory: "tablet_accessories",
+        image: "https://picsum.photos/seed/tabletstand/280/250",
+        description: { 
+            zh: "可折叠平板支架，铝合金材质，多角度调节，兼容各种平板和手机，稳固防滑。", 
+            en: "Foldable tablet stand, aluminum alloy material, multi-angle adjustment, compatible with various tablets and phones, stable and non-slip." 
         },
-        supplierRating: 4.7,
-        supplierOrders: 38000,
-        supplierName: "深圳市声韵电子有限公司"
+        specs: {
+            zh: {
+                "材质": "铝合金+硅胶",
+                "适用设备": "4-13英寸",
+                "可调角度": "0-270度",
+                "折叠尺寸": "18cm x 12cm",
+                "重量": "250g"
+            },
+            en: {
+                "Material": "Aluminum Alloy + Silicone",
+                "Compatible Devices": "4-13 inch",
+                "Adjustable Angle": "0-270 degrees",
+                "Folded Size": "18cm x 12cm",
+                "Weight": "250g"
+            }
+        }
+    },
+    {
+        id: 6,
+        title: { zh: "USB-C多功能扩展坞", en: "USB-C Multiport Hub" },
+        price: 35.99,
+        originalPrice: 69.99,
+        category: "electronics",
+        subcategory: "computer_accessories",
+        image: "https://picsum.photos/seed/usbhub/280/250",
+        description: { 
+            zh: "7合1 USB-C扩展坞，支持HDMI 4K输出、USB3.0、SD卡读取、PD快充，即插即用。", 
+            en: "7-in-1 USB-C hub with HDMI 4K output, USB3.0, SD card reader, PD fast charging, plug and play." 
+        },
+        specs: {
+            zh: {
+                "接口": "HDMI x1, USB3.0 x3, SD/TF x2, PD",
+                "HDMI输出": "4K@30Hz",
+                "传输速度": "5Gbps",
+                "材质": "铝合金外壳",
+                "线长": "15cm"
+            },
+            en: {
+                "Ports": "HDMI x1, USB3.0 x3, SD/TF x2, PD",
+                "HDMI Output": "4K@30Hz",
+                "Transfer Speed": "5Gbps",
+                "Material": "Aluminum Alloy",
+                "Cable Length": "15cm"
+            }
+        }
+    },
+    // ========== 医疗辅助类 ==========
+    {
+        id: 7,
+        title: { zh: "轻便折叠轮椅", en: "Lightweight Foldable Wheelchair" },
+        price: 199.99,
+        originalPrice: 399.99,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://picsum.photos/seed/wheelchair/280/250",
+        description: { 
+            zh: "轻便铝合金轮椅，可折叠设计，舒适坐垫，安全刹车，承重100kg，方便出行。", 
+            en: "Lightweight aluminum alloy wheelchair, foldable design, comfortable seat cushion, safe braking, 100kg weight capacity, convenient for travel." 
+        },
+        specs: {
+            zh: {
+                "材质": "铝合金车架",
+                "承重": "100kg",
+                "净重": "15kg",
+                "展开尺寸": "100cm x 62cm x 90cm",
+                "折叠尺寸": "85cm x 30cm x 70cm"
+            },
+            en: {
+                "Material": "Aluminum Alloy Frame",
+                "Weight Capacity": "100kg",
+                "Net Weight": "15kg",
+                "Open Size": "100cm x 62cm x 90cm",
+                "Folded Size": "85cm x 30cm x 70cm"
+            }
+        }
+    },
+    {
+        id: 8,
+        title: { zh: "可调节拐杖 轻便型", en: "Adjustable Crutches Lightweight" },
+        price: 29.99,
+        originalPrice: 59.99,
+        category: "medical",
+        subcategory: "crutch",
+        image: "https://picsum.photos/seed/crutches/280/250",
+        description: { 
+            zh: "铝合金拐杖，高度可调，防滑脚垫，人体工学手柄，适合老人及康复使用。", 
+            en: "Aluminum alloy crutches, adjustable height, non-slip foot pads, ergonomic handle, suitable for elderly and rehabilitation." 
+        },
+        specs: {
+            zh: {
+                "材质": "铝合金",
+                "高度范围": "72-95cm",
+                "承重": "120kg",
+                "重量": "0.5kg/支",
+                "颜色": "银色、蓝色"
+            },
+            en: {
+                "Material": "Aluminum Alloy",
+                "Height Range": "72-95cm",
+                "Weight Capacity": "120kg",
+                "Weight": "0.5kg/pair",
+                "Colors": "Silver, Blue"
+            }
+        }
+    },
+    {
+        id: 9,
+        title: { zh: "电子血压计 智能款", en: "Electronic Blood Pressure Monitor Smart" },
+        price: 45.99,
+        originalPrice: 89.99,
+        category: "medical",
+        subcategory: "inspection_tools",
+        image: "https://picsum.photos/seed/bloodpressure/280/250",
+        description: { 
+            zh: "全自动电子血压计，大屏幕显示，记忆存储，心律不齐检测，操作简单准确。", 
+            en: "Fully automatic electronic blood pressure monitor, large screen display, memory storage, arrhythmia detection, easy and accurate operation." 
+        },
+        specs: {
+            zh: {
+                "测量范围": "0-299mmHg",
+                "精度": "±3mmHg",
+                "记忆组数": "2组各60组",
+                "电源": "电池/USB",
+                "臂带周长": "22-42cm"
+            },
+            en: {
+                "Measurement Range": "0-299mmHg",
+                "Accuracy": "±3mmHg",
+                "Memory Groups": "2 groups x 60 readings",
+                "Power": "Battery/USB",
+                "Cuff Circumference": "22-42cm"
+            }
+        }
     },
     {
         id: 10,
-        title: { zh: "天然护肤套装", en: "Natural Skincare Set" },
-        price: 42.99,
-        originalPrice: 89.99,
-        category: "beauty",
-        supplier: "1688",
-        supplierId: "1688_SUP010",
-        image: "https://via.placeholder.com/280x250/eb2f96/ffffff?text=Skincare+Set",
+        title: { zh: "血氧仪 指夹式", en: "Pulse Oximeter Finger Type" },
+        price: 19.99,
+        originalPrice: 39.99,
+        category: "medical",
+        subcategory: "inspection_tools",
+        image: "https://picsum.photos/seed/oximeter/280/250",
         description: { 
-            zh: "三件套天然护肤套装，包含洁面乳、爽肤水、乳液，温和无刺激，适合敏感肌。", 
-            en: "3-piece natural skincare set including cleanser, toner, and lotion, gentle and non-irritating, suitable for sensitive skin." 
+            zh: "便携式指夹血氧仪，实时监测血氧饱和度和脉搏，LED大屏显示，一键操作。", 
+            en: "Portable finger pulse oximeter, real-time monitoring of blood oxygen saturation and pulse, large LED display, one-button operation." 
         },
         specs: {
             zh: {
-                "包含": "洁面乳100ml + 爽肤水150ml + 乳液100ml",
-                "成分": "天然植物提取物",
-                "功效": "清洁、保湿、滋养",
-                "适用肌肤": "敏感肌、所有肤质",
-                "保质期": "3年"
+                "血氧测量": "70%-100%",
+                "脉搏范围": "30-250bpm",
+                "显示方式": "OLED双彩屏",
+                "电源": "2节AAA电池",
+                "重量": "50g"
             },
             en: {
-                "Includes": "Cleanser 100ml + Toner 150ml + Lotion 100ml",
-                "Ingredients": "Natural plant extracts",
-                "Benefits": "Cleansing, Moisturizing, Nourishing",
-                "Skin Type": "Sensitive skin, All skin types",
-                "Shelf Life": "3 years"
+                "SpO2 Range": "70%-100%",
+                "Pulse Range": "30-250bpm",
+                "Display": "OLED Dual Color Screen",
+                "Power": "2x AAA Batteries",
+                "Weight": "50g"
             }
-        },
-        supplierRating: 4.9,
-        supplierOrders: 56000,
-        supplierName: "杭州天然美妆科技有限公司"
+        }
     },
     {
         id: 11,
-        title: { zh: "智能温控水杯", en: "Smart Temperature Control Mug" },
-        price: 32.99,
-        originalPrice: 69.99,
-        category: "home",
-        supplier: "1688",
-        supplierId: "1688_SUP011",
-        image: "https://via.placeholder.com/280x250/13c2c2/ffffff?text=Smart+Mug",
+        title: { zh: "助行器 老人步行器", en: "Walker for Elderly" },
+        price: 69.99,
+        originalPrice: 139.99,
+        category: "medical",
+        subcategory: "walking_aid",
+        image: "https://picsum.photos/seed/walker/280/250",
         description: { 
-            zh: "智能温控保温杯，LED温度显示，可设定温度，保温长达12小时，不锈钢材质。", 
-            en: "Smart temperature control mug with LED display, customizable temperature, keeps warm for up to 12 hours, stainless steel." 
+            zh: "可折叠助行器，加宽底盘，防滑脚垫，高度可调，适合老人康复训练使用。", 
+            en: "Foldable walker, widened base, non-slip foot pads, adjustable height, suitable for elderly rehabilitation training." 
         },
         specs: {
             zh: {
-                "容量": "450ml",
-                "材质": "316不锈钢",
-                "保温时间": "12小时",
-                "温控范围": "40-90℃",
-                "充电接口": "USB"
+                "材质": "高强度钢管",
+                "高度范围": "78-96cm",
+                "承重": "150kg",
+                "重量": "4.5kg",
+                "特点": "可折叠、带刹车"
             },
             en: {
-                "Capacity": "450ml",
-                "Material": "316 Stainless Steel",
-                "Insulation Time": "12 hours",
-                "Temperature Range": "40-90℃",
-                "Charging Port": "USB"
+                "Material": "High-strength Steel",
+                "Height Range": "78-96cm",
+                "Weight Capacity": "150kg",
+                "Weight": "4.5kg",
+                "Features": "Foldable, With Brakes"
             }
-        },
-        supplierRating: 4.8,
-        supplierOrders: 41000,
-        supplierName: "永康市智造家居用品厂"
+        }
     },
     {
         id: 12,
-        title: { zh: "运动鞋 轻便透气", en: "Sports Shoes Lightweight Breathable" },
-        price: 38.99,
-        originalPrice: 79.99,
-        category: "clothing",
-        supplier: "1688",
-        supplierId: "1688_SUP012",
-        image: "https://via.placeholder.com/280x250/fa8c16/ffffff?text=Sneakers",
+        title: { zh: "电子体温枪 非接触式", en: "Infrared Thermometer Non-contact" },
+        price: 25.99,
+        originalPrice: 49.99,
+        category: "medical",
+        subcategory: "inspection_tools",
+        image: "https://picsum.photos/seed/thermometer/280/250",
         description: { 
-            zh: "轻便透气运动鞋，鞋底防滑耐磨，记忆鞋垫，适合跑步、健身、日常穿着。", 
-            en: "Lightweight breathable sneakers with non-slip durable sole, memory foam insole, perfect for running, fitness, and daily wear." 
+            zh: "红外线体温枪，非接触式测量，秒速测温，高温报警，记忆功能，适合家庭使用。", 
+            en: "Infrared thermometer, non-contact measurement, instant reading, high temperature alarm, memory function, suitable for home use." 
         },
         specs: {
             zh: {
-                "材质": "网布 + EVA鞋底",
-                "重量": "单只约280g",
-                "颜色": "白色、黑色、红色、蓝色",
-                "尺码": "36-45",
-                "特点": "透气、防滑、轻便"
+                "测量范围": "32-42.9℃",
+                "精度": "±0.2℃",
+                "测量距离": "3-5cm",
+                "测量时间": "1秒",
+                "记忆组数": "32组"
             },
             en: {
-                "Material": "Mesh + EVA Sole",
-                "Weight": "Approx. 280g each",
-                "Colors": "White, Black, Red, Blue",
-                "Sizes": "36-45",
-                "Features": "Breathable, Non-slip, Lightweight"
+                "Measurement Range": "32-42.9℃",
+                "Accuracy": "±0.2℃",
+                "Distance": "3-5cm",
+                "Reading Time": "1 second",
+                "Memory": "32 readings"
             }
+        }
+    },
+    // ========== 五金产品类 ==========
+    {
+        id: 13,
+        title: { zh: "多功能工具钳 12合1", en: "Multi-tool Pliers 12-in-1" },
+        price: 24.99,
+        originalPrice: 49.99,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://picsum.photos/seed/multitool/280/250",
+        description: { 
+            zh: "12合1多功能工具钳，不锈钢材质，包含钳子、刀、螺丝刀、开瓶器等，便携实用。", 
+            en: "12-in-1 multi-tool pliers, stainless steel, includes pliers, knife, screwdriver, bottle opener, etc., portable and practical." 
         },
-        supplierRating: 4.6,
-        supplierOrders: 52000,
-        supplierName: "泉州运动鞋业有限公司"
+        specs: {
+            zh: {
+                "材质": "不锈钢",
+                "工具数量": "12种",
+                "展开长度": "16cm",
+                "折叠长度": "10cm",
+                "重量": "280g"
+            },
+            en: {
+                "Material": "Stainless Steel",
+                "Tools": "12 types",
+                "Open Length": "16cm",
+                "Folded Length": "10cm",
+                "Weight": "280g"
+            }
+        }
+    },
+    {
+        id: 14,
+        title: { zh: "家用工具套装 28件", en: "Home Tool Set 28 Pieces" },
+        price: 39.99,
+        originalPrice: 79.99,
+        category: "hardware",
+        subcategory: "tool_set",
+        image: "https://picsum.photos/seed/toolset/280/250",
+        description: { 
+            zh: "家用工具套装，包含扳手、螺丝刀、锤子、卷尺等28件常用工具，收纳箱包装。", 
+            en: "Home tool set including wrenches, screwdrivers, hammer, tape measure and 28 common tools, storage box included." 
+        },
+        specs: {
+            zh: {
+                "件数": "28件",
+                "包含工具": "扳手、螺丝刀、锤子、卷尺等",
+                "收纳箱": "塑料工具箱",
+                "适用场景": "家庭维修、DIY",
+                "重量": "2.5kg"
+            },
+            en: {
+                "Pieces": "28 pieces",
+                "Includes": "Wrenches, Screwdrivers, Hammer, Tape, etc.",
+                "Storage": "Plastic Tool Box",
+                "Usage": "Home repair, DIY",
+                "Weight": "2.5kg"
+            }
+        }
+    },
+    {
+        id: 15,
+        title: { zh: "电钻冲击钻 家用款", en: "Electric Impact Drill Home Use" },
+        price: 49.99,
+        originalPrice: 99.99,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://picsum.photos/seed/drill/280/250",
+        description: { 
+            zh: "家用冲击钻，可调速正反转，LED照明，配多种钻头，适合木材、金属、混凝土。", 
+            en: "Home impact drill, variable speed with reverse, LED light, includes various drill bits, suitable for wood, metal, concrete." 
+        },
+        specs: {
+            zh: {
+                "功率": "550W",
+                "转速": "0-3000rpm",
+                "钻夹头": "13mm",
+                "功能": "平钻/冲击钻",
+                "重量": "1.8kg"
+            },
+            en: {
+                "Power": "550W",
+                "Speed": "0-3000rpm",
+                "Chuck Size": "13mm",
+                "Modes": "Drilling/Impact",
+                "Weight": "1.8kg"
+            }
+        }
+    },
+    {
+        id: 16,
+        title: { zh: "测量卷尺 5米", en: "Measuring Tape 5m" },
+        price: 8.99,
+        originalPrice: 18.99,
+        category: "hardware",
+        subcategory: "measuring",
+        image: "https://picsum.photos/seed/tapemeasure/280/250",
+        description: { 
+            zh: "专业测量卷尺，5米长度，双面刻度，自动回卷，锁扣设计，耐磨外壳。", 
+            en: "Professional measuring tape, 5m length, dual-sided scale, auto-retract, lock button, durable casing." 
+        },
+        specs: {
+            zh: {
+                "长度": "5米",
+                "宽度": "19mm",
+                "材质": "优质钢带",
+                "外壳": "ABS+TPE",
+                "精度": "±0.5mm"
+            },
+            en: {
+                "Length": "5m",
+                "Width": "19mm",
+                "Material": "Premium Steel Blade",
+                "Casing": "ABS+TPE",
+                "Accuracy": "±0.5mm"
+            }
+        }
+    },
+    {
+        id: 17,
+        title: { zh: "不锈钢扳手套装 12件", en: "Stainless Steel Wrench Set 12 Pieces" },
+        price: 34.99,
+        originalPrice: 69.99,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://picsum.photos/seed/wrench/280/250",
+        description: { 
+            zh: "开口扳手套装，12件套，铬钒钢材质，双向开口，规格齐全，适合各种维修。", 
+            en: "Open-end wrench set, 12 pieces, chrome vanadium steel, double-ended, complete specifications, suitable for various repairs." 
+        },
+        specs: {
+            zh: {
+                "件数": "12件",
+                "材质": "铬钒钢",
+                "规格": "6-22mm",
+                "表面处理": "镀铬",
+                "收纳袋": "帆布卷袋"
+            },
+            en: {
+                "Pieces": "12 pieces",
+                "Material": "Chrome Vanadium Steel",
+                "Sizes": "6-22mm",
+                "Finish": "Chrome Plated",
+                "Storage": "Canvas Roll Pouch"
+            }
+        }
+    },
+    {
+        id: 18,
+        title: { zh: "水平尺 3气泡", en: "Spirit Level 3 Bubble" },
+        price: 12.99,
+        originalPrice: 25.99,
+        category: "hardware",
+        subcategory: "measuring",
+        image: "https://picsum.photos/seed/level/280/250",
+        description: { 
+            zh: "铝合金水平尺，3气泡设计（水平、垂直、45度），高精度，带磁吸功能。", 
+            en: "Aluminum spirit level, 3 bubble design (horizontal, vertical, 45°), high precision, magnetic strip included." 
+        },
+        specs: {
+            zh: {
+                "长度": "40cm",
+                "材质": "铝合金",
+                "气泡数": "3个",
+                "精度": "0.5mm/m",
+                "特点": "磁吸、挂孔"
+            },
+            en: {
+                "Length": "40cm",
+                "Material": "Aluminum Alloy",
+                "Bubbles": "3",
+                "Accuracy": "0.5mm/m",
+                "Features": "Magnetic, Hanging Hole"
+            }
+        }
     }
 ];
 
@@ -513,9 +642,8 @@ const orderStatuses = {
 // 分类翻译
 const categoryTranslations = {
     electronics: { zh: "电子产品", en: "Electronics" },
-    clothing: { zh: "服装配饰", en: "Clothing & Accessories" },
-    home: { zh: "家居生活", en: "Home & Living" },
-    beauty: { zh: "美妆个护", en: "Beauty & Personal Care" }
+    medical: { zh: "医疗辅助", en: "Medical Aids" },
+    hardware: { zh: "五金产品", en: "Hardware" }
 };
 
 // 初始化购物车
@@ -526,4 +654,3 @@ let orders = JSON.parse(localStorage.getItem('orders')) || [];
 
 // 初始化代找产品请求
 let findProductRequests = JSON.parse(localStorage.getItem('findProductRequests')) || [];
-

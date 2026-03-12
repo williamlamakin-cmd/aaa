@@ -55,7 +55,7 @@
         <div id="page-home" class="page active">
             <section class="hero">
                 <h1 data-translate="hero_title">发现优质好货，享全球优惠</h1>
-                <p data-translate="hero_subtitle">直接从1688等优质供应商采购，为您节省最多60%的费用</p>
+                <p data-translate="hero_subtitle">精选优质供应商直采，为您节省最多60%的费用</p>
                 <button class="cta-button" onclick="showPage('products')" data-translate="start_shopping">开始购物</button>
             </section>
 
@@ -94,7 +94,7 @@
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3 data-translate="step3_title">代购采购</h3>
-                        <p data-translate="step3_desc">我们从1688等平台采购</p>
+                        <p data-translate="step3_desc">我们从优质供应商采购</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
@@ -113,15 +113,14 @@
                     <select id="category-filter" onchange="filterProducts()">
                         <option value="all" data-translate="filter_all">全部分类</option>
                         <option value="electronics" data-translate="filter_electronics">电子产品</option>
-                        <option value="clothing" data-translate="filter_clothing">服装配饰</option>
-                        <option value="home" data-translate="filter_home">家居生活</option>
-                        <option value="beauty" data-translate="filter_beauty">美妆个护</option>
+                        <option value="medical" data-translate="filter_medical">医疗辅助</option>
+                        <option value="hardware" data-translate="filter_hardware">五金产品</option>
                     </select>
                     <select id="price-filter" onchange="filterProducts()">
                         <option value="all" data-translate="price_all">全部价格</option>
-                        <option value="0-50" data-translate="price_low">$0 - $50</option>
-                        <option value="50-100" data-translate="price_medium">$50 - $100</option>
-                        <option value="100+" data-translate="price_high">$100+</option>
+                        <option value="0-30" data-translate="price_low">$0 - $30</option>
+                        <option value="30-50" data-translate="price_medium">$30 - $50</option>
+                        <option value="50+" data-translate="price_high">$50+</option>
                     </select>
                 </div>
             </div>
@@ -226,6 +225,9 @@
                         <span data-translate="shipping_fee">运费:</span>
                         <span id="checkout-shipping">$0.00</span>
                     </div>
+                    <div class="shipping-note" style="background: #fff7e6; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.9rem; color: #d48806; border-left: 3px solid #faad14;">
+                        <span id="shipping-note">⚠️ 运费为预收估计，实际运费可能有所不同，最终多退少补</span>
+                    </div>
                     <div class="summary-row total">
                         <span data-translate="total">总计:</span>
                         <span id="checkout-total">$0.00</span>
@@ -264,6 +266,9 @@
                     <li data-translate="transfer_note_1">请在转账时备注订单号：<span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
                     <li data-translate="transfer_note_2">转账完成后，您的订单将进入处理流程</li>
                     <li data-translate="transfer_note_3">我们将从优质供应商采购商品并安排发货</li>
+                    <li class="shipping-refund-note" style="background: #fff7e6; padding: 10px; margin-top: 10px; border-radius: 4px; color: #d48806;">
+                        <strong>📦 <span data-translate="shipping_fee_cny">运费（约¥500人民币）</span>：</strong><span data-translate="shipping_refund_policy">运费为预收估计，实际运费可能有所不同。最终多退少补，超出部分将退回您的账户。</span>
+                    </li>
                 </ul>
                 <button class="cta-button" onclick="continueShopping()" data-translate="continue_shopping">继续购物</button>
             </div>
@@ -508,9 +513,46 @@
         </div>
     </footer>
 
+    <!-- 在线客服聊天窗口 -->
+    <div id="chat-widget" class="chat-widget">
+        <div id="chat-button" class="chat-button" onclick="toggleChat()">
+            <span class="chat-icon">💬</span>
+            <span class="chat-badge" id="unread-badge" style="display: none;">1</span>
+        </div>
+        <div id="chat-window" class="chat-window" style="display: none;">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-avatar">👤</span>
+                    <div>
+                        <span class="chat-title" data-translate="customer_service">在线客服</span>
+                        <span class="chat-status">● 在线</span>
+                    </div>
+                </div>
+                <button class="chat-close" onclick="toggleChat()">×</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="chat-message system">
+                    <span class="message-content" data-translate="welcome_message">欢迎来到全球优选！有什么可以帮助您的？</span>
+                    <span class="message-time"></span>
+                </div>
+            </div>
+            <div class="chat-quick-replies">
+                <button onclick="sendQuickReply('product_inquiry')" data-translate="quick_product_inquiry">产品咨询</button>
+                <button onclick="sendQuickReply('order_status')" data-translate="quick_order_status">订单查询</button>
+                <button onclick="sendQuickReply('shipping_info')" data-translate="quick_shipping_info">运费说明</button>
+                <button onclick="sendQuickReply('other')" data-translate="quick_other">其他问题</button>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="输入消息..." onkeypress="handleChatKeyPress(event)">
+                <button onclick="sendChatMessage()" data-translate="send">发送</button>
+            </div>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="translations.js"></script>
     <script src="auth.js"></script>
+    <script src="chat.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

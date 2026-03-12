@@ -24,13 +24,12 @@ const translations = {
         products_title: "精选产品",
         filter_all: "全部分类",
         filter_electronics: "电子产品",
-        filter_clothing: "服装配饰",
-        filter_home: "家居生活",
-        filter_beauty: "美妆个护",
+        filter_medical: "医疗辅助",
+        filter_hardware: "五金产品",
         price_all: "全部价格",
-        price_low: "$0 - $50",
-        price_medium: "$50 - $100",
-        price_high: "$100+",
+        price_low: "$0 - $30",
+        price_medium: "$30 - $50",
+        price_high: "$50+",
         cart_title: "购物车",
         cart_total: "总计:",
         checkout: "去结算",
@@ -131,7 +130,15 @@ const translations = {
         register_failed: "注册失败，邮箱可能已被注册",
         password_mismatch: "两次密码输入不一致",
         please_login: "请先登录",
-        welcome_back: "欢迎回来"
+        welcome_back: "欢迎回来",
+        // 在线客服
+        customer_service: "在线客服",
+        welcome_message: "欢迎来到全球优选！有什么可以帮助您的？",
+        send: "发送",
+        quick_product_inquiry: "产品咨询",
+        quick_order_status: "订单查询",
+        quick_shipping_info: "运费说明",
+        quick_other: "其他问题"
     },
     en: {
         hero_title: "Discover Quality Products, Enjoy Global Savings",
@@ -157,13 +164,12 @@ const translations = {
         products_title: "Featured Products",
         filter_all: "All Categories",
         filter_electronics: "Electronics",
-        filter_clothing: "Clothing & Accessories",
-        filter_home: "Home & Living",
-        filter_beauty: "Beauty & Personal Care",
+        filter_medical: "Medical Aids",
+        filter_hardware: "Hardware",
         price_all: "All Prices",
-        price_low: "$0 - $50",
-        price_medium: "$50 - $100",
-        price_high: "$100+",
+        price_low: "$0 - $30",
+        price_medium: "$30 - $50",
+        price_high: "$50+",
         cart_title: "Shopping Cart",
         cart_total: "Total:",
         checkout: "Checkout",
@@ -264,7 +270,15 @@ const translations = {
         register_failed: "Registration failed, email may already be registered",
         password_mismatch: "Passwords do not match",
         please_login: "Please login first",
-        welcome_back: "Welcome back"
+        welcome_back: "Welcome back",
+        // 在线客服
+        customer_service: "Customer Service",
+        welcome_message: "Welcome to GlobalChoice! How can we help you?",
+        send: "Send",
+        quick_product_inquiry: "Product Inquiry",
+        quick_order_status: "Order Status",
+        quick_shipping_info: "Shipping Info",
+        quick_other: "Other Questions"
     },
     ja: {
         hero_title: "高品質商品を発見、お得な価格で",
@@ -290,13 +304,12 @@ const translations = {
         products_title: "厳選商品",
         filter_all: "全カテゴリ",
         filter_electronics: "電子機器",
-        filter_clothing: "ファッション・アクセサリー",
-        filter_home: "ホーム・生活",
-        filter_beauty: "ビューティー・パーソナルケア",
+        filter_medical: "医療補助",
+        filter_hardware: "五金製品",
         price_all: "全価格帯",
-        price_low: "$0 - $50",
-        price_medium: "$50 - $100",
-        price_high: "$100+",
+        price_low: "$0 - $30",
+        price_medium: "$30 - $50",
+        price_high: "$50+",
         cart_title: "ショッピングカート",
         cart_total: "合計:",
         checkout: "レジに進む",
@@ -380,7 +393,15 @@ const translations = {
         register_failed: "登録失敗、メールは既に登録されている可能性があります",
         password_mismatch: "パスワードが一致しません",
         please_login: "ログインしてください",
-        welcome_back: "おかえりなさい"
+        welcome_back: "おかえりなさい",
+        // オンライン客服
+        customer_service: "オンラインサポート",
+        welcome_message: "GlobalChoiceへようこそ！何かお手伝いできることはありますか？",
+        send: "送信",
+        quick_product_inquiry: "製品のお問い合わせ",
+        quick_order_status: "注文状況",
+        quick_shipping_info: "送料情報",
+        quick_other: "その他の質問"
     },
     ko: {
         hero_title: "고품질 상품 발견, 글로벌 혜택 누리기",
@@ -496,7 +517,19 @@ const translations = {
         register_failed: "회원가입 실패, 이미 등록된 이메일일 수 있습니다",
         password_mismatch: "비밀번호가 일치하지 않습니다",
         please_login: "먼저 로그인해주세요",
-        welcome_back: "다시 오신 것을 환영합니다"
+        welcome_back: "다시 오신 것을 환영합니다",
+        // 온라인 고객센터
+        customer_service: "온라인 상담",
+        welcome_message: "GlobalChoice에 오신 것을 환영합니다! 무엇을 도와드릴까요?",
+        send: "보내기",
+        quick_product_inquiry: "제품 문의",
+        quick_order_status: "주문 상태",
+        quick_shipping_info: "배송 정보",
+        quick_other: "기타 문의",
+        // 배송 관련
+        shipping_note_estimate: "⚠️ 배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 환불됩니다.",
+        shipping_refund_policy: "배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 계정으로 환불됩니다.",
+        shipping_fee_cny: "배송비 (약 ¥500 위안)"
     }
 };
 

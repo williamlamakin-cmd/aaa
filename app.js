@@ -280,12 +280,24 @@ function renderCheckout() {
     document.getElementById('checkout-subtotal').textContent = formatPrice(subtotal);
     document.getElementById('checkout-shipping').textContent = formatPrice(shipping);
     document.getElementById('checkout-total').textContent = formatPrice(total);
+
+    // 更新运费说明
+    updateShippingNote();
+}
+
+function updateShippingNote() {
+    const shippingNoteEl = document.getElementById('shipping-note');
+    if (shippingNoteEl) {
+        shippingNoteEl.textContent = translate('shipping_note_estimate');
+    }
 }
 
 function calculateShipping(subtotal) {
-    const currency = document.getElementById('checkout-currency')?.value || 'USD';
-    const subtotalUSD = subtotal * exchangeRates[currency];
-    return subtotalUSD >= 50 ? 0 : 9.99;
+    // 固定运费：500人民币 ≈ 70美元（估计）
+    // 实际运费可能有所不同，多退少补
+    const baseShippingCNY = 500;
+    const baseShippingUSD = baseShippingCNY / exchangeRates.CNY;
+    return baseShippingUSD;
 }
 
 function submitOrder(event) {
