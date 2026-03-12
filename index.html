@@ -28,6 +28,24 @@
                         <option value="ko">한국어</option>
                     </select>
                 </li>
+                <li class="user-menu">
+                    <span id="user-icon" onclick="toggleUserMenu()">👤</span>
+                    <div id="user-dropdown" class="user-dropdown" style="display: none;">
+                        <div id="logged-out-menu">
+                            <a href="#" onclick="showLoginModal()" data-translate="login">登录</a>
+                            <a href="#" onclick="showRegisterModal()" data-translate="register">注册</a>
+                        </div>
+                        <div id="logged-in-menu" style="display: none;">
+                            <div class="user-info">
+                                <strong id="user-display-name"></strong>
+                                <small id="user-display-email"></small>
+                            </div>
+                            <a href="#" onclick="showPage('profile')" data-translate="my_profile">个人中心</a>
+                            <a href="#" onclick="showPage('orders')" data-translate="my_orders">我的订单</a>
+                            <a href="#" onclick="logout()" data-translate="logout">退出登录</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -218,15 +236,15 @@
                     <h3 data-translate="payment_method">支付方式</h3>
                     <div class="payment-option">
                         <input type="radio" name="payment" id="payment-bank" value="bank" checked onchange="showBankInfo()">
-                        <label for="payment-bank">银行转账</label>
+                        <label for="payment-bank" data-translate="bank_transfer">银行转账</label>
                     </div>
                     <div class="payment-option">
                         <input type="radio" name="payment" id="payment-alipay" value="alipay" onchange="showBankInfo()">
-                        <label for="payment-alipay">支付宝</label>
+                        <label for="payment-alipay">Alipay</label>
                     </div>
                     <div class="payment-option">
                         <input type="radio" name="payment" id="payment-wechat" value="wechat" onchange="showBankInfo()">
-                        <label for="payment-wechat">微信支付</label>
+                        <label for="payment-wechat">WeChat Pay</label>
                     </div>
                 </div>
 
@@ -238,16 +256,16 @@
             </form>
 
             <div id="payment-instruction" class="payment-instruction" style="display: none;">
-                <h3>订单提交成功！</h3>
-                <p>请将款项转账到以下银行账户：</p>
+                <h3 data-translate="order_submitted">订单提交成功！</h3>
+                <p data-translate="transfer_instruction">请将款项转账到以下银行账户：</p>
                 <div id="final-bank-info"></div>
-                <p><strong>重要提示：</strong></p>
+                <p><strong data-translate="important_notice">重要提示：</strong></p>
                 <ul>
-                    <li>请在转账时备注订单号：<span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
-                    <li>转账完成后，您的订单将进入处理流程</li>
-                    <li>我们将从国内平台采购商品并安排发货</li>
+                    <li data-translate="transfer_note_1">请在转账时备注订单号：<span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
+                    <li data-translate="transfer_note_2">转账完成后，您的订单将进入处理流程</li>
+                    <li data-translate="transfer_note_3">我们将从优质供应商采购商品并安排发货</li>
                 </ul>
-                <button class="cta-button" onclick="continueShopping()">继续购物</button>
+                <button class="cta-button" onclick="continueShopping()" data-translate="continue_shopping">继续购物</button>
             </div>
         </div>
 
@@ -374,6 +392,101 @@
         </div>
     </div>
 
+    <!-- 登录模态框 -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="auth-container">
+                <h2 data-translate="login">登录</h2>
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label data-translate="label_email">邮箱 *</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_password">密码 *</label>
+                        <input type="password" id="login-password" required minlength="6">
+                    </div>
+                    <button type="submit" class="submit-button" data-translate="login">登录</button>
+                </form>
+                <p class="auth-switch">
+                    <span data-translate="no_account">还没有账号？</span>
+                    <a href="#" onclick="switchToRegister()" data-translate="register_now">立即注册</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 注册模态框 -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <div class="auth-container">
+                <h2 data-translate="register">注册</h2>
+                <form id="register-form" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label data-translate="label_name">姓名 *</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_email">邮箱 *</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_phone">电话 *</label>
+                        <input type="tel" id="register-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_password">密码 *</label>
+                        <input type="password" id="register-password" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="label_confirm_password">确认密码 *</label>
+                        <input type="password" id="register-confirm-password" required minlength="6">
+                    </div>
+                    <button type="submit" class="submit-button" data-translate="register">注册</button>
+                </form>
+                <p class="auth-switch">
+                    <span data-translate="have_account">已有账号？</span>
+                    <a href="#" onclick="switchToLogin()" data-translate="login_now">立即登录</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人中心页面 -->
+    <div id="page-profile" class="page">
+        <h2 data-translate="my_profile">个人中心</h2>
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-info">
+                        <h3 id="profile-name"></h3>
+                        <p id="profile-email"></p>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <h4 data-translate="account_info">账户信息</h4>
+                    <div class="profile-item">
+                        <span data-translate="label_phone">电话</span>
+                        <span id="profile-phone"></span>
+                    </div>
+                    <div class="profile-item">
+                        <span data-translate="register_date">注册时间</span>
+                        <span id="profile-register-date"></span>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <h4 data-translate="quick_actions">快捷操作</h4>
+                    <button class="profile-button" onclick="showPage('orders')" data-translate="my_orders">我的订单</button>
+                    <button class="profile-button" onclick="showPage('tracking')" data-translate="order_tracking">订单追踪</button>
+                    <button class="profile-button logout-btn" onclick="logout()" data-translate="logout">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -397,6 +510,7 @@
 
     <script src="data.js"></script>
     <script src="translations.js"></script>
+    <script src="auth.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

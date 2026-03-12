@@ -1,6 +1,7 @@
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
     initLanguage();
+    initAuth();
     renderProducts();
     updateCartCount();
     renderCart();
@@ -31,6 +32,9 @@ function showPage(pageName) {
         case 'checkout':
             renderCheckout();
             break;
+        case 'profile':
+            renderProfile();
+            break;
     }
 }
 
@@ -56,11 +60,14 @@ function renderProducts() {
         return true;
     });
 
-    container.innerHTML = filteredProducts.map(product => `
+    const lang = currentLanguage;
+    container.innerHTML = filteredProducts.map(product => {
+        const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
+        return `
         <div class="product-card" onclick="showProductDetail(${product.id})">
-            <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='https://via.placeholder.com/280x250/cccccc/666666?text=No+Image'">
+            <img src="${product.image}" alt="${title}" class="product-image" onerror="this.src='https://via.placeholder.com/280x250/cccccc/666666?text=No+Image'">
             <div class="product-info">
-                <h3 class="product-title">${product.title}</h3>
+                <h3 class="product-title">${title}</h3>
                 <div class="product-meta">
                     <div>
                         <span class="product-price">${formatPrice(product.price)}</span>
@@ -68,15 +75,15 @@ function renderProducts() {
                     </div>
                 </div>
                 <div class="product-tags">
-                    <span class="product-tag">节省${Math.round((1 - product.price / product.originalPrice) * 100)}%</span>
-                    <span class="product-tag">品质保证</span>
+                    <span class="product-tag">${translate('save')} ${Math.round((1 - product.price / product.originalPrice) * 100)}%</span>
+                    <span class="product-tag">${translate('quality_assured')}</span>
                 </div>
                 <button class="add-to-cart-button" onclick="event.stopPropagation(); addToCart(${product.id})">
                     ${translate('add_to_cart')}
                 </button>
             </div>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 function filterProducts() {
@@ -87,22 +94,27 @@ function showProductDetail(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
+    const lang = currentLanguage;
+    const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
+    const description = typeof product.description === 'object' ? (product.description[lang] || product.description.en) : product.description;
+    const specs = typeof product.specs === 'object' && product.specs[lang] ? product.specs[lang] : product.specs;
+
     const modal = document.getElementById('product-modal');
     const detailContent = document.getElementById('modal-product-detail');
 
     detailContent.innerHTML = `
         <div class="product-detail">
             <div class="product-detail-header">
-                <img src="${product.image}" alt="${product.title}" class="product-detail-image" onerror="this.src='https://via.placeholder.com/600x600/cccccc/666666?text=No+Image'">
+                <img src="${product.image}" alt="${title}" class="product-detail-image" onerror="this.src='https://via.placeholder.com/600x600/cccccc/666666?text=No+Image'">
                 <div class="product-detail-info">
-                    <h1>${product.title}</h1>
+                    <h1>${title}</h1>
                     <div class="product-detail-price">
                         ${formatPrice(product.price)}
                         <span style="font-size: 1rem; color: #999; text-decoration: line-through; margin-left: 1rem;">
                             ${formatPrice(product.originalPrice)}
                         </span>
                     </div>
-                    <p class="product-detail-description">${product.description}</p>
+                    <p class="product-detail-description">${description}</p>
 
                     <div class="quantity-selector">
                         <span>${translate('quantity')}</span>
@@ -118,9 +130,9 @@ function showProductDetail(productId) {
             </div>
 
             <div class="product-specs">
-                <h3>产品规格</h3>
+                <h3>${translate('product_specs')}</h3>
                 <ul>
-                    ${Object.entries(product.specs).map(([key, value]) => `
+                    ${Object.entries(specs).map(([key, value]) => `
                         <li><strong>${key}:</strong> ${value}</li>
                     `).join('')}
                 </ul>
@@ -210,11 +222,14 @@ function renderCart() {
         return;
     }
 
-    container.innerHTML = cart.map(item => `
+    const lang = currentLanguage;
+    container.innerHTML = cart.map(item => {
+        const title = typeof item.title === 'object' ? (item.title[lang] || item.title.en) : item.title;
+        return `
         <div class="cart-item">
-            <img src="${item.image}" alt="${item.title}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/100x100/cccccc/666666?text=No+Image'">
+            <img src="${item.image}" alt="${title}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/100x100/cccccc/666666?text=No+Image'">
             <div class="cart-item-info">
-                <h3>${item.title}</h3>
+                <h3>${title}</h3>
                 <p>${formatPrice(item.price)}</p>
             </div>
             <div class="cart-item-quantity">
@@ -224,7 +239,7 @@ function renderCart() {
             </div>
             <div class="cart-item-remove" onclick="removeCartItem(${item.id})">✕</div>
         </div>
-    `).join('');
+    `}).join('');
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     document.getElementById('cart-total-price').textContent = formatPrice(total);
@@ -248,12 +263,15 @@ function renderCheckout() {
         return;
     }
 
-    container.innerHTML = cart.map(item => `
+    const lang = currentLanguage;
+    container.innerHTML = cart.map(item => {
+        const title = typeof item.title === 'object' ? (item.title[lang] || item.title.en) : item.title;
+        return `
         <div class="summary-row">
-            <span>${item.title} x ${item.quantity}</span>
+            <span>${title} x ${item.quantity}</span>
             <span>${formatPrice(item.price * item.quantity)}</span>
         </div>
-    `).join('');
+    `}).join('');
 
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const shipping = calculateShipping(subtotal);
@@ -304,7 +322,7 @@ function submitOrder(event) {
         total: total,
         tracking: {
             steps: [
-                { status: 'received', date: new Date().toISOString(), note: '订单已接收，等待付款' }
+                { status: 'received', date: new Date().toISOString(), note: currentLanguage === 'en' ? 'Order received, awaiting payment' : '订单已接收，等待付款' }
             ]
         }
     };
@@ -325,28 +343,35 @@ function submitOrder(event) {
     // 更新最终的银行信息（显示转换后的金额）
     const bankInfoDiv = document.getElementById('final-bank-info');
     const country = document.getElementById('checkout-country').value;
+    const lang = currentLanguage;
+
+    const bankNameLabel = lang === 'en' ? 'Bank Name' : '银行名称';
+    const accountNumLabel = lang === 'en' ? 'Account Number' : '账户号码';
+    const accountNameLabel = lang === 'en' ? 'Account Name' : '账户名称';
+    const swiftLabel = lang === 'en' ? 'SWIFT Code' : 'SWIFT代码';
+    const amountLabel = lang === 'en' ? 'Payment Amount' : '支付金额';
 
     if (bankAccounts[country]) {
         const account = bankAccounts[country];
         bankInfoDiv.innerHTML = `
             <div class="bank-details" style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                <p><strong>🏦 银行名称:</strong> ${account.bankName}</p>
-                <p><strong>💳 账户号码:</strong> ${account.accountNumber}</p>
-                <p><strong>👤 账户名称:</strong> ${account.accountName}</p>
-                <p><strong>🔄 SWIFT代码:</strong> ${account.swiftCode}</p>
+                <p><strong>🏦 ${bankNameLabel}:</strong> ${account.bankName}</p>
+                <p><strong>💳 ${accountNumLabel}:</strong> ${account.accountNumber}</p>
+                <p><strong>👤 ${accountNameLabel}:</strong> ${account.accountName}</p>
+                <p><strong>🔄 ${swiftLabel}:</strong> ${account.swiftCode}</p>
                 <hr style="margin: 1rem 0;">
-                <p style="font-size: 1.2rem; color: #1890ff;"><strong>💰 支付金额: ${formatPrice(total, currency)}</strong></p>
+                <p style="font-size: 1.2rem; color: #1890ff;"><strong>💰 ${amountLabel}: ${formatPrice(total, currency)}</strong></p>
             </div>
         `;
     } else {
         bankInfoDiv.innerHTML = `
             <div class="bank-details" style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                <p><strong>🏦 银行名称:</strong> International Bank</p>
-                <p><strong>💳 账户号码:</strong> INT-1234567890</p>
-                <p><strong>👤 账户名称:</strong> GlobalChoice International</p>
-                <p><strong>🔄 SWIFT代码:</strong> INTBKXXXX</p>
+                <p><strong>🏦 ${bankNameLabel}:</strong> International Bank</p>
+                <p><strong>💳 ${accountNumLabel}:</strong> INT-1234567890</p>
+                <p><strong>👤 ${accountNameLabel}:</strong> GlobalChoice International</p>
+                <p><strong>🔄 ${swiftLabel}:</strong> INTBKXXXX</p>
                 <hr style="margin: 1rem 0;">
-                <p style="font-size: 1.2rem; color: #1890ff;"><strong>💰 支付金额: ${formatPrice(total, currency)}</strong></p>
+                <p style="font-size: 1.2rem; color: #1890ff;"><strong>💰 ${amountLabel}: ${formatPrice(total, currency)}</strong></p>
             </div>
         `;
     }
@@ -356,7 +381,7 @@ function submitOrder(event) {
         simulateOrderProcessing(orderId);
     }, 2000);
 
-    showToast('订单提交成功！请完成付款');
+    showToast(lang === 'en' ? 'Order submitted! Please complete payment' : '订单提交成功！请完成付款');
 }
 
 function generateOrderId() {
@@ -372,24 +397,30 @@ function simulateOrderProcessing(orderId) {
     const order = orders.find(o => o.id === orderId);
     if (!order) return;
 
+    const lang = currentLanguage;
+
     // 5分钟后标记为处理中
     setTimeout(() => {
-        updateOrderStatus(orderId, 'processing', '付款确认，订单处理中');
+        const note = lang === 'en' ? 'Payment confirmed, processing order' : '付款确认，订单处理中';
+        updateOrderStatus(orderId, 'processing', note);
     }, 5 * 60 * 1000);
 
     // 30分钟后标记为已采购
     setTimeout(() => {
-        updateOrderStatus(orderId, 'purchased', '已从国内采购平台采购商品');
+        const note = lang === 'en' ? 'Product sourced from premium suppliers' : '已从优质供应商采购商品';
+        updateOrderStatus(orderId, 'purchased', note);
     }, 30 * 60 * 1000);
 
     // 1小时后标记为已发货
     setTimeout(() => {
-        updateOrderStatus(orderId, 'shipped', '商品已发货至国际物流中心');
+        const note = lang === 'en' ? 'Shipped to international logistics center' : '商品已发货至国际物流中心';
+        updateOrderStatus(orderId, 'shipped', note);
     }, 60 * 60 * 1000);
 
     // 3天后标记为已送达（实际场景需要真实时间）
     setTimeout(() => {
-        updateOrderStatus(orderId, 'delivered', '商品已送达');
+        const note = lang === 'en' ? 'Delivered' : '商品已送达';
+        updateOrderStatus(orderId, 'delivered', note);
     }, 3 * 24 * 60 * 60 * 1000);
 }
 
@@ -417,6 +448,7 @@ function renderOrders() {
         return;
     }
 
+    const lang = currentLanguage;
     container.innerHTML = orders.map(order => `
         <div class="order-card">
             <div class="order-header">
@@ -425,15 +457,18 @@ function renderOrders() {
                 <span class="order-status ${order.status}">${getOrderStatusText(order.status)}</span>
             </div>
             <div class="order-items">
-                ${order.items.map(item => `
+                ${order.items.map(item => {
+                    const product = products.find(p => p.id === item.id);
+                    const title = product ? (typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title) : item.title;
+                    return `
                     <div class="order-item">
-                        <img src="${products.find(p => p.id === item.id)?.image || 'https://via.placeholder.com/60x60'}" alt="${item.title}" class="order-item-image" onerror="this.src='https://via.placeholder.com/60x60/cccccc/666666?text=No+Image'">
+                        <img src="${product?.image || 'https://via.placeholder.com/60x60'}" alt="${title}" class="order-item-image" onerror="this.src='https://via.placeholder.com/60x60/cccccc/666666?text=No+Image'">
                         <div class="order-item-info">
-                            <h4>${item.title}</h4>
+                            <h4>${title}</h4>
                             <p>${formatPrice(item.price)} x ${item.quantity}</p>
                         </div>
                     </div>
-                `).join('')}
+                `}).join('')}
             </div>
             <div class="order-footer">
                 <button onclick="trackOrder('${order.id}')" style="padding: 0.5rem 1rem; background: #1890ff; color: white; border: none; border-radius: 4px; cursor: pointer;">
@@ -560,6 +595,13 @@ function showBankInfo() {
     const country = document.getElementById('checkout-country').value;
     const currency = document.getElementById('checkout-currency').value;
     const bankInfoDiv = document.getElementById('bank-details');
+    const lang = currentLanguage;
+
+    const bankNameLabel = lang === 'en' ? 'Bank Name' : '银行名称';
+    const accountNumLabel = lang === 'en' ? 'Account Number' : '账户号码';
+    const accountNameLabel = lang === 'en' ? 'Account Name' : '账户名称';
+    const swiftLabel = lang === 'en' ? 'SWIFT Code' : 'SWIFT代码';
+    const noteLabel = lang === 'en' ? 'Please include order number in transfer reference' : '请在转账时备注订单号';
 
     let bankInfo = '';
 
@@ -567,36 +609,36 @@ function showBankInfo() {
         const account = bankAccounts[country];
         bankInfo = `
             <div class="bank-details">
-                <p><strong>银行名称:</strong> ${account.bankName}</p>
-                <p><strong>账户号码:</strong> ${account.accountNumber}</p>
-                <p><strong>账户名称:</strong> ${account.accountName}</p>
-                <p><strong>SWIFT代码:</strong> ${account.swiftCode}</p>
+                <p><strong>${bankNameLabel}:</strong> ${account.bankName}</p>
+                <p><strong>${accountNumLabel}:</strong> ${account.accountNumber}</p>
+                <p><strong>${accountNameLabel}:</strong> ${account.accountName}</p>
+                <p><strong>${swiftLabel}:</strong> ${account.swiftCode}</p>
                 <p style="margin-top: 1rem; color: #1890ff;">
-                    <strong>💡 请在转账时备注订单号</strong>
+                    <strong>💡 ${noteLabel}</strong>
                 </p>
             </div>
         `;
     } else if (currency === 'CNY') {
         bankInfo = `
             <div class="bank-details">
-                <p><strong>银行名称:</strong> 中国工商银行</p>
-                <p><strong>账户号码:</strong> 6222 0200 1234 5678 901</p>
-                <p><strong>账户名称:</strong> 全球优选科技有限公司</p>
-                <p><strong>开户行:</strong> 中国工商银行深圳市分行</p>
+                <p><strong>${bankNameLabel}:</strong> ICBC</p>
+                <p><strong>${accountNumLabel}:</strong> 6222 0200 1234 5678 901</p>
+                <p><strong>${accountNameLabel}:</strong> GlobalChoice Technology Co., Ltd.</p>
+                <p><strong>${lang === 'en' ? 'Branch' : '开户行'}:</strong> Shenzhen Branch</p>
                 <p style="margin-top: 1rem; color: #1890ff;">
-                    <strong>💡 请在转账时备注订单号</strong>
+                    <strong>💡 ${noteLabel}</strong>
                 </p>
             </div>
         `;
     } else {
         bankInfo = `
             <div class="bank-details">
-                <p><strong>银行名称:</strong> International Bank</p>
-                <p><strong>账户号码:</strong> INT-1234567890</p>
-                <p><strong>账户名称:</strong> GlobalChoice International</p>
-                <p><strong>SWIFT代码:</strong> INTBKXXXX</p>
+                <p><strong>${bankNameLabel}:</strong> International Bank</p>
+                <p><strong>${accountNumLabel}:</strong> INT-1234567890</p>
+                <p><strong>${accountNameLabel}:</strong> GlobalChoice International</p>
+                <p><strong>${swiftLabel}:</strong> INTBKXXXX</p>
                 <p style="margin-top: 1rem; color: #1890ff;">
-                    <strong>💡 请在转账时备注订单号</strong>
+                    <strong>💡 ${noteLabel}</strong>
                 </p>
             </div>
         `;
