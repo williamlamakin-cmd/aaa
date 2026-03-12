@@ -16,6 +16,7 @@
                 <li><a href="#" onclick="showPage('find-product')">代找产品</a></li>
                 <li><a href="#" onclick="showPage('orders')">我的订单</a></li>
                 <li><a href="#" onclick="showPage('tracking')">订单追踪</a></li>
+                <li><a href="#" onclick="showPage('admin')" style="color: #ff4d4f;">后台管理</a></li>
                 <li class="cart-icon">
                     <span onclick="showPage('cart')">🛒</span>
                     <span id="cart-count">0</span>
@@ -27,6 +28,24 @@
                         <option value="ja">日本語</option>
                         <option value="ko">한국어</option>
                     </select>
+                </li>
+                <li class="language-selector">
+                    <select id="global-currency" onchange="changeGlobalCurrency()">
+                        <option value="USD">$ USD</option>
+                        <option value="CNY">¥ CNY</option>
+                        <option value="HKD">HK$ HKD</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="JPY">¥ JPY</option>
+                        <option value="KRW">₩ KRW</option>
+                        <option value="SGD">S$ SGD</option>
+                        <option value="MYR">RM MYR</option>
+                        <option value="THB">฿ THB</option>
+                        <option value="PHP">₱ PHP</option>
+                        <option value="IDR">Rp IDR</option>
+                    </select>
+                </li>
+                <li class="currency-rate" id="currency-rate" style="font-size: 0.75rem; color: #888;">
+                    USD 1 = CNY 7.24
                 </li>
                 <li class="user-menu">
                     <span id="user-icon" onclick="toggleUserMenu()">👤</span>
@@ -197,7 +216,7 @@
                     <h3 data-translate="payment_info">支付信息</h3>
                     <div class="form-group">
                         <label data-translate="label_currency">币种</label>
-                        <select id="checkout-currency">
+                        <select id="checkout-currency" onchange="updateCurrencyRateDisplay(); renderCheckout();">
                             <option value="USD">USD ($)</option>
                             <option value="CNY">CNY (¥)</option>
                             <option value="HKD">HKD (HK$)</option>
@@ -492,6 +511,69 @@
         </div>
     </div>
 
+    <!-- 后台管理页面 -->
+    <div id="page-admin" class="page">
+        <h2>后台管理系统</h2>
+        
+        <!-- 管理员登录 -->
+        <div id="admin-login-section">
+            <div class="admin-login-card">
+                <h3>管理员登录</h3>
+                <p style="color: #666; margin-bottom: 1rem;">请输入管理员密码</p>
+                <input type="password" id="admin-password" placeholder="管理员密码" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+                <button class="cta-button" onclick="adminLogin()" style="width: 100%;">登录</button>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">提示: 密码为 admin123</p>
+            </div>
+        </div>
+        
+        <!-- 后台管理内容 -->
+        <div id="admin-content" style="display: none;">
+            <div class="admin-header">
+                <h3>欢迎来到后台管理系统</h3>
+                <button class="cta-button" onclick="adminLogout()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">退出管理</button>
+            </div>
+            
+            <!-- 统计概览 -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h4>总订单数</h4>
+                    <p class="stat-number" id="admin-total-orders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>总销售额</h4>
+                    <p class="stat-number" id="admin-total-sales">$0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>待处理订单</h4>
+                    <p class="stat-number" id="admin-pending-orders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>注册用户</h4>
+                    <p class="stat-number" id="admin-total-users">0</p>
+                </div>
+            </div>
+            
+            <!-- 平台下单数据 -->
+            <div class="admin-section">
+                <h3>各平台采购数据</h3>
+                <p style="color: #666; margin-bottom: 1rem;">从各平台采购产品的订单数据</p>
+                <div id="platform-orders-table"></div>
+            </div>
+            
+            <!-- 所有订单列表 -->
+            <div class="admin-section">
+                <h3>所有订单</h3>
+                <div id="admin-orders-list"></div>
+            </div>
+            
+            <!-- 产品管理 -->
+            <div class="admin-section">
+                <h3>产品管理</h3>
+                <div class="admin-products-grid" id="admin-products-list"></div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -525,7 +607,7 @@
                     <span class="chat-avatar">👤</span>
                     <div>
                         <span class="chat-title" data-translate="customer_service">在线客服</span>
-                        <span class="chat-status">● 在线</span>
+                        <span class="chat-status" data-translate="online_status">● 在线</span>
                     </div>
                 </div>
                 <button class="chat-close" onclick="toggleChat()">×</button>
@@ -543,7 +625,7 @@
                 <button onclick="sendQuickReply('other')" data-translate="quick_other">其他问题</button>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="输入消息..." onkeypress="handleChatKeyPress(event)">
+                <input type="text" id="chat-input" data-translate-placeholder="chat_placeholder" placeholder="输入消息..." onkeypress="handleChatKeyPress(event)">
                 <button onclick="sendChatMessage()" data-translate="send">发送</button>
             </div>
         </div>

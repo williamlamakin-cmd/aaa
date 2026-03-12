@@ -2,11 +2,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     initLanguage();
     initAuth();
+    initProductAutoUpdate(); // 初始化产品自动更新
+    initGlobalCurrency(); // 初始化全局货币
     renderProducts();
     updateCartCount();
     renderCart();
     renderOrders();
 });
+
+// 初始化全局货币
+function initGlobalCurrency() {
+    const globalCurrencySelect = document.getElementById('global-currency');
+    if (globalCurrencySelect) {
+        globalCurrencySelect.value = globalCurrency;
+    }
+    updateCurrencyRateDisplay();
+}
 
 // 页面切换
 function showPage(pageName) {
@@ -77,6 +88,7 @@ function renderProducts() {
                 <div class="product-tags">
                     <span class="product-tag">${translate('save')} ${Math.round((1 - product.price / product.originalPrice) * 100)}%</span>
                     <span class="product-tag">${translate('quality_assured')}</span>
+                    ${product.sales ? `<span class="product-tag sales-tag">${translate('sales_count')}: ${product.sales.toLocaleString()}</span>` : ''}
                 </div>
                 <button class="add-to-cart-button" onclick="event.stopPropagation(); addToCart(${product.id})">
                     ${translate('add_to_cart')}
@@ -559,7 +571,11 @@ function showTrackingResult(order) {
 
 // 工具函数
 function formatPrice(price, currency = null) {
-    const curr = currency || document.getElementById('checkout-currency')?.value || 'USD';
+    // 优先使用全局货币设置
+    let curr = currency;
+    if (!curr) {
+        curr = document.getElementById('global-currency')?.value || globalCurrency;
+    }
     const symbol = currencySymbols[curr];
     const rate = exchangeRates[curr];
     const convertedPrice = price * rate;
@@ -574,6 +590,22 @@ function formatPrice(price, currency = null) {
         default:
             return `${symbol}${convertedPrice.toFixed(2)}`;
     }
+}
+
+// 全局货币切换
+function changeGlobalCurrency() {
+    const currency = document.getElementById('global-currency').value;
+    globalCurrency = currency;
+    localStorage.setItem('globalCurrency', currency);
+    
+    // 更新汇率显示
+    updateCurrencyRateDisplay();
+    
+    // 重新渲染产品列表
+    renderProducts();
+    
+    // 更新购物车价格
+    renderCart();
 }
 
 // 根据国家自动更新货币
@@ -596,10 +628,23 @@ function updateCurrencyByCountry() {
 
     if (currencyMap[country]) {
         document.getElementById('checkout-currency').value = currencyMap[country];
+        updateCurrencyRateDisplay();
         showBankInfo();
     }
 
     renderCheckout();
+}
+
+// 更新货币汇率显示
+function updateCurrencyRateDisplay() {
+    const currencyRateEl = document.getElementById('currency-rate');
+    if (!currencyRateEl) return;
+    
+    const selectedCurrency = document.getElementById('global-currency')?.value || globalCurrency;
+    const rate = exchangeRates[selectedCurrency];
+    const symbol = currencySymbols[selectedCurrency];
+    
+    currencyRateEl.textContent = `USD 1 = ${symbol}${rate.toFixed(2)}`;
 }
 
 // 显示银行信息
@@ -836,5 +881,105 @@ function resetFindProduct() {
     document.querySelector('.upload-placeholder').style.display = 'block';
     document.getElementById('find-product-form').style.display = 'block';
     document.getElementById('find-product-result').style.display = 'none';
+}
+
+// ========== 后台管理系统 ==========
+const ADMIN_PASSWORD = 'admin123';
+let isAdminLoggedIn = false;
+
+const platformOrdersData = [
+    { platform: '1688', orders: 1250, amount: 156800, products: 89, rating: 4.8 },
+    { platform: 'Taobao', orders: 890, amount: 98400, products: 67, rating: 4.6 },
+    { platform: 'JD.com', orders: 560, amount: 67200, products: 45, rating: 4.7 },
+    { platform: 'Pinduoduo', orders: 320, amount: 28600, products: 34, rating: 4.4 },
+    { platform: 'Alibaba', orders: 780, amount: 95200, products: 56, rating: 4.5 }
+];
+
+function adminLogin() {
+    const password = document.getElementById('admin-password').value;
+    if (password === ADMIN_PASSWORD) {
+        isAdminLoggedIn = true;
+        document.getElementById('admin-login-section').style.display = 'none';
+        document.getElementById('admin-content').style.display = 'block';
+        renderAdminDashboard();
+        showToast('管理员登录成功！');
+    } else {
+        showToast('密码错误，请重试');
+    }
+}
+
+function adminLogout() {
+    isAdminLoggedIn = false;
+    document.getElementById('admin-login-section').style.display = 'block';
+    document.getElementById('admin-content').style.display = 'none';
+    document.getElementById('admin-password').value = '';
+}
+
+function renderAdminDashboard() {
+    const allOrders = JSON.parse(localStorage.getItem('orders')) || [];
+    const totalSales = allOrders.reduce((sum, order) => sum + (order.total || 0), 0);
+    const pendingOrders = allOrders.filter(o => o.status === 'pending').length;
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    document.getElementById('admin-total-orders').textContent = allOrders.length;
+    document.getElementById('admin-total-sales').textContent = formatPrice(totalSales);
+    document.getElementById('admin-pending-orders').textContent = pendingOrders;
+    document.getElementById('admin-total-users').textContent = users.length;
+
+    renderPlatformOrders();
+    renderAdminOrders(allOrders);
+    renderAdminProducts();
+}
+
+function renderPlatformOrders() {
+    const container = document.getElementById('platform-orders-table');
+    let html = '<table class="admin-table" style="width: 100%; border-collapse: collapse; margin-top: 1rem;"><thead><tr style="background: #f5f5f5;"><th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ddd;">平台</th><th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #ddd;">订单数</th><th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #ddd;">采购金额</th><th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #ddd;">产品数</th><th style="padding: 0.75rem; text-align: center; border-bottom: 2px solid #ddd;">评分</th></tr></thead><tbody>';
+    
+    platformOrdersData.forEach(p => {
+        html += `<tr style="border-bottom: 1px solid #eee;"><td style="padding: 0.75rem;"><strong>${p.platform}</strong></td><td style="padding: 0.75rem; text-align: right;">${p.orders.toLocaleString()}</td><td style="padding: 0.75rem; text-align: right;">¥${p.amount.toLocaleString()}</td><td style="padding: 0.75rem; text-align: right;">${p.products}</td><td style="padding: 0.75rem; text-align: center;"><span style="color: #faad14;">★</span> ${p.rating}</td></tr>`;
+    });
+    
+    const totalOrders = platformOrdersData.reduce((s, p) => s + p.orders, 0);
+    const totalAmount = platformOrdersData.reduce((s, p) => s + p.amount, 0);
+    const totalProducts = platformOrdersData.reduce((s, p) => s + p.products, 0);
+    
+    html += `<tr style="background: #f0f5ff; font-weight: bold;"><td style="padding: 0.75rem;">合计</td><td style="padding: 0.75rem; text-align: right;">${totalOrders.toLocaleString()}</td><td style="padding: 0.75rem; text-align: right;">¥${totalAmount.toLocaleString()}</td><td style="padding: 0.75rem; text-align: right;">${totalProducts}</td><td style="padding: 0.75rem; text-align: center;">-</td></tr></tbody></table>`;
+    container.innerHTML = html;
+}
+
+function renderAdminOrders(orders) {
+    const container = document.getElementById('admin-orders-list');
+    
+    if (orders.length === 0) {
+        container.innerHTML = '<p style="color: #888; text-align: center; padding: 2rem;">暂无订单</p>';
+        return;
+    }
+    
+    let html = '<table class="admin-table" style="width: 100%; border-collapse: collapse; margin-top: 1rem;"><thead><tr style="background: #f5f5f5;"><th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ddd;">订单号</th><th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ddd;">日期</th><th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #ddd;">金额</th><th style="padding: 0.75rem; text-align: center; border-bottom: 2px solid #ddd;">状态</th><th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ddd;">客户</th></tr></thead><tbody>';
+    
+    orders.forEach(order => {
+        const statusColors = { pending: '#fa8c16', processing: '#1890ff', purchased: '#722ed1', shipped: '#52c41a', delivered: '#52c41a', cancelled: '#ff4d4f' };
+        const statusText = getOrderStatusText(order.status);
+        
+        html += `<tr style="border-bottom: 1px solid #eee;"><td style="padding: 0.75rem;"><strong>${order.id}</strong></td><td style="padding: 0.75rem;">${formatDate(order.date)}</td><td style="padding: 0.75rem; text-align: right;">${formatPrice(order.total)}</td><td style="padding: 0.75rem; text-align: center;"><span style="background: ${statusColors[order.status]}; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">${statusText}</span></td><td style="padding: 0.75rem;">${order.customer?.name || '-'}</td></tr>`;
+    });
+    
+    html += '</tbody></table>';
+    container.innerHTML = html;
+}
+
+function renderAdminProducts() {
+    const container = document.getElementById('admin-products-list');
+    const lang = currentLanguage;
+    
+    let html = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">';
+    
+    products.slice(0, 12).forEach(product => {
+        const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
+        html += `<div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 1rem;"><img src="${product.image}" alt="${title}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;"><h4 style="margin: 0.5rem 0; font-size: 0.9rem;">${title}</h4><p style="margin: 0; color: var(--primary-color); font-weight: bold;">${formatPrice(product.price)}</p><p style="margin: 0.25rem 0 0; font-size: 0.8rem; color: #888;">库存: ${Math.floor(Math.random() * 100) + 10}</p></div>`;
+    });
+    
+    html += '</div>';
+    container.innerHTML = html;
 }
 

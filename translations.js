@@ -133,6 +133,8 @@ const translations = {
         welcome_back: "欢迎回来",
         // 在线客服
         customer_service: "在线客服",
+        online_status: "● 在线",
+        chat_placeholder: "输入消息...",
         welcome_message: "欢迎来到全球优选！有什么可以帮助您的？",
         send: "发送",
         quick_product_inquiry: "产品咨询",
@@ -273,6 +275,8 @@ const translations = {
         welcome_back: "Welcome back",
         // 在线客服
         customer_service: "Customer Service",
+        online_status: "● Online",
+        chat_placeholder: "Type a message...",
         welcome_message: "Welcome to GlobalChoice! How can we help you?",
         send: "Send",
         quick_product_inquiry: "Product Inquiry",
@@ -396,6 +400,8 @@ const translations = {
         welcome_back: "おかえりなさい",
         // オンライン客服
         customer_service: "オンラインサポート",
+        online_status: "● オンライン",
+        chat_placeholder: "メッセージを入力...",
         welcome_message: "GlobalChoiceへようこそ！何かお手伝いできることはありますか？",
         send: "送信",
         quick_product_inquiry: "製品のお問い合わせ",
@@ -520,6 +526,8 @@ const translations = {
         welcome_back: "다시 오신 것을 환영합니다",
         // 온라인 고객센터
         customer_service: "온라인 상담",
+        online_status: "● 온라인",
+        chat_placeholder: "메시지를 입력하세요...",
         welcome_message: "GlobalChoice에 오신 것을 환영합니다! 무엇을 도와드릴까요?",
         send: "보내기",
         quick_product_inquiry: "제품 문의",
@@ -529,7 +537,11 @@ const translations = {
         // 배송 관련
         shipping_note_estimate: "⚠️ 배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 환불됩니다.",
         shipping_refund_policy: "배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 계정으로 환불됩니다.",
-        shipping_fee_cny: "배송비 (약 ¥500 위안)"
+        shipping_fee_cny: "배송비 (약 ¥500 위안)",
+        // 제품 업데이트
+        hot_products_updated: "🔄 인기 제품이 업데이트되었습니다!",
+        trending: "인기 제품",
+        sales_count: "판매량"
     }
 };
 
@@ -561,6 +573,15 @@ function updatePageText() {
         const text = translate(key);
         if (text) {
             element.textContent = text;
+        }
+    });
+    
+    // 更新 placeholder 文本
+    document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        const text = translate(key);
+        if (text) {
+            element.placeholder = text;
         }
     });
 }
