@@ -983,3 +983,117 @@ function renderAdminProducts() {
     container.innerHTML = html;
 }
 
+// 打开微信小程序
+function openWeChat() {
+    // 微信小程序链接格式：weixin://dl/business/?t=xxxxx
+    // 这里模拟打开微信，用户需要替换为实际的小程序链接
+    const wechatUrl = 'weixin://';
+    const lang = currentLanguage;
+
+    // 检测是否在微信环境中
+    const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+
+    if (isWeChat) {
+        // 在微信中，直接尝试打开小程序
+        window.location.href = wechatUrl;
+    } else {
+        // 不在微信中，提示用户
+        const message = lang === 'zh'
+            ? '请在微信中打开本页面，或点击右上角菜单分享给微信朋友'
+            : 'Please open this page in WeChat, or share to WeChat friends via menu';
+
+        // 显示二维码提示（可选）
+        const qrCodeHtml = `
+            <div style="text-align: center; padding: 20px;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💚</div>
+                <p style="margin-bottom: 1rem;">${message}</p>
+                <p style="color: #666; font-size: 0.9rem;">
+                    ${lang === 'zh' ? '或搜索小程序: GlobalChoice' : 'Or search mini program: GlobalChoice'}
+                </p>
+            </div>
+        `;
+
+        // 显示提示模态框
+        showCustomModal(
+            lang === 'zh' ? '打开微信小程序' : 'Open WeChat Mini Program',
+            qrCodeHtml
+        );
+    }
+}
+
+// 打开WhatsApp
+function openWhatsApp() {
+    const lang = currentLanguage;
+    // WhatsApp 链接格式
+    const phoneNumber = '+85212345678'; // 替换为实际的电话号码
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\+/g, '')}?text=${encodeURIComponent(
+        lang === 'zh' ? '你好，我想咨询 GlobalChoice 平台的产品' : 'Hello, I would like to inquire about GlobalChoice products'
+    )}`;
+
+    // 检测是否在移动设备上
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // 移动设备上尝试打开WhatsApp应用
+        const whatsappAppUrl = `whatsapp://send?phone=${phoneNumber.replace(/\+/g, '')}&text=${encodeURIComponent(
+            lang === 'zh' ? '你好，我想咨询 GlobalChoice 平台的产品' : 'Hello, I would like to inquire about GlobalChoice products'
+        )}`;
+
+        // 尝试打开WhatsApp应用
+        window.location.href = whatsappAppUrl;
+
+        // 如果没有打开应用，显示网页版链接
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 500);
+    } else {
+        // 桌面设备上打开WhatsApp网页版
+        window.open(whatsappUrl, '_blank');
+    }
+}
+
+// 显示自定义提示模态框
+function showCustomModal(title, content) {
+    // 创建模态框
+    const modal = document.createElement('div');
+    modal.id = 'custom-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+    `;
+
+    modal.innerHTML = `
+        <div style="background: white; border-radius: 12px; padding: 2rem; max-width: 400px; width: 90%; position: relative;">
+            <button onclick="closeCustomModal()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+            <h3 style="margin-bottom: 1rem; color: var(--primary-color);">${title}</h3>
+            ${content}
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // 点击外部关闭
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeCustomModal();
+        }
+    });
+}
+
+function closeCustomModal() {
+    const modal = document.getElementById('custom-modal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+
+

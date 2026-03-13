@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 
+/* 防止页面闪烁 */
+html {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 页面加载时隐藏非活动页面，避免闪烁 */
+.page {
+    display: none;
+    visibility: hidden;
+}
+
+.page.active {
+    display: block;
+    visibility: visible;
+}
+
+/* 防止内容闪烁 */
+body {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+
 :root {
     --primary-color: #1890ff;
     --primary-gradient: linear-gradient(135deg, #1890ff 0%, #40a9ff 50%, #69c0ff 100%);
@@ -125,6 +148,25 @@ body {
 .currency-rate {
     font-size: 0.75rem;
     color: rgba(255,255,255,0.7) !important;
+}
+
+/* 社交应用按钮 */
+.social-apps {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-apps a {
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-apps a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
 }
 
 .user-dropdown {

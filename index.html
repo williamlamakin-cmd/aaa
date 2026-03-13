@@ -11,12 +11,12 @@
         <div class="nav-container">
             <div class="nav-brand">GlobalChoice</div>
             <ul class="nav-menu">
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('products')">Products</a></li>
-                <li><a href="#" onclick="showPage('find-product')">Find Product</a></li>
-                <li><a href="#" onclick="showPage('orders')">My Orders</a></li>
-                <li><a href="#" onclick="showPage('tracking')">Tracking</a></li>
-                <li><a href="#" onclick="showPage('admin')" style="color: #ff6b6b;">Admin</a></li>
+                <li><a href="#" onclick="showPage('home')" data-translate="nav_home">Home</a></li>
+                <li><a href="#" onclick="showPage('products')" data-translate="nav_products">Products</a></li>
+                <li><a href="#" onclick="showPage('find-product')" data-translate="nav_find_product">Find Product</a></li>
+                <li><a href="#" onclick="showPage('orders')" data-translate="nav_orders">My Orders</a></li>
+                <li><a href="#" onclick="showPage('tracking')" data-translate="nav_tracking">Tracking</a></li>
+                <li><a href="#" onclick="showPage('admin')" style="color: #ff6b6b;" data-translate="nav_admin">Admin</a></li>
                 <li class="cart-icon">
                     <span onclick="showPage('cart')">🛒</span>
                     <span id="cart-count">0</span>
@@ -46,6 +46,10 @@
                 </li>
                 <li class="currency-rate" id="currency-rate">
                     USD 1 = CNY 7.24
+                </li>
+                <li class="social-apps">
+                    <a href="#" onclick="openWeChat()" title="WeChat" data-translate="open_wechat_mini">💚</a>
+                    <a href="#" onclick="openWhatsApp()" title="WhatsApp" data-translate="open_whatsapp">💬</a>
                 </li>
                 <li class="user-menu">
                     <span id="user-icon" onclick="toggleUserMenu()">👤</span>

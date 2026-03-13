@@ -1,6 +1,14 @@
 // 多语言翻译
 const translations = {
     zh: {
+        // 导航栏
+        nav_home: "首页",
+        nav_products: "产品",
+        nav_find_product: "代找产品",
+        nav_orders: "我的订单",
+        nav_tracking: "订单追踪",
+        nav_admin: "管理",
+        // 首页
         hero_title: "发现优质好货，享全球优惠",
         hero_subtitle: "精选优质商品，为您节省最多60%的费用",
         start_shopping: "开始购物",
@@ -140,9 +148,20 @@ const translations = {
         quick_product_inquiry: "产品咨询",
         quick_order_status: "订单查询",
         quick_shipping_info: "运费说明",
-        quick_other: "其他问题"
+        quick_other: "其他问题",
+        // 社交应用
+        open_wechat_mini: "打开微信",
+        open_whatsapp: "打开WhatsApp"
     },
     en: {
+        // 导航栏
+        nav_home: "Home",
+        nav_products: "Products",
+        nav_find_product: "Find Product",
+        nav_orders: "My Orders",
+        nav_tracking: "Tracking",
+        nav_admin: "Admin",
+        // 首页
         hero_title: "Discover Quality Products, Enjoy Global Savings",
         hero_subtitle: "Sourced from premium suppliers, saving you up to 60%",
         start_shopping: "Start Shopping",
@@ -282,9 +301,20 @@ const translations = {
         quick_product_inquiry: "Product Inquiry",
         quick_order_status: "Order Status",
         quick_shipping_info: "Shipping Info",
-        quick_other: "Other Questions"
+        quick_other: "Other Questions",
+        // Social Apps
+        open_wechat_mini: "Open WeChat",
+        open_whatsapp: "Open WhatsApp"
     },
     ja: {
+        // ナビゲーション
+        nav_home: "ホーム",
+        nav_products: "商品",
+        nav_find_product: "商品検索",
+        nav_orders: "注文履歴",
+        nav_tracking: "追跡",
+        nav_admin: "管理",
+        // ホーム
         hero_title: "高品質商品を発見、お得な価格で",
         hero_subtitle: "厳選された優良サプライヤーから直接調達、最大60%節約",
         start_shopping: "ショッピングを開始",
@@ -407,9 +437,20 @@ const translations = {
         quick_product_inquiry: "製品のお問い合わせ",
         quick_order_status: "注文状況",
         quick_shipping_info: "送料情報",
-        quick_other: "その他の質問"
+        quick_other: "その他の質問",
+        // ソーシャルアプリ
+        open_wechat_mini: "微信を開く",
+        open_whatsapp: "WhatsAppを開く"
     },
     ko: {
+        // 네비게이션
+        nav_home: "홈",
+        nav_products: "상품",
+        nav_find_product: "상품 찾기",
+        nav_orders: "주문 내역",
+        nav_tracking: "추적",
+        nav_admin: "관리",
+        // 홈
         hero_title: "고품질 상품 발견, 글로벌 혜택 누리기",
         hero_subtitle: "엄선된 프리미엄 공급업체에서 직접 조달하여 최대 60% 절약",
         start_shopping: "쇼핑 시작하기",
@@ -534,6 +575,9 @@ const translations = {
         quick_order_status: "주문 상태",
         quick_shipping_info: "배송 정보",
         quick_other: "기타 문의",
+        // 소셜 앱
+        open_wechat_mini: "微信 열기",
+        open_whatsapp: "WhatsApp 열기",
         // 배송 관련
         shipping_note_estimate: "⚠️ 배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 환불됩니다.",
         shipping_refund_policy: "배송비는 예상 금액입니다. 실제 배송비가 다를 수 있습니다. 초과 요금은 계정으로 환불됩니다.",
@@ -555,14 +599,39 @@ function translate(key) {
 
 // 切换语言
 function changeLanguage() {
-    currentLanguage = document.getElementById('language-select').value;
+    const newLang = document.getElementById('language-select').value;
+    if (newLang === currentLanguage) return; // 如果语言没变，不做任何操作
+
+    currentLanguage = newLang;
     localStorage.setItem('language', currentLanguage);
+
+    // 先更新页面文本
     updatePageText();
-    // 重新加载当前页面内容
+
+    // 重新渲染当前页面内容
     const currentPage = document.querySelector('.page.active');
     if (currentPage) {
-        const pageId = currentPage.id;
-        showPage(pageId.replace('page-', ''));
+        const pageName = currentPage.id.replace('page-', '');
+        // 使用 setTimeout 延迟执行，避免与文本更新冲突
+        setTimeout(() => {
+            switch(pageName) {
+                case 'products':
+                    renderProducts();
+                    break;
+                case 'cart':
+                    renderCart();
+                    break;
+                case 'orders':
+                    renderOrders();
+                    break;
+                case 'checkout':
+                    renderCheckout();
+                    break;
+                case 'profile':
+                    renderProfile();
+                    break;
+            }
+        }, 0);
     }
 }
 
@@ -589,9 +658,11 @@ function updatePageText() {
 // 初始化语言设置
 function initLanguage() {
     const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && translations[savedLanguage]) {
+    // 只有当保存的语言与默认语言不同时才更新，避免页面闪烁
+    if (savedLanguage && translations[savedLanguage] && savedLanguage !== 'en') {
         currentLanguage = savedLanguage;
         document.getElementById('language-select').value = currentLanguage;
+        updatePageText();
     }
-    updatePageText();
+    // 默认语言(en)不需要更新，因为HTML已经是英文
 }
