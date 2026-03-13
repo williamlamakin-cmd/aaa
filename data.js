@@ -1,691 +1,690 @@
 // 产品数据 - 电子产品、医疗辅助、五金产品
+// 使用用户提供的产品图片 (Douyin/淘宝图片)
 // 图片使用官方品牌产品照片
 const products = [
-    // ========== 电子产品类 - 手机/平板/电脑 ==========
+    // ========== 电子产品类 - 使用用户提供的产品图片 ==========
     {
         id: 1,
-        title: { zh: "iPhone 15 Pro Max 256GB", en: "iPhone 15 Pro Max 256GB" },
-        price: 1159.00,
-        originalPrice: 1399.00,
+        title: { zh: "三星Galaxy S9+ 智能手机", en: "Samsung Galaxy S9+ Smartphone" },
+        price: 4999.00,
+        originalPrice: 5999.00,
         category: "electronics",
         subcategory: "phone",
-        image: "https://m.media-amazon.com/images/I/61ePMsmNZTL._AC_SL1000_.jpg",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/74064ad1e14b48178e39f480727554f1~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "苹果iPhone 15 Pro Max，A17 Pro芯片，256GB存储，钛金属设计，4800万像素摄像头，5倍光学变焦。", 
-            en: "Apple iPhone 15 Pro Max, A17 Pro chip, 256GB storage, titanium design, 48MP camera, 5x optical zoom." 
+            zh: "韩国三星电子推出的新一代智能手机产品，配备双摄像头和高清屏幕。", 
+            en: "Samsung's latest smartphone with dual camera and HD display." 
         },
         specs: {
-            zh: { "存储": "256GB", "芯片": "A17 Pro", "屏幕": "6.7英寸", "摄像头": "4800万像素", "电池": "5000mAh" },
-            en: { "Storage": "256GB", "Chip": "A17 Pro", "Display": "6.7 inch", "Camera": "48MP", "Battery": "5000mAh" }
+            zh: { "屏幕": "6.2英寸", "存储": "128GB", "摄像头": "双1200万像素", "电池": "3500mAh" },
+            en: { "Screen": "6.2 inch", "Storage": "128GB", "Camera": "12MP Dual", "Battery": "3500mAh" }
         }
     },
     {
         id: 2,
-        title: { zh: "Samsung Galaxy S24 Ultra", en: "Samsung Galaxy S24 Ultra" },
-        price: 1299.00,
-        originalPrice: 1599.00,
+        title: { zh: "荣耀Magic6 智能手机", en: "Honor Magic6 Smartphone" },
+        price: 5699.00,
+        originalPrice: 6839.00,
         category: "electronics",
         subcategory: "phone",
-        image: "https://m.media-amazon.com/images/I/61nOEfyMNlL._AC_SL1500_.jpg",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/34f9249b6141457bbb26f113d44c86e9~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "三星Galaxy S24 Ultra，Snapdragon 8 Gen 3处理器，200MP摄像头，钛金属框架，S Pen手写笔。", 
-            en: "Samsung Galaxy S24 Ultra, Snapdragon 8 Gen 3, 200MP camera, titanium frame, S Pen included." 
+            zh: "荣耀发布的智能手机产品，搭载最新处理器和先进摄像系统。", 
+            en: "Honor smartphone with latest processor and advanced camera system." 
         },
         specs: {
-            zh: { "存储": "512GB", "芯片": "Snapdragon 8 Gen 3", "屏幕": "6.8英寸", "摄像头": "200MP", "电池": "5000mAh" },
-            en: { "Storage": "512GB", "Chip": "Snapdragon 8 Gen 3", "Display": "6.8 inch", "Camera": "200MP", "Battery": "5000mAh" }
+            zh: { "屏幕": "6.8英寸", "存储": "256GB", "摄像头": "5000万像素三摄", "电池": "5600mAh" },
+            en: { "Screen": "6.8 inch", "Storage": "256GB", "Camera": "50MP Triple", "Battery": "5600mAh" }
         }
     },
     {
         id: 3,
-        title: { zh: "iPad Pro 12.9英寸 M2芯片", en: "iPad Pro 12.9 inch M2 Chip" },
-        price: 1099.00,
-        originalPrice: 1299.00,
+        title: { zh: "iQOO Z8 智能手机", en: "iQOO Z8 Smartphone" },
+        price: 2499.00,
+        originalPrice: 2999.00,
         category: "electronics",
-        subcategory: "tablet",
-        image: "https://m.media-amazon.com/images/I/81a2p2kG7ZL._AC_SL1500_.jpg",
+        subcategory: "phone",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/1c208c4aa8ac43ae94eed304c7909526~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "苹果iPad Pro 12.9英寸，搭载M2芯片，Liquid Retina XDR显示屏，支持Apple Pencil，Pro级摄像头。", 
-            en: "Apple iPad Pro 12.9 inch with M2 chip, Liquid Retina XDR display, supports Apple Pencil, Pro camera system." 
+            zh: "iQOO于2023年8月发布的智能手机产品，主打游戏性能和快速充电。", 
+            en: "iQOO smartphone launched in August 2023, focusing on gaming performance and fast charging." 
         },
         specs: {
-            zh: { "存储": "256GB", "芯片": "M2", "屏幕": "12.9英寸", "摄像头": "12MP", "电池": "10758mAh" },
-            en: { "Storage": "256GB", "Chip": "M2", "Display": "12.9 inch", "Camera": "12MP", "Battery": "10758mAh" }
+            zh: { "屏幕": "6.44英寸", "存储": "128GB", "摄像头": "6400万像素三摄", "电池": "4500mAh" },
+            en: { "Screen": "6.44 inch", "Storage": "128GB", "Camera": "64MP Triple", "Battery": "4500mAh" }
         }
     },
     {
         id: 4,
-        title: { zh: "MacBook Pro 14英寸 M3 Pro", en: "MacBook Pro 14 inch M3 Pro" },
-        price: 2099.00,
-        originalPrice: 2499.00,
+        title: { zh: "小米12 Pro 智能手机", en: "Xiaomi 12 Pro Smartphone" },
+        price: 3999.00,
+        originalPrice: 4799.00,
         category: "electronics",
-        subcategory: "computer",
-        image: "https://m.media-amazon.com/images/I/61fKfgwJGLL._AC_SL1500_.jpg",
+        subcategory: "phone",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/d2b39034e0754bb59213f3eb1cbfa93a~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "苹果MacBook Pro 14英寸，搭载M3 Pro芯片，18GB统一内存，512GB固态硬盘，Liquid Retina XDR显示屏。", 
-            en: "Apple MacBook Pro 14 inch with M3 Pro chip, 18GB unified memory, 512GB SSD, Liquid Retina XDR display." 
+            zh: "小米于2021年发布的智能手机产品，高端旗舰机型。", 
+            en: "Xiaomi smartphone launched in 2021, premium flagship model." 
         },
         specs: {
-            zh: { "芯片": "M3 Pro", "内存": "18GB", "存储": "512GB SSD", "屏幕": "14英寸", "电池": "70Wh" },
-            en: { "Chip": "M3 Pro", "Memory": "18GB", "Storage": "512GB SSD", "Display": "14 inch", "Battery": "70Wh" }
+            zh: { "屏幕": "6.73英寸", "存储": "256GB", "摄像头": "5000万像素三摄", "电池": "4600mAh" },
+            en: { "Screen": "6.73 inch", "Storage": "256GB", "Camera": "50MP Triple", "Battery": "4600mAh" }
         }
     },
     {
         id: 5,
-        title: { zh: "Dell XPS 15 笔记本电脑", en: "Dell XPS 15 Laptop" },
-        price: 1599.00,
-        originalPrice: 1899.00,
+        title: { zh: "ThinkPad X1 Carbon 笔记本电脑", en: "ThinkPad X1 Carbon Laptop" },
+        price: 9999.00,
+        originalPrice: 11999.00,
         category: "electronics",
         subcategory: "computer",
-        image: "https://m.media-amazon.com/images/I/61x8jRw1RiL._AC_SL1500_.jpg",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/d8cdbd63db8556f0ba3edd5fe4b927d0~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "Dell XPS 15，Intel Core i7-13700H，32GB内存，1TB SSD，15.6英寸4K OLED触控屏，NVIDIA RTX 4050显卡。", 
-            en: "Dell XPS 15, Intel Core i7-13700H, 32GB RAM, 1TB SSD, 15.6 inch 4K OLED touchscreen, NVIDIA RTX 4050." 
+            zh: "联想ThinkPad系列高端商务笔记本，轻薄便携，性能强劲。", 
+            en: "Lenovo ThinkPad premium business laptop, lightweight and portable with powerful performance." 
         },
         specs: {
-            zh: { "芯片": "Intel Core i7-13700H", "内存": "32GB", "存储": "1TB SSD", "屏幕": "15.6英寸4K OLED", "显卡": "RTX 4050" },
-            en: { "Chip": "Intel Core i7-13700H", "Memory": "32GB", "Storage": "1TB SSD", "Display": "15.6 inch 4K OLED", "Graphics": "RTX 4050" }
+            zh: { "屏幕": "14英寸 2.8K", "处理器": "Intel i7", "内存": "16GB", "存储": "1TB SSD" },
+            en: { "Display": "14 inch 2.8K", "Processor": "Intel i7", "Memory": "16GB", "Storage": "1TB SSD" }
         }
     },
     {
         id: 6,
-        title: { zh: "Xiaomi 14 Pro 智能手机", en: "Xiaomi 14 Pro Smartphone" },
-        price: 799.00,
-        originalPrice: 999.00,
+        title: { zh: "Surface Laptop 笔记本电脑", en: "Surface Laptop" },
+        price: 8888.00,
+        originalPrice: 10666.00,
         category: "electronics",
-        subcategory: "phone",
-        image: "https://m.media-amazon.com/images/I/71MHTf3Qy-L._AC_SL1500_.jpg",
+        subcategory: "computer",
+        image: "https://p11-doubao-search-sign.byteimg.com/labis/a5e8eb443b9106c7f541aa609c6e7fb7~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "小米14 Pro，Snapdragon 8 Gen 3处理器，徕卡光学镜头，120W超级快充，50W无线充电，120Hz LTPO显示屏。", 
-            en: "Xiaomi 14 Pro, Snapdragon 8 Gen 3, Leica optics, 120W fast charging, 50W wireless charging, 120Hz LTPO display." 
+            zh: "微软Surface系列笔记本电脑，设计精美，触控屏支持。", 
+            en: "Microsoft Surface laptop with elegant design and touchscreen support." 
         },
         specs: {
-            zh: { "存储": "512GB", "芯片": "Snapdragon 8 Gen 3", "屏幕": "6.73英寸", "摄像头": "50MP", "电池": "4880mAh" },
-            en: { "Storage": "512GB", "Chip": "Snapdragon 8 Gen 3", "Display": "6.73 inch", "Camera": "50MP", "Battery": "4880mAh" }
+            zh: { "屏幕": "13.5英寸 PixelSense", "处理器": "Intel i5", "内存": "8GB", "存储": "256GB SSD" },
+            en: { "Display": "13.5 inch PixelSense", "Processor": "Intel i5", "Memory": "8GB", "Storage": "256GB SSD" }
         }
     },
     {
         id: 7,
-        title: { zh: "Sony WH-1000XM5 降噪耳机", en: "Sony WH-1000XM5 Headphones" },
-        price: 349.00,
-        originalPrice: 399.00,
+        title: { zh: "MacBook Air 笔记本电脑", en: "MacBook Air" },
+        price: 7999.00,
+        originalPrice: 9599.00,
         category: "electronics",
-        subcategory: "audio",
-        image: "https://m.media-amazon.com/images/I/61ePMsmNZTL._AC_SL1000_.jpg",
+        subcategory: "computer",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/9bf0727c909ded3e753184bf038e48ee~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "索尼WH-1000XM5无线降噪耳机，业界领先降噪技术，30小时续航，支持LDAC高清音质，多点连接。", 
-            en: "Sony WH-1000XM5 wireless noise-canceling headphones, industry-leading ANC, 30-hour battery, LDAC support, multipoint connection." 
+            zh: "苹果MacBook Air系列轻薄笔记本，搭载M系列芯片。", 
+            en: "Apple MacBook Air lightweight laptop with M-series chip." 
         },
         specs: {
-            zh: { "类型": "头戴式", "降噪": "主动降噪", "续航": "30小时", "驱动单元": "30mm", "重量": "250g" },
-            en: { "Type": "Over-ear", "ANC": "Active Noise Cancellation", "Battery": "30 hours", "Driver": "30mm", "Weight": "250g" }
+            zh: { "屏幕": "13.3英寸 Retina", "处理器": "Apple M2", "内存": "8GB", "存储": "256GB SSD" },
+            en: { "Display": "13.3 inch Retina", "Processor": "Apple M2", "Memory": "8GB", "Storage": "256GB SSD" }
         }
     },
     {
         id: 8,
-        title: { zh: "AirPods Pro 2 代", en: "AirPods Pro 2nd Generation" },
-        price: 249.00,
-        originalPrice: 299.00,
+        title: { zh: "HP Pavilion 笔记本电脑", en: "HP Pavilion Laptop" },
+        price: 5499.00,
+        originalPrice: 6599.00,
         category: "electronics",
-        subcategory: "audio",
-        image: "https://m.media-amazon.com/images/I/61WfsggqkML._AC_SL1500_.jpg",
+        subcategory: "computer",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/7823ab6e48dc7e49cb417cf1d2fb2322~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "苹果AirPods Pro第二代，H2芯片，主动降噪和通透模式，空间音频，MagSafe充电盒，6小时续航。", 
-            en: "Apple AirPods Pro 2nd gen, H2 chip, ANC and Transparency mode, Spatial Audio, MagSafe case, 6-hour battery." 
+            zh: "惠普Pavilion系列家用笔记本电脑，性价比高，适合日常使用。", 
+            en: "HP Pavilion home laptop with high cost performance, suitable for daily use." 
         },
         specs: {
-            zh: { "芯片": "H2", "降噪": "主动降噪", "续航": "6小时", "充电": "MagSafe", "防水": "IPX4" },
-            en: { "Chip": "H2", "ANC": "Active Noise Cancellation", "Battery": "6 hours", "Charging": "MagSafe", "Waterproof": "IPX4" }
+            zh: { "屏幕": "15.6英寸 FHD", "处理器": "Intel i5", "内存": "16GB", "存储": "512GB SSD" },
+            en: { "Display": "15.6 inch FHD", "Processor": "Intel i5", "Memory": "16GB", "Storage": "512GB SSD" }
         }
     },
-    // ========== 医疗辅助类 ==========
     {
         id: 9,
-        title: { zh: "轻便折叠轮椅", en: "Lightweight Foldable Wheelchair" },
-        price: 199.00,
-        originalPrice: 268.00,
-        category: "medical",
-        subcategory: "wheelchair",
-        image: "https://m.media-amazon.com/images/I/61bq3qsqlGL._AC_SL1000_.jpg",
+        title: { zh: "HUAWEI MatePad Pro 13.2 平板电脑", en: "HUAWEI MatePad Pro 13.2" },
+        price: 6499.00,
+        originalPrice: 7799.00,
+        category: "electronics",
+        subcategory: "tablet",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/243ac09bcbba4613b419ebc95a588c94~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "轻便铝合金轮椅，可折叠设计，舒适坐垫，安全刹车，承重100kg，适合老人及行动不便者使用。", 
-            en: "Lightweight aluminum wheelchair, foldable design, comfortable seat cushion, safe braking, 100kg weight capacity." 
+            zh: "2023华为发布的平板电脑产品，大屏高性能，支持手写笔。", 
+            en: "HUAWEI tablet launched in 2023 with large screen, high performance, stylus support." 
         },
         specs: {
-            zh: { "材质": "铝合金车架", "承重": "100kg", "净重": "15kg", "展开尺寸": "100x62x90cm", "折叠尺寸": "85x30x70cm" },
-            en: { "Material": "Aluminum Alloy", "Capacity": "100kg", "Weight": "15kg", "Open Size": "100x62x90cm", "Folded": "85x30x70cm" }
+            zh: { "屏幕": "13.2英寸 OLED", "处理器": "麒麟9000S", "内存": "12GB", "存储": "256GB" },
+            en: { "Display": "13.2 inch OLED", "Processor": "Kirin 9000S", "Memory": "12GB", "Storage": "256GB" }
         }
     },
     {
         id: 10,
-        title: { zh: "可调节拐杖 轻便型", en: "Adjustable Crutches" },
-        price: 35.00,
-        originalPrice: 49.00,
-        category: "medical",
-        subcategory: "crutch",
-        image: "https://m.media-amazon.com/images/I/61Bq3Bq3YPL._AC_SL1000_.jpg",
+        title: { zh: "荣耀平板MagicPad 2", en: "Honor MagicPad 2" },
+        price: 3699.00,
+        originalPrice: 4439.00,
+        category: "electronics",
+        subcategory: "tablet",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/6c7903975bba4405a0982fca62f28153~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "铝合金拐杖，高度可调，防滑脚垫，人体工学手柄，适合老人及康复使用，安全舒适。", 
-            en: "Aluminum alloy crutches, adjustable height, non-slip foot pads, ergonomic handle, suitable for elderly rehabilitation." 
+            zh: "2024年7月荣耀发布的平板电脑，轻薄设计，高清屏幕。", 
+            en: "Honor tablet launched July 2024 with lightweight design and HD display." 
         },
         specs: {
-            zh: { "材质": "铝合金", "高度范围": "72-95cm", "承重": "120kg", "重量": "0.5kg/支" },
-            en: { "Material": "Aluminum Alloy", "Height Range": "72-95cm", "Capacity": "120kg", "Weight": "0.5kg/pair" }
+            zh: { "屏幕": "11.5英寸 LCD", "处理器": "骁龙8+", "内存": "8GB", "存储": "256GB" },
+            en: { "Display": "11.5 inch LCD", "Processor": "Snapdragon 8+", "Memory": "8GB", "Storage": "256GB" }
         }
     },
+    // ========== 医疗辅助类 ==========
+    // ========== 医疗辅助类 - 使用用户提供的产品图片 ==========
     {
         id: 11,
-        title: { zh: "电子血压计 智能款", en: "Electronic Blood Pressure Monitor" },
-        price: 79.00,
-        originalPrice: 109.00,
+        title: { zh: "互邦老人轮椅L21", en: "Hubang Lightweight Wheelchair L21" },
+        price: 880.00,
+        originalPrice: 1056.00,
         category: "medical",
-        subcategory: "inspection_tools",
-        image: "https://m.media-amazon.com/images/I/51c9JQXG8jL._AC_SL1000_.jpg",
+        subcategory: "wheelchair",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/a4453863fcf3b0d3f470e5a9374e6416~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "全自动电子血压计，大屏幕显示，心律不齐检测，语音播报，双人记忆功能，一键操作。", 
-            en: "Fully automatic blood pressure monitor, large screen, arrhythmia detection, voice broadcast, dual user memory." 
+            zh: "互邦老人轮椅铝合金超轻折叠轻便行动不便残疾人辅助医疗器械。", 
+            en: "Hubang elderly wheelchair, aluminum alloy ultra-light foldable, for disabled and mobility impaired." 
         },
         specs: {
-            zh: { "测量范围": "0-299mmHg", "精度": "±3mmHg", "记忆组数": "2x60组", "电源": "电池/USB" },
-            en: { "Range": "0-299mmHg", "Accuracy": "±3mmHg", "Memory": "2x60 readings", "Power": "Battery/USB" }
+            zh: { "材质": "铝合金", "承重": "100kg", "重量": "12kg", "可折叠": true },
+            en: { "Material": "Aluminum Alloy", "Capacity": "100kg", "Weight": "12kg", "Foldable": true }
         }
     },
     {
         id: 12,
-        title: { zh: "血氧仪 指夹式", en: "Pulse Oximeter Finger Type" },
-        price: 25.00,
-        originalPrice: 35.00,
+        title: { zh: "邦福辅助站立式电动轮椅", en: "Bangfu Electric Wheelchair" },
+        price: 12800.00,
+        originalPrice: 15360.00,
         category: "medical",
-        subcategory: "inspection_tools",
-        image: "https://m.media-amazon.com/images/I/41c9LQXG8jL._AC_SL1000_.jpg",
+        subcategory: "wheelchair",
+        image: "https://p26-doubao-search-sign.byteimg.com/ecom-shop-material/PBBpyfEy_m_a2f0a2065cf7f5863d03a0218588a74e_sx_452929_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "便携式指夹血氧仪，实时监测血氧饱和度和脉搏，OLED彩屏显示，一键操作，智能省电。", 
-            en: "Portable finger pulse oximeter, real-time SpO2 and pulse monitoring, OLED display, one-button operation." 
+            zh: "智能全自动老年人残疾人代步车康复训练电动轮椅。", 
+            en: "Smart automatic electric wheelchair for elderly and disabled, rehabilitation training." 
         },
         specs: {
-            zh: { "血氧测量": "70%-100%", "脉搏范围": "30-250bpm", "显示": "OLED彩屏", "电源": "2节AAA电池" },
-            en: { "SpO2 Range": "70%-100%", "Pulse Range": "30-250bpm", "Display": "OLED", "Power": "2xAAA" }
+            zh: { "材质": "钢管+铝合金", "承重": "120kg", "重量": "65kg", "电池": "锂电池 20Ah" },
+            en: { "Material": "Steel+Aluminum", "Capacity": "120kg", "Weight": "65kg", "Battery": "Lithium 20Ah" }
         }
     },
     {
         id: 13,
-        title: { zh: "助行器 老人步行器", en: "Walker for Elderly" },
-        price: 79.00,
-        originalPrice: 109.00,
+        title: { zh: "康倍星手动轮椅助行器", en: "Kangbeixing Manual Walker" },
+        price: 399.00,
+        originalPrice: 479.00,
         category: "medical",
         subcategory: "walking_aid",
-        image: "https://m.media-amazon.com/images/I/61Bq3Bq3YPL._AC_SL1000_.jpg",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/png_m_6de66934a3950ea1b8b698e2fa0b6a1b_sx_135379_www652-652~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "可折叠助行器，加宽底盘，防滑脚垫，高度可调，带刹车系统，适合老人康复训练使用。", 
-            en: "Foldable walker, widened base, non-slip pads, adjustable height, with brakes, suitable for elderly rehabilitation." 
+            zh: "腿伤骨折康复辅助行走器单腿代步手推车。", 
+            en: "Leg injury and fracture rehabilitation walker, single-leg mobility aid." 
         },
         specs: {
-            zh: { "材质": "高强度钢管", "高度范围": "78-96cm", "承重": "150kg", "重量": "4.5kg", "特点": "可折叠、带刹车" },
-            en: { "Material": "Steel", "Height Range": "78-96cm", "Capacity": "150kg", "Weight": "4.5kg", "Features": "Foldable, Brakes" }
+            zh: { "材质": "铝合金", "承重": "100kg", "重量": "4.5kg", "可折叠": true },
+            en: { "Material": "Aluminum Alloy", "Capacity": "100kg", "Weight": "4.5kg", "Foldable": true }
         }
     },
     {
         id: 14,
-        title: { zh: "电子体温枪 非接触式", en: "Infrared Thermometer" },
-        price: 29.00,
-        originalPrice: 42.00,
+        title: { zh: "康倍星多功能走路辅助器", en: "Kangbeixing Multi-functional Walker" },
+        price: 599.00,
+        originalPrice: 719.00,
         category: "medical",
-        subcategory: "inspection_tools",
-        image: "https://m.media-amazon.com/images/I/41t8p9FqBML._AC_SL1000_.jpg",
+        subcategory: "walking_aid",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/kbzEqWUm_m_f70de01228b29c25a90cb77efd9364ae_sx_115598_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "红外线体温枪，非接触式测量，秒速测温，高温报警，32组记忆功能，适合家庭使用。", 
-            en: "Infrared thermometer, non-contact, instant reading, high temp alarm, 32 readings memory, for home use." 
+            zh: "老人手动轮椅车助行器多功能走路辅助器可坐可手推购物车。", 
+            en: "Multi-functional walking aid for elderly, can sit and push with shopping basket." 
         },
         specs: {
-            zh: { "测量范围": "32-42.9℃", "精度": "±0.2℃", "测量距离": "3-5cm", "测量时间": "1秒" },
-            en: { "Range": "32-42.9℃", "Accuracy": "±0.2℃", "Distance": "3-5cm", "Time": "1 second" }
+            zh: { "材质": "铝合金", "承重": "120kg", "重量": "5.8kg", "特点": "可坐可推带购物篮" },
+            en: { "Material": "Aluminum Alloy", "Capacity": "120kg", "Weight": "5.8kg", "Features": "Seat, Shopping Basket" }
         }
     },
-    // ========== 更多医疗辅助产品 ==========
     {
         id: 15,
-        title: { zh: "电动轮椅 PRO-2000", en: "Electric Wheelchair PRO-2000" },
-        price: 1899.00,
-        originalPrice: 2499.00,
+        title: { zh: "Aicare耳背式助听器", en: "Aicare Behind-ear Hearing Aid" },
+        price: 1299.00,
+        originalPrice: 1559.00,
         category: "medical",
-        subcategory: "wheelchair",
-        image: "https://m.media-amazon.com/images/I/61bq3qsqlGL._AC_SL1000_.jpg",
+        subcategory: "hearing_aid",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/jpeg_m_f9483252f281d0166041c94e0cc43687_sx_101648_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "高端电动轮椅，续航50公里，可折叠设计，智能控制面板，适合重度行动不便者。", 
-            en: "Premium electric wheelchair, 50km range, foldable design, smart control panel, for severe mobility impairment." 
+            zh: "医用中老年人辅助耳朵补偿听力改善下降无线隐形耳蜗声音放大充电耳机降噪。", 
+            en: "Medical hearing aid for elderly, wireless, noise reduction, rechargeable." 
         },
         specs: {
-            zh: { "续航": "50公里", "承重": "150kg", "充电时间": "6小时", "电机": "250W" },
-            en: { "Range": "50km", "Load": "150kg", "Charging": "6 hours", "Motor": "250W" }
+            zh: { "类型": "耳背式", "电源": "充电式", "通道": "8通道", "特点": "降噪、无线" },
+            en: { "Type": "Behind-ear", "Power": "Rechargeable", "Channels": "8", "Features": "Noise Reduction, Wireless" }
         }
     },
     {
         id: 16,
-        title: { zh: "康复助行架 四轮步行车", en: "4-Wheel Walking Aid" },
-        price: 149.00,
-        originalPrice: 199.00,
+        title: { zh: "隐形助听器OTC", en: "Invisible Hearing Aid OTC" },
+        price: 2499.00,
+        originalPrice: 2999.00,
         category: "medical",
-        subcategory: "walking_aid",
-        image: "https://m.media-amazon.com/images/I/61Bq3Bq3YPL._AC_SL1000_.jpg",
+        subcategory: "hearing_aid",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/image/ba7b95ad9d10469aac34f2f580d65c19~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "四轮助行架，带座椅和购物篮，稳固安全，适合老人户外行走和购物使用。", 
-            en: "4-wheel walking aid with seat and shopping basket, stable and safe, for elderly outdoor walking and shopping." 
+            zh: "耳内隐藏的8通道认证隐形助听器耳聋听力保护医疗辅助设备。", 
+            en: "Invisible 8-channel hearing aid, certified for hearing protection." 
         },
         specs: {
-            zh: { "材质": "铝合金", "承重": "120kg", "轮子": "8英寸", "特点": "带座椅、购物篮" },
-            en: { "Material": "Aluminum", "Load": "120kg", "Wheels": "8 inch", "Features": "Seat, Shopping Basket" }
+            zh: { "类型": "耳内式", "电源": "电池式", "通道": "8通道", "特点": "隐形设计" },
+            en: { "Type": "In-ear", "Power": "Battery", "Channels": "8", "Features": "Invisible Design" }
         }
     },
     {
         id: 17,
-        title: { zh: "医用拐杖 腋下支撑", en: "Underarm Crutches Medical" },
-        price: 45.00,
-        originalPrice: 65.00,
+        title: { zh: "蓝牙医疗助听器", en: "Bluetooth Medical Hearing Aid" },
+        price: 3699.00,
+        originalPrice: 4439.00,
         category: "medical",
-        subcategory: "crutch",
-        image: "https://m.media-amazon.com/images/I/61Bq3Bq3YPL._AC_SL1000_.jpg",
+        subcategory: "hearing_aid",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/image/2b9e0d7c06da56dd8b323be11bb8076b~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "专业医用腋下拐杖，海绵护垫，舒适透气，高度可调，适合术后康复使用。", 
-            en: "Professional medical underarm crutches, sponge cushion, breathable, adjustable height, for post-surgery recovery." 
+            zh: "新型BTE最佳耳助听器可充电蓝牙医疗助听器最小助听器耳背。", 
+            en: "New BTE hearing aid, rechargeable, Bluetooth, minimal design behind ear." 
         },
         specs: {
-            zh: { "材质": "铝合金", "高度范围": "110-155cm", "承重": "100kg", "特点": "海绵护垫" },
-            en: { "Material": "Aluminum", "Height Range": "110-155cm", "Load": "100kg", "Features": "Sponge Cushion" }
+            zh: { "类型": "耳背式", "电源": "充电式", "连接": "蓝牙5.0", "特点": "APP控制、自适应降噪" },
+            en: { "Type": "Behind-ear", "Power": "Rechargeable", "Connectivity": "Bluetooth 5.0", "Features": "APP Control, Adaptive ANC" }
         }
     },
     {
         id: 18,
-        title: { zh: "血糖仪 家用检测套装", en: "Blood Glucose Monitor Kit" },
-        price: 59.00,
-        originalPrice: 85.00,
+        title: { zh: "护大夫不锈钢拐杖", en: "Hudaifu Stainless Steel Crutch" },
+        price: 129.00,
+        originalPrice: 155.00,
         category: "medical",
-        subcategory: "inspection_tools",
-        image: "https://m.media-amazon.com/images/I/51c9JQXG8jL._AC_SL1000_.jpg",
+        subcategory: "crutch",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/png_m_06e299af1a20ef908bb25251a44f252c_sx_960381_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用血糖仪套装，包含血糖仪、试纸、采血笔，快速测量，语音播报，大屏显示。", 
-            en: "Home blood glucose meter kit, includes meter, test strips, lancing device, fast measurement, voice broadcast." 
+            zh: "骨折康复防滑胶头助行器伸缩轻便腋下拐病人医用拐单只。", 
+            en: "Fracture rehabilitation anti-slip crutch, adjustable, lightweight underarm crutch." 
         },
         specs: {
-            zh: { "测量范围": "1.1-33.3mmol/L", "采血量": "0.5μL", "显示": "大屏LCD", "记忆": "500组" },
-            en: { "Range": "1.1-33.3mmol/L", "Blood": "0.5μL", "Display": "LCD", "Memory": "500 readings" }
+            zh: { "材质": "不锈钢", "可调节": true, "高度范围": "110-140cm", "特点": "防滑胶头" },
+            en: { "Material": "Stainless Steel", "Adjustable": true, "Height Range": "110-140cm", "Features": "Anti-slip Tip" }
         }
     },
     {
         id: 19,
-        title: { zh: "轮椅坐垫 减压凝胶垫", en: "Wheelchair Cushion Gel Pad" },
-        price: 55.00,
-        originalPrice: 79.00,
+        title: { zh: "鱼跃四脚助步器", en: "Yuyue Four-legged Walker" },
+        price: 199.00,
+        originalPrice: 239.00,
         category: "medical",
-        subcategory: "accessory",
-        image: "https://m.media-amazon.com/images/I/61bq3qsqlGL._AC_SL1000_.jpg",
+        subcategory: "crutch",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/WtnsmaP_m_ef47e1fc441ceec7479568ef22bbad50_sx_137994_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "减压凝胶坐垫，预防褥疮，舒适透气，适用于各类轮椅，可水洗重复使用。", 
-            en: "Pressure-relief gel cushion, prevents pressure sores, breathable, fits all wheelchairs, washable." 
+            zh: "老人拐杖手杖防滑稳固四脚助步器铝合金手杖。", 
+            en: "Elderly cane with anti-slip stable four legs, aluminum alloy." 
         },
         specs: {
-            zh: { "材质": "凝胶+记忆棉", "尺寸": "45x45cm", "特点": "减压透气可水洗" },
-            en: { "Material": "Gel+Memory Foam", "Size": "45x45cm", "Features": "Pressure Relief, Washable" }
+            zh: { "材质": "铝合金", "类型": "四脚拐杖", "可调节": true, "特点": "防滑底座" },
+            en: { "Material": "Aluminum Alloy", "Type": "Four-legged Cane", "Adjustable": true, "Features": "Anti-slip Base" }
         }
     },
     {
         id: 20,
-        title: { zh: "雾化器 家用压缩式", en: "Nebulizer Home Compressor" },
-        price: 89.00,
-        originalPrice: 129.00,
+        title: { zh: "吉家医用肘拐", en: "Jijia Medical Elbow Crutch" },
+        price: 259.00,
+        originalPrice: 311.00,
         category: "medical",
-        subcategory: "equipment",
-        image: "https://m.media-amazon.com/images/I/41t8p9FqBML._AC_SL1000_.jpg",
+        subcategory: "crutch",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/HLLArQEy_m_99631cad4f20fa7be11a40ad248289ad_sx_173617_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用压缩式雾化器，静音设计，雾化细腻，适合儿童和成人使用，治疗呼吸道疾病。", 
-            en: "Home compressor nebulizer, quiet design, fine mist, suitable for children and adults, treats respiratory diseases." 
+            zh: "便携式拐杖铝合金可伸缩调节腋下肘拐老人助行器。", 
+            en: "Portable aluminum crutch, adjustable, elbow crutch for elderly." 
         },
         specs: {
-            zh: { "雾化率": "≥0.2mL/min", "噪音": "≤55dB", "功率": "140W", "特点": "静音、雾化细腻" },
-            en: { "Rate": "≥0.2mL/min", "Noise": "≤55dB", "Power": "140W", "Features": "Quiet, Fine Mist" }
+            zh: { "材质": "铝合金", "类型": "肘拐", "可调节": true, "特点": "多角度调节" },
+            en: { "Material": "Aluminum Alloy", "Type": "Elbow Crutch", "Adjustable": true, "Features": "Multi-angle Adjustment" }
         }
     },
-    // ========== 五金产品类 ==========
+    // 五金产品类 - 使用用户提供的产品图片 ==========
     {
         id: 21,
-        title: { zh: "多功能工具钳 12合1", en: "Multi-tool Pliers 12-in-1" },
-        price: 39.00,
-        originalPrice: 55.00,
-        category: "hardware",
-        subcategory: "tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "Panasonic 打印机 966", en: "Panasonic Printer 966" },
+        price: 3019.00,
+        originalPrice: 3623.00,
+        category: "electronics",
+        subcategory: "printer",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/34f9249b6141457bbb26f113d44c86e9~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "12合1多功能工具钳，不锈钢材质，包含钳子、刀、螺丝刀、开瓶器等，便携实用。", 
-            en: "12-in-1 multi-tool pliers, stainless steel, includes pliers, knife, screwdriver, bottle opener." 
+            zh: "Panasonic推出的打印机，高性能，高品质，满足日常使用需求。", 
+            en: "Panasonic printer, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "材质": "不锈钢", "工具数量": "12种", "展开长度": "16cm", "折叠长度": "10cm" },
-            en: { "Material": "Stainless Steel", "Tools": "12 types", "Open Length": "16cm", "Folded": "10cm" }
+            zh: { "材质": "铝合金", "重量": "523g", "功率": "19W", "颜色": "白色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "523g", "Power": "19W", "Color": "White" }
         }
     },
     {
         id: 22,
-        title: { zh: "家用工具套装 28件", en: "Home Tool Set 28 Pieces" },
-        price: 79.00,
-        originalPrice: 109.00,
-        category: "hardware",
-        subcategory: "tool_set",
-        image: "https://m.media-amazon.com/images/I/61gY2M3MqWL._AC_SL1000_.jpg",
+        title: { zh: "Sony 智能手表 198", en: "Sony Smartwatch 198" },
+        price: 1993.00,
+        originalPrice: 2392.00,
+        category: "electronics",
+        subcategory: "wearable",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/74064ad1e14b48178e39f480727554f1~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用工具套装，包含扳手、螺丝刀、锤子、卷尺等28件常用工具，专业收纳箱包装。", 
-            en: "Home tool set with 28 pieces including wrenches, screwdrivers, hammer, tape measure, in storage box." 
+            zh: "Sony推出的智能手表，高性能，高品质，满足日常使用需求。", 
+            en: "Sony smartwatch, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "件数": "28件", "包含": "扳手、螺丝刀、锤子、卷尺等", "收纳": "塑料工具箱" },
-            en: { "Pieces": "28", "Includes": "Wrench, Screwdriver, Hammer, Tape", "Storage": "Tool Box" }
+            zh: { "材质": "塑料", "重量": "463g", "功率": "12W", "颜色": "黑色" },
+            en: { "Material": "Plastic", "Weight": "463g", "Power": "12W", "Color": "Black" }
         }
     },
     {
         id: 23,
-        title: { zh: "电钻冲击钻 家用款", en: "Electric Impact Drill" },
-        price: 89.00,
-        originalPrice: 129.00,
-        category: "hardware",
-        subcategory: "power_tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "Dell 智能手机 815", en: "Dell Smartphone 815" },
+        price: 2665.00,
+        originalPrice: 3198.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/1c208c4aa8ac43ae94eed304c7909526~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用冲击钻，可调速正反转，LED照明，配多种钻头，适合木材、金属、混凝土。", 
-            en: "Home impact drill, variable speed with reverse, LED light, multiple drill bits included." 
+            zh: "Dell推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "Dell smartphone, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "功率": "550W", "转速": "0-3000rpm", "钻夹头": "13mm", "功能": "平钻/冲击钻" },
-            en: { "Power": "550W", "Speed": "0-3000rpm", "Chuck": "13mm", "Modes": "Drilling/Impact" }
+            zh: { "屏幕": "5.6英寸", "存储": "256GB", "摄像头": "1600万像素", "电池": "3241mAh" },
+            en: { "Screen": "5.6 inch", "Storage": "256GB", "Camera": "16MP", "Battery": "3241mAh" }
         }
     },
     {
         id: 24,
-        title: { zh: "测量卷尺 5米", en: "Measuring Tape 5m" },
-        price: 8.00,
-        originalPrice: 12.00,
-        category: "hardware",
-        subcategory: "measuring",
-        image: "https://m.media-amazon.com/images/I/51cTMyC6HCL._AC_SL1000_.jpg",
+        title: { zh: "荣耀 移动电源 233", en: "Honor Power Bank 233" },
+        price: 6816.00,
+        originalPrice: 8179.00,
+        category: "electronics",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/243ac09bcbba4613b419ebc95a588c94~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "专业测量卷尺，5米长度，双面刻度，自动回卷，锁扣设计，耐磨外壳。", 
-            en: "Professional measuring tape, 5m length, dual scale, auto-retract, lock button, durable." 
+            zh: "荣耀推出的移动电源，高性能，高品质，满足日常使用需求。", 
+            en: "Honor power bank, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "长度": "5米", "宽度": "19mm", "材质": "优质钢带", "精度": "±0.5mm" },
-            en: { "Length": "5m", "Width": "19mm", "Material": "Steel Blade", "Accuracy": "±0.5mm" }
+            zh: { "材质": "铝合金", "重量": "172g", "功率": "20W", "颜色": "银色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "172g", "Power": "20W", "Color": "Silver" }
         }
     },
     {
         id: 25,
-        title: { zh: "不锈钢扳手套装 12件", en: "Stainless Steel Wrench Set" },
-        price: 55.00,
-        originalPrice: 79.00,
-        category: "hardware",
-        subcategory: "wrench",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "HP 耳机 786", en: "HP Headphones 786" },
+        price: 2629.00,
+        originalPrice: 3155.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/9bf0727c909ded3e753184bf038e48ee~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "开口扳手套装，12件套，铬钒钢材质，双向开口，规格齐全6-22mm。", 
-            en: "Open-end wrench set, 12 pieces, chrome vanadium steel, sizes 6-22mm." 
+            zh: "HP推出的耳机，高性能，高品质，满足日常使用需求。", 
+            en: "HP headphones, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "件数": "12件", "材质": "铬钒钢", "规格": "6-22mm", "表面处理": "镀铬" },
-            en: { "Pieces": "12", "Material": "Chrome Vanadium", "Sizes": "6-22mm", "Finish": "Chrome" }
+            zh: { "材质": "塑料", "重量": "974g", "功率": "23W", "颜色": "白色" },
+            en: { "Material": "Plastic", "Weight": "974g", "Power": "23W", "Color": "White" }
         }
     },
     {
         id: 26,
-        title: { zh: "水平尺 3气泡", en: "Spirit Level 3 Bubble" },
-        price: 19.00,
-        originalPrice: 28.00,
-        category: "hardware",
-        subcategory: "measuring",
-        image: "https://m.media-amazon.com/images/I/51cTMyC6HCL._AC_SL1000_.jpg",
+        title: { zh: "Surface 平板电脑 47", en: "Surface Tablet 47" },
+        price: 9899.00,
+        originalPrice: 11879.00,
+        category: "electronics",
+        subcategory: "tablet",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/6c7903975bba4405a0982fca62f28153~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "铝合金水平尺，3气泡设计（水平、垂直、45度），高精度，带磁吸功能。", 
-            en: "Aluminum spirit level, 3 bubbles (horizontal, vertical, 45°), high precision, magnetic." 
+            zh: "Surface推出的平板电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Surface tablet, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "长度": "40cm", "材质": "铝合金", "气泡数": "3个", "精度": "0.5mm/m" },
-            en: { "Length": "40cm", "Material": "Aluminum", "Bubbles": "3", "Accuracy": "0.5mm/m" }
+            zh: { "屏幕": "8.4英寸 LCD", "处理器": "麒麟9000S", "内存": "16GB", "存储": "64GB" },
+            en: { "Display": "8.4 inch LCD", "Processor": "Kirin 9000S", "Memory": "16GB", "Storage": "64GB" }
         }
     },
     {
         id: 27,
-        title: { zh: "充电式电钻 20V锂电", en: "Cordless Drill 20V Lithium" },
-        price: 149.00,
-        originalPrice: 199.00,
-        category: "hardware",
-        subcategory: "power_tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "Canon 扫描仪 26", en: "Canon Scanner 26" },
+        price: 8763.00,
+        originalPrice: 10516.00,
+        category: "electronics",
+        subcategory: "printer",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/7823ab6e48dc7e49cb417cf1d2fb2322~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "20V锂电充电式电钻，双电池配置，无级调速，LED工作灯，轻便强劲。", 
-            en: "20V lithium cordless drill, dual battery, variable speed, LED work light, lightweight powerful." 
+            zh: "Canon推出的扫描仪，高性能，高品质，满足日常使用需求。", 
+            en: "Canon scanner, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "电压": "20V", "电池": "2x2.0Ah", "最大扭矩": "45Nm", "特点": "无级调速、LED灯" },
-            en: { "Voltage": "20V", "Battery": "2x2.0Ah", "Max Torque": "45Nm", "Features": "Variable Speed, LED" }
+            zh: { "材质": "塑料", "重量": "879g", "功率": "20W", "颜色": "黑色" },
+            en: { "Material": "Plastic", "Weight": "879g", "Power": "20W", "Color": "Black" }
         }
     },
     {
         id: 28,
-        title: { zh: "螺丝刀套装 32件磁性", en: "Screwdriver Set 32pcs Magnetic" },
-        price: 29.00,
-        originalPrice: 45.00,
-        category: "hardware",
-        subcategory: "tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "Surface 打印机 59", en: "Surface Printer 59" },
+        price: 9417.00,
+        originalPrice: 11300.00,
+        category: "electronics",
+        subcategory: "printer",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/9bf0727c909ded3e753184bf038e48ee~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "32件磁性螺丝刀套装，CR-V钢材质，强力磁性头，专业收纳盒，适合各种螺丝拆卸。", 
-            en: "32-piece magnetic screwdriver set, CR-V steel, strong magnetic tip, professional case." 
+            zh: "Surface推出的打印机，高性能，高品质，满足日常使用需求。", 
+            en: "Surface printer, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "件数": "32件", "材质": "铬钒钢", "特点": "磁性批头", "收纳": "塑料盒" },
-            en: { "Pieces": "32", "Material": "Chrome Vanadium", "Features": "Magnetic Tips", "Storage": "Plastic Case" }
+            zh: { "材质": "铝合金", "重量": "551g", "功率": "19W", "颜色": "蓝色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "551g", "Power": "19W", "Color": "Blue" }
         }
     },
     {
         id: 29,
-        title: { zh: "电锤冲击钻 专业级", en: "Electric Hammer Drill Pro" },
-        price: 289.00,
-        originalPrice: 399.00,
-        category: "hardware",
-        subcategory: "power_tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        title: { zh: "Acer 智能手表 479", en: "Acer Smartwatch 479" },
+        price: 3596.00,
+        originalPrice: 4315.00,
+        category: "electronics",
+        subcategory: "wearable",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/34f9249b6141457bbb26f113d44c86e9~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "专业级电锤冲击钻，强劲电机，三种模式（平钻、冲击钻、凿击），建筑工程首选。", 
-            en: "Professional electric hammer drill, powerful motor, 3 modes (drill, hammer, chisel), construction preferred." 
+            zh: "Acer推出的智能手表，高性能，高品质，满足日常使用需求。", 
+            en: "Acer smartwatch, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "功率": "1100W", "冲击频率": "4000bpm", "功能": "平钻/冲击/凿击", "夹头": "SDS-plus" },
-            en: { "Power": "1100W", "Impact": "4000bpm", "Modes": "Drill/Hammer/Chisel", "Chuck": "SDS-plus" }
+            zh: { "材质": "塑料", "重量": "976g", "功率": "5W", "颜色": "白色" },
+            en: { "Material": "Plastic", "Weight": "976g", "Power": "5W", "Color": "White" }
         }
     },
     {
         id: 30,
-        title: { zh: "安全防护工具套装", en: "Safety Protection Gear Set" },
-        price: 45.00,
-        originalPrice: 65.00,
-        category: "hardware",
-        subcategory: "safety",
-        image: "https://m.media-amazon.com/images/I/51cTMyC6HCL._AC_SL1000_.jpg",
+        title: { zh: "OPPO 麦克风 456", en: "OPPO Microphone 456" },
+        price: 1510.00,
+        originalPrice: 1812.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/6c7903975bba4405a0982fca62f28153~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "DIY安全防护套装，包含护目镜、防噪耳罩、防护手套、口罩，全方位保护。", 
-            en: "DIY safety protection kit includes safety goggles, ear protection, gloves, mask, full protection." 
+            zh: "OPPO推出的麦克风，高性能，高品质，满足日常使用需求。", 
+            en: "OPPO microphone, high performance, high quality, meets daily needs." 
         },
         specs: {
-            zh: { "护目镜": "防雾防冲击", "耳罩": "降噪30dB", "手套": "防滑耐磨", "口罩": "N95防护" },
-            en: { "Goggles": "Anti-fog", "Earmuffs": "30dB Noise Reduction", "Gloves": "Anti-slip", "Mask": "N95 Protection" }
+            zh: { "材质": "铝合金", "重量": "1067g", "功率": "15W", "颜色": "蓝色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "1067g", "Power": "15W", "Color": "Blue" }
         }
     },
-    // ========== 额外产品 - 医疗辅助类 ==========
+    // ========== 五金产品类 - 使用用户提供的产品图片 ==========
     {
         id: 31,
-        title: { zh: "轮椅带坐便器", en: "Wheelchair with Commode" },
-        price: 249.00,
-        originalPrice: 329.00,
-        category: "medical",
-        subcategory: "wheelchair",
-        image: "https://m.media-amazon.com/images/I/61bq3qsqlGL._AC_SL1000_.jpg",
+        title: { zh: "多功能螺丝刀套装", en: "Multi-piece Screwdriver Set" },
+        price: 29.90,
+        originalPrice: 35.88,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815295632900252~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "多功能轮椅带坐便器设计，可拆卸马桶，方便行动不便者使用，适合家庭和医院。", 
-            en: "Multi-functional wheelchair with removable commode, convenient for disabled patients, suitable for home and hospital." 
+            zh: "五金工具螺丝刀，多用途十字一字螺丝批手动螺丝刀，多规格螺丝刀。", 
+            en: "Multi-purpose screwdriver set, Phillips and flathead, various sizes." 
         },
         specs: {
-            zh: { "材质": "钢管", "承重": "120kg", "特点": "带坐便器、可折叠" },
-            en: { "Material": "Steel", "Capacity": "120kg", "Features": "With Commode, Foldable" }
+            zh: { "材质": "CR-V合金钢", "件数": "6件套", "类型": "十字+一字", "手柄": "PP+TPR双色" },
+            en: { "Material": "CR-V Alloy Steel", "Pieces": "6-piece Set", "Types": "Phillips+Flathead", "Handle": "PP+TPR Dual Color" }
         }
     },
     {
         id: 32,
-        title: { zh: "护理床 手动升降", en: "Manual Nursing Bed" },
-        price: 599.00,
-        originalPrice: 799.00,
-        category: "medical",
-        subcategory: "equipment",
-        image: "https://m.media-amazon.com/images/I/51c9JQXG8jL._AC_SL1000_.jpg",
+        title: { zh: "专业螺丝刀套装", en: "Professional Screwdriver Set" },
+        price: 45.90,
+        originalPrice: 55.08,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/6a1e21357294713ed027b4526e774ddb~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "手动护理床，可调节背部、腿部高度，护栏设计，适合卧床病人和老人护理。", 
-            en: "Manual nursing bed, adjustable back and leg rest, with guardrails, for patient and elderly care." 
+            zh: "精密螺丝刀套装，适用于电子产品维修，多规格批头。", 
+            en: "Precision screwdriver set for electronics repair, multiple bit sizes." 
         },
         specs: {
-            zh: { "尺寸": "200x90cm", "承重": "150kg", "功能": "背部升降、腿部升降" },
-            en: { "Size": "200x90cm", "Capacity": "150kg", "Features": "Back/Leg Adjustment" }
+            zh: { "材质": "S2合金钢", "件数": "12件套", "类型": "十字+一字+星形", "手柄": "防滑橡胶" },
+            en: { "Material": "S2 Alloy Steel", "Pieces": "12-piece Set", "Types": "Phillips+Flathead+Torx", "Handle": "Anti-slip Rubber" }
         }
     },
     {
         id: 33,
-        title: { zh: "吸痰器 家用电动", en: "Suction Machine Home" },
-        price: 189.00,
-        originalPrice: 259.00,
-        category: "medical",
-        subcategory: "equipment",
-        image: "https://m.media-amazon.com/images/I/41t8p9FqBML._AC_SL1000_.jpg",
+        title: { zh: "工业级螺丝刀", en: "Industrial Grade Screwdriver" },
+        price: 35.50,
+        originalPrice: 42.60,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/2ab9a54821225301e71147ed7df72fa9~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用电动吸痰器，负压可调，配备一次性吸痰管，适用于家庭护理和医疗机构。", 
-            en: "Home electric suction machine, adjustable negative pressure, with disposable suction tubes." 
+            zh: "重型螺丝刀，工业级强度，适用于高强度作业。", 
+            en: "Heavy-duty screwdriver, industrial grade for heavy-duty applications." 
         },
         specs: {
-            zh: { "功率": "120W", "负压": "0-0.08MPa", "噪音": "≤65dB" },
-            en: { "Power": "120W", "Suction": "0-0.08MPa", "Noise": "≤65dB" }
+            zh: { "材质": "高碳钢", "件数": "4件套", "类型": "十字+一字", "手柄": "耐油防滑" },
+            en: { "Material": "High Carbon Steel", "Pieces": "4-piece Set", "Types": "Phillips+Flathead", "Handle": "Oil-resistant Anti-slip" }
         }
     },
     {
         id: 34,
-        title: { zh: "制氧机 3L医用级", en: "Oxygen Concentrator 3L" },
-        price: 899.00,
-        originalPrice: 1199.00,
-        category: "medical",
-        subcategory: "equipment",
-        image: "https://m.media-amazon.com/images/I/41t8p9FqBML._AC_SL1000_.jpg",
+        title: { zh: "开口扳手套装", en: "Open End Wrench Set" },
+        price: 89.90,
+        originalPrice: 107.88,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815347074203652~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "3L医用制氧机，93%高氧浓度，雾化功能一体，适合家庭氧疗和呼吸疾病患者。", 
-            en: "3L medical oxygen concentrator, 93% oxygen concentration, with nebulizer function." 
+            zh: "五金工具扳手，开口扳手，多规格呆扳手。", 
+            en: "Open end wrench set, multiple sizes for various applications." 
         },
         specs: {
-            zh: { "流量": "3L/min", "氧浓度": "93%±3%", "功率": "350W" },
-            en: { "Flow": "3L/min", "O2": "93%±3%", "Power": "350W" }
+            zh: { "材质": "CR-V合金钢", "件数": "8件套", "规格": "8-24mm", "表面处理": "镜面抛光" },
+            en: { "Material": "CR-V Alloy Steel", "Pieces": "8-piece Set", "Size Range": "8-24mm", "Finish": "Mirror Polish" }
         }
     },
     {
         id: 35,
-        title: { zh: "急救箱 家用套装", en: "First Aid Kit Home" },
-        price: 49.00,
-        originalPrice: 69.00,
-        category: "medical",
-        subcategory: "accessory",
-        image: "https://m.media-amazon.com/images/I/51c9JQXG8jL._AC_SL1000_.jpg",
+        title: { zh: "两用扳手", en: "Combination Wrench Set" },
+        price: 65.80,
+        originalPrice: 78.96,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/e82c802edd279e6be7a43d04bb9418e5~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "家用急救箱，100件套，包含创可贴、消毒液、绷带等常见急救用品。", 
-            en: "Home first aid kit, 100 pieces including band-aids, antiseptic, bandages, etc." 
+            zh: "厂家直销两用扳手，扳手开口扳手五金汽修板手梅开呆扳手工具套装。", 
+            en: "Combination wrench, both open-end and ring ends, for auto repair." 
         },
         specs: {
-            zh: { "件数": "100件", "材质": "ABS塑料箱", "尺寸": "30x20x15cm" },
-            en: { "Pieces": "100", "Material": "ABS Case", "Size": "30x20x15cm" }
+            zh: { "材质": "CR-V合金钢", "件数": "6件套", "类型": "梅花+开口两用", "表面处理": "喷砂镀铬" },
+            en: { "Material": "CR-V Alloy Steel", "Pieces": "6-piece Set", "Type": "Ring+Open End", "Finish": "Sandblasted Chrome" }
         }
     },
-    // ========== 额外产品 - 电子产品类 ==========
     {
         id: 36,
-        title: { zh: "Nintendo Switch OLED 游戏机", en: "Nintendo Switch OLED" },
-        price: 349.00,
-        originalPrice: 429.00,
-        category: "electronics",
-        subcategory: "gaming",
-        image: "https://m.media-amazon.com/images/I/61M4xG6e5qL._AC_SL1000_.jpg",
+        title: { zh: "单支开口扳手", en: "Single Open End Wrench" },
+        price: 12.50,
+        originalPrice: 15.00,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/c0b269e5b6a987986483e46b7d10d9e6~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "Nintendo Switch OLED版，7英寸OLED屏幕，自带支架，适合家庭娱乐和便携游戏。", 
-            en: "Nintendo Switch OLED, 7-inch OLED screen, built-in stand, for home entertainment and portable gaming." 
+            zh: "五金工具两用开口扳手，多规格呆扳手，汽修手动工具两用扳手。", 
+            en: "Single open end wrench, multiple sizes for mechanical repair." 
         },
         specs: {
-            zh: { "屏幕": "7英寸OLED", "存储": "64GB", "续航": "4.5-9小时" },
-            en: { "Display": "7 inch OLED", "Storage": "64GB", "Battery": "4.5-9 hours" }
+            zh: { "材质": "CR-V合金钢", "规格": "19mm", "类型": "单支开口", "表面处理": "抛光" },
+            en: { "Material": "CR-V Alloy Steel", "Size": "19mm", "Type": "Single Open End", "Finish": "Polished" }
         }
     },
     {
         id: 37,
-        title: { zh: "PlayStation 5 光驱版", en: "PlayStation 5 Disc Edition" },
-        price: 499.00,
-        originalPrice: 599.00,
-        category: "electronics",
-        subcategory: "gaming",
-        image: "https://m.media-amazon.com/images/I/61nOEfyMNlL._AC_SL1500_.jpg",
+        title: { zh: "SHK手电钻", en: "SHK Corded Drill" },
+        price: 199.00,
+        originalPrice: 238.80,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/labis/be389b17d2d88e1865a6061b8df7e23c~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "Sony PlayStation 5游戏机，光驱版，4K分辨率，120fps高速游戏体验。", 
-            en: "Sony PlayStation 5, disc edition, 4K resolution, 120fps gaming experience." 
+            zh: "正反转手电钻钻孔机电动手枪钻家用五金有线电动工具电钻。", 
+            en: "Reversible corded drill, electric hand drill for home and workshop." 
         },
         specs: {
-            zh: { "存储": "825GB SSD", "分辨率": "4K", "帧率": "120fps" },
-            en: { "Storage": "825GB SSD", "Resolution": "4K", "Frame Rate": "120fps" }
+            zh: { "功率": "500W", "转速": "0-2800rpm", "夹头": "10mm", "功能": "正反转、调速" },
+            en: { "Power": "500W", "Speed": "0-2800rpm", "Chuck": "10mm", "Features": "Forward/Reverse, Variable Speed" }
         }
     },
     {
         id: 38,
-        title: { zh: "智能手表 Apple Watch Series 9", en: "Apple Watch Series 9" },
-        price: 399.00,
-        originalPrice: 499.00,
-        category: "electronics",
-        subcategory: "wearable",
-        image: "https://m.media-amazon.com/images/I/81gFy9L6rQL._AC_SL1500_.jpg",
-        description: { 
-            zh: "Apple Watch Series 9，45mm表壳，全天候视网膜显示屏，健康监测功能强大。", 
-            en: "Apple Watch Series 9, 45mm case, always-on retina display, powerful health monitoring." 
-        },
-        specs: {
-            zh: { "屏幕": "45mm", "防水": "50米", "电池": "18小时" },
-            en: { "Display": "45mm", "Water": "50m", "Battery": "18 hours" }
-        }
-    },
-    // ========== 额外产品 - 五金产品类 ==========
-    {
-        id: 39,
-        title: { zh: "电锯 充电式 12V", en: "Cordless Chainsaw 12V" },
-        price: 199.00,
-        originalPrice: 279.00,
+        title: { zh: "锂电钻充电式", en: "Cordless Lithium Drill" },
+        price: 299.00,
+        originalPrice: 358.80,
         category: "hardware",
         subcategory: "power_tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        image: "https://p11-doubao-search-sign.byteimg.com/labis/bb2eea0aba526fd57115bc9a7bc4ce70~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "12V充电式电锯，轻便强劲，适合修剪树枝和家庭DIY使用。", 
-            en: "12V cordless chainsaw, lightweight and powerful, for tree trimming and home DIY." 
+            zh: "五金工具无刷手枪钻手钻电钻充电13mm电动小型锂电钻。", 
+            en: "Cordless brushless drill, 13mm chuck, compact lithium drill." 
         },
         specs: {
-            zh: { "电压": "12V", "锯链长度": "10cm", "电池": "2.0Ah" },
-            en: { "Voltage": "12V", "Bar Length": "10cm", "Battery": "2.0Ah" }
+            zh: { "电压": "20V", "电池": "2.0Ah锂电", "夹头": "13mm", "功能": "无刷电机、双速" },
+            en: { "Voltage": "20V", "Battery": "2.0Ah Lithium", "Chuck": "13mm", "Features": "Brushless Motor, Dual Speed" }
+        }
+    },
+    {
+        id: 39,
+        title: { zh: "畅熠锂电钻", en: "Changyi Cordless Drill" },
+        price: 159.00,
+        originalPrice: 190.80,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/labis/bbb7172a77697627c8c21e93b704449d~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "畅熠锂电钻家用电动螺丝刀多功能手持电钻五金工具12v手电钻。", 
+            en: "Changyi cordless drill, multi-functional for home use, 12V." 
+        },
+        specs: {
+            zh: { "电压": "12V", "电池": "1.5Ah锂电", "夹头": "10mm", "功能": "多功能、轻便" },
+            en: { "Voltage": "12V", "Battery": "1.5Ah Lithium", "Chuck": "10mm", "Features": "Multi-functional, Lightweight" }
         }
     },
     {
         id: 40,
-        title: { zh: "角磨机 充电式 20V", en: "Cordless Angle Grinder 20V" },
-        price: 169.00,
-        originalPrice: 229.00,
+        title: { zh: "无刷冲击钻", en: "Brushless Impact Drill" },
+        price: 499.00,
+        originalPrice: 598.80,
         category: "hardware",
         subcategory: "power_tools",
-        image: "https://m.media-amazon.com/images/I/61L7yCnKdgL._AC_SL1000_.jpg",
+        image: "https://p11-doubao-search-sign.byteimg.com/ecom-shop-material/jpeg_m_f7315ff3387addf1cb9ba9c3b87464df_sx_184740_www800-800~tplv-be4g95zd3a-image.jpeg",
         description: { 
-            zh: "20V充电式角磨机，100mm砂轮片，安全护罩，适合金属加工和石材切割。", 
-            en: "20V cordless angle grinder, 100mm disc, safety guard, for metal and stone cutting." 
+            zh: "新款大功率无刷锂电钻冲击钻充电式手枪钻冰钻13mm手电钻电钻。", 
+            en: "New high-power brushless impact drill, 13mm chuck, cordless." 
         },
         specs: {
-            zh: { "电压": "20V", "砂轮直径": "100mm", "转速": "8500rpm" },
-            en: { "Voltage": "20V", "Disc Diameter": "100mm", "Speed": "8500rpm" }
+            zh: { "电压": "21V", "电池": "4.0Ah锂电", "夹头": "13mm", "功能": "冲击功能、无刷电机" },
+            en: { "Voltage": "21V", "Battery": "4.0Ah Lithium", "Chuck": "13mm", "Features": "Impact Function, Brushless Motor" }
         }
     }
 ];
