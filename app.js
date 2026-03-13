@@ -1,13 +1,25 @@
-// 初始化
+// 初始化 - 使用 setTimeout 延迟初始化，避免页面闪烁
 document.addEventListener('DOMContentLoaded', () => {
-    initLanguage();
-    initAuth();
-    initProductAutoUpdate(); // 初始化产品自动更新
-    initGlobalCurrency(); // 初始化全局货币
-    renderProducts();
-    updateCartCount();
-    renderCart();
-    renderOrders();
+    // 延迟50ms后执行初始化，让页面先完成首次渲染
+    setTimeout(() => {
+        // 第一步：只初始化语言（不做DOM更新）
+        initLanguage();
+
+        // 第二步：初始化认证
+        initAuth();
+
+        // 第三步：初始化产品自动更新
+        initProductAutoUpdate();
+
+        // 第四步：初始化全局货币
+        initGlobalCurrency();
+
+        // 第五步：渲染内容
+        renderProducts();
+        updateCartCount();
+        renderCart();
+        renderOrders();
+    }, 50);
 });
 
 // 初始化全局货币

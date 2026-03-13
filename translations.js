@@ -655,14 +655,21 @@ function updatePageText() {
     });
 }
 
-// 初始化语言设置
+// 初始化语言设置 - 简化版本，只读取保存的语言，不做任何DOM操作
 function initLanguage() {
     const savedLanguage = localStorage.getItem('language');
-    // 只有当保存的语言与默认语言不同时才更新，避免页面闪烁
+    // 如果有保存的语言且不是英文，则更新语言变量
     if (savedLanguage && translations[savedLanguage] && savedLanguage !== 'en') {
         currentLanguage = savedLanguage;
-        document.getElementById('language-select').value = currentLanguage;
-        updatePageText();
+        // 只更新下拉框的值，不调用 updatePageText()
+        const langSelect = document.getElementById('language-select');
+        if (langSelect) {
+            langSelect.value = currentLanguage;
+        }
+        // 延迟更新文本，等页面完全渲染后再更新
+        requestAnimationFrame(() => {
+            setTimeout(updatePageText, 0);
+        });
     }
-    // 默认语言(en)不需要更新，因为HTML已经是英文
+    // 默认语言(en)不需要任何操作，HTML已经是英文
 }

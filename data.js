@@ -786,9 +786,10 @@ function initProductAutoUpdate() {
         updateHotProducts();
     }, oneWeek);
     lastPriceUpdate = new Date();
-    
-    // 初始更新一次
-    setTimeout(() => updateHotProducts(), 2000);
+
+    // 注意：不再初始更新，避免页面加载时的闪烁
+    // 如果需要初始更新，可以移除下面的注释
+    // setTimeout(() => updateHotProducts(), 2000);
 }
 
 // 热门产品自动更新函数

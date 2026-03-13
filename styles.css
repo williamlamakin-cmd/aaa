@@ -4,27 +4,22 @@
     box-sizing: border-box;
 }
 
-/* 防止页面闪烁 */
-html {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* 页面加载时隐藏非活动页面，避免闪烁 */
+/* 防止页面闪烁 - 使用 transform 和 position 隐藏而非 display */
 .page {
-    display: none;
-    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    left: -9999px;
+    top: 0;
 }
 
 .page.active {
-    display: block;
-    visibility: visible;
+    position: static;
+    left: auto;
 }
 
-/* 防止内容闪烁 */
+/* 防止FOUC */
 body {
-    opacity: 1;
-    transition: opacity 0.1s ease-in;
+    visibility: visible !important;
 }
 
 :root {
