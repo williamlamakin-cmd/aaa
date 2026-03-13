@@ -546,7 +546,7 @@ const translations = {
 };
 
 // 当前语言
-let currentLanguage = 'zh';
+let currentLanguage = 'en';
 
 // 获取翻译文本
 function translate(key) {

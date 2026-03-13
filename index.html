@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球优选 - 跨国代购平台</title>
+    <title>GlobalChoice - Cross-Border Shopping Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">全球优选</div>
+            <div class="nav-brand">GlobalChoice</div>
             <ul class="nav-menu">
-                <li><a href="#" onclick="showPage('home')">首页</a></li>
-                <li><a href="#" onclick="showPage('products')">产品</a></li>
-                <li><a href="#" onclick="showPage('find-product')">代找产品</a></li>
-                <li><a href="#" onclick="showPage('orders')">我的订单</a></li>
-                <li><a href="#" onclick="showPage('tracking')">订单追踪</a></li>
-                <li><a href="#" onclick="showPage('admin')" style="color: #ff4d4f;">后台管理</a></li>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('find-product')">Find Product</a></li>
+                <li><a href="#" onclick="showPage('orders')">My Orders</a></li>
+                <li><a href="#" onclick="showPage('tracking')">Tracking</a></li>
+                <li><a href="#" onclick="showPage('admin')" style="color: #ff6b6b;">Admin</a></li>
                 <li class="cart-icon">
                     <span onclick="showPage('cart')">🛒</span>
                     <span id="cart-count">0</span>
                 </li>
                 <li class="language-selector">
                     <select id="language-select" onchange="changeLanguage()">
-                        <option value="zh">中文</option>
                         <option value="en">English</option>
+                        <option value="zh">中文</option>
                         <option value="ja">日本語</option>
                         <option value="ko">한국어</option>
                     </select>
@@ -44,24 +44,24 @@
                         <option value="IDR">Rp IDR</option>
                     </select>
                 </li>
-                <li class="currency-rate" id="currency-rate" style="font-size: 0.75rem; color: #888;">
+                <li class="currency-rate" id="currency-rate">
                     USD 1 = CNY 7.24
                 </li>
                 <li class="user-menu">
                     <span id="user-icon" onclick="toggleUserMenu()">👤</span>
                     <div id="user-dropdown" class="user-dropdown" style="display: none;">
                         <div id="logged-out-menu">
-                            <a href="#" onclick="showLoginModal()" data-translate="login">登录</a>
-                            <a href="#" onclick="showRegisterModal()" data-translate="register">注册</a>
+                            <a href="#" onclick="showLoginModal()" data-translate="login">Login</a>
+                            <a href="#" onclick="showRegisterModal()" data-translate="register">Register</a>
                         </div>
                         <div id="logged-in-menu" style="display: none;">
                             <div class="user-info">
                                 <strong id="user-display-name"></strong>
                                 <small id="user-display-email"></small>
                             </div>
-                            <a href="#" onclick="showPage('profile')" data-translate="my_profile">个人中心</a>
-                            <a href="#" onclick="showPage('orders')" data-translate="my_orders">我的订单</a>
-                            <a href="#" onclick="logout()" data-translate="logout">退出登录</a>
+                            <a href="#" onclick="showPage('profile')" data-translate="my_profile">My Profile</a>
+                            <a href="#" onclick="showPage('orders')" data-translate="my_orders">My Orders</a>
+                            <a href="#" onclick="logout()" data-translate="logout">Logout</a>
                         </div>
                     </div>
                 </li>
@@ -73,52 +73,52 @@
         <!-- 首页 -->
         <div id="page-home" class="page active">
             <section class="hero">
-                <h1 data-translate="hero_title">发现优质好货，享全球优惠</h1>
-                <p data-translate="hero_subtitle">精选优质供应商直采，为您节省最多60%的费用</p>
-                <button class="cta-button" onclick="showPage('products')" data-translate="start_shopping">开始购物</button>
+                <h1 data-translate="hero_title">Discover Quality Products, Enjoy Global Savings</h1>
+                <p data-translate="hero_subtitle">Premium suppliers sourcing - Save up to 60% on quality products</p>
+                <button class="cta-button" onclick="showPage('products')" data-translate="start_shopping">Shop Now</button>
             </section>
 
             <section class="features">
                 <div class="feature-card">
-                    <h3 data-translate="feature_quality">品质保证</h3>
-                    <p data-translate="feature_quality_desc">精选优质供应商，严格品控</p>
+                    <h3 data-translate="feature_quality">Quality Guaranteed</h3>
+                    <p data-translate="feature_quality_desc">Premium suppliers with strict quality control</p>
                 </div>
                 <div class="feature-card">
-                    <h3 data-translate="feature_price">价格优势</h3>
-                    <p data-translate="feature_price_desc">源头直采，价格更优惠</p>
+                    <h3 data-translate="feature_price">Best Prices</h3>
+                    <p data-translate="feature_price_desc">Direct sourcing from manufacturers</p>
                 </div>
                 <div class="feature-card">
-                    <h3 data-translate="feature_tracking">全程追踪</h3>
-                    <p data-translate="feature_tracking_desc">透明化订单流程，实时更新</p>
+                    <h3 data-translate="feature_tracking">Full Tracking</h3>
+                    <p data-translate="feature_tracking_desc">Transparent order process with real-time updates</p>
                 </div>
                 <div class="feature-card">
-                    <h3 data-translate="feature_shipping">全球配送</h3>
-                    <p data-translate="feature_shipping_desc">覆盖全球200+国家和地区</p>
+                    <h3 data-translate="feature_shipping">Global Shipping</h3>
+                    <p data-translate="feature_shipping_desc">Delivery to 200+ countries worldwide</p>
                 </div>
             </section>
 
             <section class="how-it-works">
-                <h2 data-translate="how_it_works">购物流程</h2>
+                <h2 data-translate="how_it_works">How It Works</h2>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h3 data-translate="step1_title">浏览选购</h3>
-                        <p data-translate="step1_desc">在平台浏览精选产品</p>
+                        <h3 data-translate="step1_title">Browse</h3>
+                        <p data-translate="step1_desc">Explore our curated product selection</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h3 data-translate="step2_title">下单支付</h3>
-                        <p data-translate="step2_desc">安全支付，价格透明</p>
+                        <h3 data-translate="step2_title">Order & Pay</h3>
+                        <p data-translate="step2_desc">Secure payment with transparent pricing</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3 data-translate="step3_title">代购采购</h3>
-                        <p data-translate="step3_desc">我们从优质供应商采购</p>
+                        <h3 data-translate="step3_title">We Source</h3>
+                        <p data-translate="step3_desc">We purchase from premium suppliers</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <h3 data-translate="step4_title">配送收货</h3>
-                        <p data-translate="step4_desc">全球直邮，实时追踪</p>
+                        <h3 data-translate="step4_title">Delivery</h3>
+                        <p data-translate="step4_desc">Global shipping with tracking</p>
                     </div>
                 </div>
             </section>
@@ -127,16 +127,16 @@
         <!-- 产品页面 -->
         <div id="page-products" class="page">
             <div class="products-header">
-                <h2 data-translate="products_title">精选产品</h2>
+                <h2 data-translate="products_title">Featured Products</h2>
                 <div class="filters">
                     <select id="category-filter" onchange="filterProducts()">
-                        <option value="all" data-translate="filter_all">全部分类</option>
-                        <option value="electronics" data-translate="filter_electronics">电子产品</option>
-                        <option value="medical" data-translate="filter_medical">医疗辅助</option>
-                        <option value="hardware" data-translate="filter_hardware">五金产品</option>
+                        <option value="all" data-translate="filter_all">All Categories</option>
+                        <option value="electronics" data-translate="filter_electronics">Electronics</option>
+                        <option value="medical" data-translate="filter_medical">Medical Aids</option>
+                        <option value="hardware" data-translate="filter_hardware">Hardware</option>
                     </select>
                     <select id="price-filter" onchange="filterProducts()">
-                        <option value="all" data-translate="price_all">全部价格</option>
+                        <option value="all" data-translate="price_all">All Prices</option>
                         <option value="0-30" data-translate="price_low">$0 - $30</option>
                         <option value="30-50" data-translate="price_medium">$30 - $50</option>
                         <option value="50+" data-translate="price_high">$50+</option>
@@ -153,69 +153,69 @@
 
         <!-- 购物车 -->
         <div id="page-cart" class="page">
-            <h2 data-translate="cart_title">购物车</h2>
+            <h2 data-translate="cart_title">Shopping Cart</h2>
             <div id="cart-items" class="cart-items"></div>
             <div class="cart-summary">
                 <div class="cart-total">
-                    <span data-translate="cart_total">总计:</span>
+                    <span data-translate="cart_total">Total:</span>
                     <span id="cart-total-price">$0.00</span>
                 </div>
-                <button class="checkout-button" onclick="proceedToCheckout()" data-translate="checkout">去结算</button>
+                <button class="checkout-button" onclick="proceedToCheckout()" data-translate="checkout">Checkout</button>
             </div>
         </div>
 
         <!-- 结算页面 -->
         <div id="page-checkout" class="page">
-            <h2 data-translate="checkout_title">结算</h2>
+            <h2 data-translate="checkout_title">Checkout</h2>
             <form id="checkout-form" class="checkout-form" onsubmit="submitOrder(event)">
                 <div class="form-section">
-                    <h3 data-translate="shipping_info">收货信息</h3>
+                    <h3 data-translate="shipping_info">Shipping Information</h3>
                     <div class="form-group">
-                        <label data-translate="label_name">姓名 *</label>
+                        <label data-translate="label_name">Name *</label>
                         <input type="text" id="checkout-name" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_email">邮箱 *</label>
+                        <label data-translate="label_email">Email *</label>
                         <input type="email" id="checkout-email" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_phone">电话 *</label>
+                        <label data-translate="label_phone">Phone *</label>
                         <input type="tel" id="checkout-phone" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_address">地址 *</label>
+                        <label data-translate="label_address">Address *</label>
                         <input type="text" id="checkout-address" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_city">城市 *</label>
+                        <label data-translate="label_city">City *</label>
                         <input type="text" id="checkout-city" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_country">国家 *</label>
+                        <label data-translate="label_country">Country *</label>
                         <select id="checkout-country" required onchange="updateCurrencyByCountry()">
-                            <option value="">选择国家</option>
-                            <option value="CN">中国</option>
-                            <option value="HK">香港</option>
-                            <option value="SG">新加坡</option>
-                            <option value="MY">马来西亚</option>
-                            <option value="TH">泰国</option>
-                            <option value="VN">越南</option>
-                            <option value="PH">菲律宾</option>
-                            <option value="ID">印度尼西亚</option>
-                            <option value="US">美国</option>
-                            <option value="GB">英国</option>
-                            <option value="JP">日本</option>
-                            <option value="KR">韩国</option>
-                            <option value="AU">澳大利亚</option>
-                            <option value="CA">加拿大</option>
+                            <option value="">Select Country</option>
+                            <option value="CN">China</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="SG">Singapore</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="TH">Thailand</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="PH">Philippines</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="US">USA</option>
+                            <option value="GB">UK</option>
+                            <option value="JP">Japan</option>
+                            <option value="KR">Korea</option>
+                            <option value="AU">Australia</option>
+                            <option value="CA">Canada</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h3 data-translate="payment_info">支付信息</h3>
+                    <h3 data-translate="payment_info">Payment Information</h3>
                     <div class="form-group">
-                        <label data-translate="label_currency">币种</label>
+                        <label data-translate="label_currency">Currency</label>
                         <select id="checkout-currency" onchange="updateCurrencyRateDisplay(); renderCheckout();">
                             <option value="USD">USD ($)</option>
                             <option value="CNY">CNY (¥)</option>
@@ -234,30 +234,30 @@
                 </div>
 
                 <div class="order-summary">
-                    <h3 data-translate="order_summary">订单摘要</h3>
+                    <h3 data-translate="order_summary">Order Summary</h3>
                     <div id="checkout-items"></div>
                     <div class="summary-row">
-                        <span data-translate="subtotal">小计:</span>
+                        <span data-translate="subtotal">Subtotal:</span>
                         <span id="checkout-subtotal">$0.00</span>
                     </div>
                     <div class="summary-row">
-                        <span data-translate="shipping_fee">运费:</span>
+                        <span data-translate="shipping_fee">Shipping:</span>
                         <span id="checkout-shipping">$0.00</span>
                     </div>
                     <div class="shipping-note" style="background: #fff7e6; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.9rem; color: #d48806; border-left: 3px solid #faad14;">
-                        <span id="shipping-note">⚠️ 运费为预收估计，实际运费可能有所不同，最终多退少补</span>
+                        <span id="shipping-note">Shipping fee is estimated. Actual shipping may vary with final adjustment.</span>
                     </div>
                     <div class="summary-row total">
-                        <span data-translate="total">总计:</span>
+                        <span data-translate="total">Total:</span>
                         <span id="checkout-total">$0.00</span>
                     </div>
                 </div>
 
                 <div class="form-section" id="payment-methods">
-                    <h3 data-translate="payment_method">支付方式</h3>
+                    <h3 data-translate="payment_method">Payment Method</h3>
                     <div class="payment-option">
                         <input type="radio" name="payment" id="payment-bank" value="bank" checked onchange="showBankInfo()">
-                        <label for="payment-bank" data-translate="bank_transfer">银行转账</label>
+                        <label for="payment-bank" data-translate="bank_transfer">Bank Transfer</label>
                     </div>
                     <div class="payment-option">
                         <input type="radio" name="payment" id="payment-alipay" value="alipay" onchange="showBankInfo()">
@@ -273,57 +273,57 @@
                     <div id="bank-details"></div>
                 </div>
 
-                <button type="submit" class="submit-button" data-translate="submit_order">提交订单</button>
+                <button type="submit" class="submit-button" data-translate="submit_order">Submit Order</button>
             </form>
 
             <div id="payment-instruction" class="payment-instruction" style="display: none;">
-                <h3 data-translate="order_submitted">订单提交成功！</h3>
-                <p data-translate="transfer_instruction">请将款项转账到以下银行账户：</p>
+                <h3 data-translate="order_submitted">Order Submitted Successfully!</h3>
+                <p data-translate="transfer_instruction">Please transfer payment to the following bank account:</p>
                 <div id="final-bank-info"></div>
-                <p><strong data-translate="important_notice">重要提示：</strong></p>
+                <p><strong data-translate="important_notice">Important Notice:</strong></p>
                 <ul>
-                    <li data-translate="transfer_note_1">请在转账时备注订单号：<span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
-                    <li data-translate="transfer_note_2">转账完成后，您的订单将进入处理流程</li>
-                    <li data-translate="transfer_note_3">我们将从优质供应商采购商品并安排发货</li>
+                    <li data-translate="transfer_note_1">Please include order number in transfer remarks: <span id="order-number-display" style="color: #1890ff; font-weight: bold;"></span></li>
+                    <li data-translate="transfer_note_2">Your order will be processed after payment is confirmed</li>
+                    <li data-translate="transfer_note_3">We will source from premium suppliers and arrange shipping</li>
                     <li class="shipping-refund-note" style="background: #fff7e6; padding: 10px; margin-top: 10px; border-radius: 4px; color: #d48806;">
-                        <strong>📦 <span data-translate="shipping_fee_cny">运费（约¥500人民币）</span>：</strong><span data-translate="shipping_refund_policy">运费为预收估计，实际运费可能有所不同。最终多退少补，超出部分将退回您的账户。</span>
+                        <strong>📦 <span data-translate="shipping_fee_cny">Shipping (~$70 USD)</span>:</strong><span data-translate="shipping_refund_policy">Shipping fee is estimated. Final adjustment will be made with excess refunded or additional payment requested.</span>
                     </li>
                 </ul>
-                <button class="cta-button" onclick="continueShopping()" data-translate="continue_shopping">继续购物</button>
+                <button class="cta-button" onclick="continueShopping()" data-translate="continue_shopping">Continue Shopping</button>
             </div>
         </div>
 
         <!-- 我的订单 -->
         <div id="page-orders" class="page">
-            <h2 data-translate="my_orders">我的订单</h2>
+            <h2 data-translate="my_orders">My Orders</h2>
             <div id="orders-list" class="orders-list"></div>
         </div>
 
         <!-- 订单追踪 -->
         <div id="page-tracking" class="page">
-            <h2 data-translate="order_tracking">订单追踪</h2>
+            <h2 data-translate="order_tracking">Order Tracking</h2>
             <div class="tracking-search">
-                <input type="text" id="tracking-input" placeholder="请输入订单号">
-                <button onclick="trackOrder()" data-translate="track">追踪</button>
+                <input type="text" id="tracking-input" placeholder="Enter order number">
+                <button onclick="trackOrder()" data-translate="track">Track</button>
             </div>
             <div id="tracking-result"></div>
         </div>
 
         <!-- 代找产品 -->
         <div id="page-find-product" class="page">
-            <h2 data-translate="find_product_title">代找产品</h2>
+            <h2 data-translate="find_product_title">Find Product</h2>
             <div class="find-product-intro">
-                <p data-translate="find_product_desc">找不到想要的产品？上传图片，我们帮您找到最优质、最优惠的商品！</p>
+                <p data-translate="find_product_desc">Can't find what you're looking for? Upload images and we'll help you find the best quality products at the best prices!</p>
             </div>
 
             <form id="find-product-form" class="find-product-form" onsubmit="submitFindProduct(event)">
                 <div class="form-section">
-                    <h3 data-translate="product_images">产品图片</h3>
+                    <h3 data-translate="product_images">Product Images</h3>
                     <div class="image-upload-area" id="image-upload-area">
                         <div class="upload-placeholder" onclick="document.getElementById('product-images').click()">
                             <div class="upload-icon">📷</div>
-                            <p data-translate="click_upload">点击上传产品图片</p>
-                            <p class="upload-hint" data-translate="upload_hint">支持 JPG、PNG 格式，最多3张</p>
+                            <p data-translate="click_upload">Click to upload product images</p>
+                            <p class="upload-hint" data-translate="upload_hint">Supports JPG, PNG up to 3 images</p>
                         </div>
                         <input type="file" id="product-images" accept="image/*" multiple style="display: none;" onchange="handleImageUpload(event)">
                         <div id="image-preview-container" class="image-preview-container"></div>
@@ -331,78 +331,78 @@
                 </div>
 
                 <div class="form-section">
-                    <h3 data-translate="product_requirements">产品需求</h3>
+                    <h3 data-translate="product_requirements">Product Requirements</h3>
                     <div class="form-group">
-                        <label data-translate="product_description">产品描述 *</label>
-                        <textarea id="product-description" rows="4" required placeholder="请描述您想要的产品，如：功能、用途、尺寸、材质等"></textarea>
+                        <label data-translate="product_description">Product Description *</label>
+                        <textarea id="product-description" rows="4" required placeholder="Describe the product you want - features, usage, size, material, etc."></textarea>
                     </div>
                     <div class="form-group">
-                        <label data-translate="quantity_required">数量要求</label>
-                        <input type="number" id="product-quantity" min="1" value="1" placeholder="您需要多少件？">
+                        <label data-translate="quantity_required">Quantity Required</label>
+                        <input type="number" id="product-quantity" min="1" value="1" placeholder="How many do you need?">
                     </div>
                     <div class="form-group">
-                        <label data-translate="budget_range">预算范围</label>
-                        <input type="text" id="budget-range" placeholder="例如：$10-50 USD">
+                        <label data-translate="budget_range">Budget Range</label>
+                        <input type="text" id="budget-range" placeholder="e.g., $10-50 USD">
                     </div>
                     <div class="form-group">
-                        <label data-translate="additional_notes">其他要求</label>
-                        <textarea id="additional-notes" rows="3" placeholder="如：颜色偏好、品牌偏好、发货时间要求等"></textarea>
+                        <label data-translate="additional_notes">Additional Notes</label>
+                        <textarea id="additional-notes" rows="3" placeholder="Color preference, brand preference, shipping requirements, etc."></textarea>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h3 data-translate="contact_info">联系方式</h3>
+                    <h3 data-translate="contact_info">Contact Information</h3>
                     <div class="form-group">
-                        <label data-translate="label_name">姓名 *</label>
+                        <label data-translate="label_name">Name *</label>
                         <input type="text" id="find-name" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_email">邮箱 *</label>
+                        <label data-translate="label_email">Email *</label>
                         <input type="email" id="find-email" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_phone">电话 *</label>
+                        <label data-translate="label_phone">Phone *</label>
                         <input type="tel" id="find-phone" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_country">国家 *</label>
+                        <label data-translate="label_country">Country *</label>
                         <select id="find-country" required>
-                            <option value="">选择国家</option>
-                            <option value="CN">中国</option>
-                            <option value="HK">香港</option>
-                            <option value="SG">新加坡</option>
-                            <option value="MY">马来西亚</option>
-                            <option value="TH">泰国</option>
-                            <option value="VN">越南</option>
-                            <option value="PH">菲律宾</option>
-                            <option value="ID">印度尼西亚</option>
-                            <option value="US">美国</option>
-                            <option value="GB">英国</option>
-                            <option value="JP">日本</option>
-                            <option value="KR">韩国</option>
-                            <option value="AU">澳大利亚</option>
-                            <option value="CA">加拿大</option>
+                            <option value="">Select Country</option>
+                            <option value="CN">China</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="SG">Singapore</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="TH">Thailand</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="PH">Philippines</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="US">USA</option>
+                            <option value="GB">UK</option>
+                            <option value="JP">Japan</option>
+                            <option value="KR">Korea</option>
+                            <option value="AU">Australia</option>
+                            <option value="CA">Canada</option>
                         </select>
                     </div>
                 </div>
 
-                <button type="submit" class="submit-button" data-translate="submit_request">提交请求</button>
+                <button type="submit" class="submit-button" data-translate="submit_request">Submit Request</button>
             </form>
 
             <div id="find-product-result" style="display: none;">
-                <h3 data-translate="request_submitted">请求已提交！</h3>
+                <h3 data-translate="request_submitted">Request Submitted!</h3>
                 <div class="result-content">
-                    <p data-translate="request_number">您的请求编号：<span id="find-request-number" style="color: #1890ff; font-weight: bold;"></span></p>
-                    <p data-translate="we_will_contact">我们将在24小时内联系您，为您提供最优的产品方案和报价。</p>
+                    <p data-translate="request_number">Your request number: <span id="find-request-number" style="color: #1890ff; font-weight: bold;"></span></p>
+                    <p data-translate="we_will_contact">We will contact you within 24 hours with the best product options and quotes.</p>
                     <div class="next-steps">
-                        <h4 data-translate="next_steps">接下来：</h4>
+                        <h4 data-translate="next_steps">Next Steps:</h4>
                         <ul>
-                            <li data-translate="step_find">我们的采购团队将根据您的需求寻找最优质的产品</li>
-                            <li data-translate="step_quote">我们会提供多个选项和报价供您选择</li>
-                            <li data-translate="step_confirm">您确认后，我们立即安排采购和发货</li>
+                            <li data-translate="step_find">Our sourcing team will find the best quality products based on your requirements</li>
+                            <li data-translate="step_quote">We will provide multiple options and quotes for your selection</li>
+                            <li data-translate="step_confirm">After your confirmation, we will arrange procurement and shipping immediately</li>
                         </ul>
                     </div>
-                    <button class="cta-button" onclick="resetFindProduct()" data-translate="submit_another">继续提交新请求</button>
+                    <button class="cta-button" onclick="resetFindProduct()" data-translate="submit_another">Submit Another Request</button>
                 </div>
             </div>
         </div>
@@ -421,21 +421,21 @@
         <div class="modal-content auth-modal">
             <span class="close" onclick="closeLoginModal()">&times;</span>
             <div class="auth-container">
-                <h2 data-translate="login">登录</h2>
+                <h2 data-translate="login">Login</h2>
                 <form id="login-form" onsubmit="handleLogin(event)">
                     <div class="form-group">
-                        <label data-translate="label_email">邮箱 *</label>
+                        <label data-translate="label_email">Email *</label>
                         <input type="email" id="login-email" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_password">密码 *</label>
+                        <label data-translate="label_password">Password *</label>
                         <input type="password" id="login-password" required minlength="6">
                     </div>
-                    <button type="submit" class="submit-button" data-translate="login">登录</button>
+                    <button type="submit" class="submit-button" data-translate="login">Login</button>
                 </form>
                 <p class="auth-switch">
-                    <span data-translate="no_account">还没有账号？</span>
-                    <a href="#" onclick="switchToRegister()" data-translate="register_now">立即注册</a>
+                    <span data-translate="no_account">Don't have an account?</span>
+                    <a href="#" onclick="switchToRegister()" data-translate="register_now">Register Now</a>
                 </p>
             </div>
         </div>
@@ -446,33 +446,33 @@
         <div class="modal-content auth-modal">
             <span class="close" onclick="closeRegisterModal()">&times;</span>
             <div class="auth-container">
-                <h2 data-translate="register">注册</h2>
+                <h2 data-translate="register">Register</h2>
                 <form id="register-form" onsubmit="handleRegister(event)">
                     <div class="form-group">
-                        <label data-translate="label_name">姓名 *</label>
+                        <label data-translate="label_name">Name *</label>
                         <input type="text" id="register-name" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_email">邮箱 *</label>
+                        <label data-translate="label_email">Email *</label>
                         <input type="email" id="register-email" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_phone">电话 *</label>
+                        <label data-translate="label_phone">Phone *</label>
                         <input type="tel" id="register-phone" required>
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_password">密码 *</label>
+                        <label data-translate="label_password">Password *</label>
                         <input type="password" id="register-password" required minlength="6">
                     </div>
                     <div class="form-group">
-                        <label data-translate="label_confirm_password">确认密码 *</label>
+                        <label data-translate="label_confirm_password">Confirm Password *</label>
                         <input type="password" id="register-confirm-password" required minlength="6">
                     </div>
-                    <button type="submit" class="submit-button" data-translate="register">注册</button>
+                    <button type="submit" class="submit-button" data-translate="register">Register</button>
                 </form>
                 <p class="auth-switch">
-                    <span data-translate="have_account">已有账号？</span>
-                    <a href="#" onclick="switchToLogin()" data-translate="login_now">立即登录</a>
+                    <span data-translate="have_account">Already have an account?</span>
+                    <a href="#" onclick="switchToLogin()" data-translate="login_now">Login Now</a>
                 </p>
             </div>
         </div>
@@ -480,7 +480,7 @@
 
     <!-- 个人中心页面 -->
     <div id="page-profile" class="page">
-        <h2 data-translate="my_profile">个人中心</h2>
+        <h2 data-translate="my_profile">My Profile</h2>
         <div class="profile-container">
             <div class="profile-card">
                 <div class="profile-header">
@@ -491,21 +491,21 @@
                     </div>
                 </div>
                 <div class="profile-section">
-                    <h4 data-translate="account_info">账户信息</h4>
+                    <h4 data-translate="account_info">Account Information</h4>
                     <div class="profile-item">
-                        <span data-translate="label_phone">电话</span>
+                        <span data-translate="label_phone">Phone</span>
                         <span id="profile-phone"></span>
                     </div>
                     <div class="profile-item">
-                        <span data-translate="register_date">注册时间</span>
+                        <span data-translate="register_date">Registration Date</span>
                         <span id="profile-register-date"></span>
                     </div>
                 </div>
                 <div class="profile-section">
-                    <h4 data-translate="quick_actions">快捷操作</h4>
-                    <button class="profile-button" onclick="showPage('orders')" data-translate="my_orders">我的订单</button>
-                    <button class="profile-button" onclick="showPage('tracking')" data-translate="order_tracking">订单追踪</button>
-                    <button class="profile-button logout-btn" onclick="logout()" data-translate="logout">退出登录</button>
+                    <h4 data-translate="quick_actions">Quick Actions</h4>
+                    <button class="profile-button" onclick="showPage('orders')" data-translate="my_orders">My Orders</button>
+                    <button class="profile-button" onclick="showPage('tracking')" data-translate="order_tracking">Order Tracking</button>
+                    <button class="profile-button logout-btn" onclick="logout()" data-translate="logout">Logout</button>
                 </div>
             </div>
         </div>
@@ -513,62 +513,62 @@
 
     <!-- 后台管理页面 -->
     <div id="page-admin" class="page">
-        <h2>后台管理系统</h2>
+        <h2>Admin Dashboard</h2>
         
         <!-- 管理员登录 -->
         <div id="admin-login-section">
             <div class="admin-login-card">
-                <h3>管理员登录</h3>
-                <p style="color: #666; margin-bottom: 1rem;">请输入管理员密码</p>
-                <input type="password" id="admin-password" placeholder="管理员密码" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
-                <button class="cta-button" onclick="adminLogin()" style="width: 100%;">登录</button>
-                <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">提示: 密码为 admin123</p>
+                <h3>Admin Login</h3>
+                <p style="color: #666; margin-bottom: 1rem;">Please enter admin password</p>
+                <input type="password" id="admin-password" placeholder="Admin password" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+                <button class="cta-button" onclick="adminLogin()" style="width: 100%;">Login</button>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Hint: password is admin123</p>
             </div>
         </div>
         
         <!-- 后台管理内容 -->
         <div id="admin-content" style="display: none;">
             <div class="admin-header">
-                <h3>欢迎来到后台管理系统</h3>
-                <button class="cta-button" onclick="adminLogout()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">退出管理</button>
+                <h3>Welcome to Admin Dashboard</h3>
+                <button class="cta-button" onclick="adminLogout()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Logout</button>
             </div>
             
             <!-- 统计概览 -->
             <div class="admin-stats">
                 <div class="stat-card">
-                    <h4>总订单数</h4>
+                    <h4>Total Orders</h4>
                     <p class="stat-number" id="admin-total-orders">0</p>
                 </div>
                 <div class="stat-card">
-                    <h4>总销售额</h4>
+                    <h4>Total Sales</h4>
                     <p class="stat-number" id="admin-total-sales">$0</p>
                 </div>
                 <div class="stat-card">
-                    <h4>待处理订单</h4>
+                    <h4>Pending Orders</h4>
                     <p class="stat-number" id="admin-pending-orders">0</p>
                 </div>
                 <div class="stat-card">
-                    <h4>注册用户</h4>
+                    <h4>Registered Users</h4>
                     <p class="stat-number" id="admin-total-users">0</p>
                 </div>
             </div>
             
             <!-- 平台下单数据 -->
             <div class="admin-section">
-                <h3>各平台采购数据</h3>
-                <p style="color: #666; margin-bottom: 1rem;">从各平台采购产品的订单数据</p>
+                <h3>Sourcing Data by Platform</h3>
+                <p style="color: #666; margin-bottom: 1rem;">Order data for products sourced from various platforms</p>
                 <div id="platform-orders-table"></div>
             </div>
             
             <!-- 所有订单列表 -->
             <div class="admin-section">
-                <h3>所有订单</h3>
+                <h3>All Orders</h3>
                 <div id="admin-orders-list"></div>
             </div>
             
             <!-- 产品管理 -->
             <div class="admin-section">
-                <h3>产品管理</h3>
+                <h3>Product Management</h3>
                 <div class="admin-products-grid" id="admin-products-list"></div>
             </div>
         </div>
@@ -577,21 +577,21 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h4 data-translate="about_us">关于我们</h4>
-                <p data-translate="about_desc">全球优选致力于为您提供最优质的跨国代购服务</p>
+                <h4 data-translate="about_us">About Us</h4>
+                <p data-translate="about_desc">GlobalChoice is dedicated to providing you with the best cross-border shopping service</p>
             </div>
             <div class="footer-section">
-                <h4 data-translate="contact_us">联系我们</h4>
+                <h4 data-translate="contact_us">Contact Us</h4>
                 <p>Email: support@globalchoice.com</p>
                 <p>Tel: +86 123-4567-8900</p>
             </div>
             <div class="footer-section">
-                <h4 data-translate="follow_us">关注我们</h4>
+                <h4 data-translate="follow_us">Follow Us</h4>
                 <p>WeChat, Instagram, Twitter</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 全球优选. All rights reserved.</p>
+            <p>&copy; 2024 GlobalChoice. All rights reserved.</p>
         </div>
     </footer>
 
@@ -606,27 +606,27 @@
                 <div class="chat-header-info">
                     <span class="chat-avatar">👤</span>
                     <div>
-                        <span class="chat-title" data-translate="customer_service">在线客服</span>
-                        <span class="chat-status" data-translate="online_status">● 在线</span>
+                        <span class="chat-title" data-translate="customer_service">Customer Support</span>
+                        <span class="chat-status" data-translate="online_status">● Online</span>
                     </div>
                 </div>
                 <button class="chat-close" onclick="toggleChat()">×</button>
             </div>
             <div id="chat-messages" class="chat-messages">
                 <div class="chat-message system">
-                    <span class="message-content" data-translate="welcome_message">欢迎来到全球优选！有什么可以帮助您的？</span>
+                    <span class="message-content" data-translate="welcome_message">Welcome to GlobalChoice! How can I help you?</span>
                     <span class="message-time"></span>
                 </div>
             </div>
             <div class="chat-quick-replies">
-                <button onclick="sendQuickReply('product_inquiry')" data-translate="quick_product_inquiry">产品咨询</button>
-                <button onclick="sendQuickReply('order_status')" data-translate="quick_order_status">订单查询</button>
-                <button onclick="sendQuickReply('shipping_info')" data-translate="quick_shipping_info">运费说明</button>
-                <button onclick="sendQuickReply('other')" data-translate="quick_other">其他问题</button>
+                <button onclick="sendQuickReply('product_inquiry')" data-translate="quick_product_inquiry">Product Inquiry</button>
+                <button onclick="sendQuickReply('order_status')" data-translate="quick_order_status">Order Status</button>
+                <button onclick="sendQuickReply('shipping_info')" data-translate="quick_shipping_info">Shipping Info</button>
+                <button onclick="sendQuickReply('other')" data-translate="quick_other">Other Questions</button>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="chat-input" data-translate-placeholder="chat_placeholder" placeholder="输入消息..." onkeypress="handleChatKeyPress(event)">
-                <button onclick="sendChatMessage()" data-translate="send">发送</button>
+                <input type="text" id="chat-input" data-translate-placeholder="chat_placeholder" placeholder="Type a message..." onkeypress="handleChatKeyPress(event)">
+                <button onclick="sendChatMessage()" data-translate="send">Send</button>
             </div>
         </div>
     </div>
