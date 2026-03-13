@@ -146,7 +146,7 @@ const products = [
         originalPrice: 268.00,
         category: "medical",
         subcategory: "wheelchair",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Wheelchair",
         description: { 
             zh: "轻便铝合金轮椅，可折叠设计，舒适坐垫，安全刹车，承重100kg，适合老人及行动不便者使用。", 
             en: "Lightweight aluminum wheelchair, foldable design, comfortable seat cushion, safe braking, 100kg weight capacity." 
@@ -163,7 +163,7 @@ const products = [
         originalPrice: 49.00,
         category: "medical",
         subcategory: "crutch",
-        image: "https://images.unsplash.com/photo-1517495306984-f83b1c4aa9c5?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Crutches",
         description: { 
             zh: "铝合金拐杖，高度可调，防滑脚垫，人体工学手柄，适合老人及康复使用，安全舒适。", 
             en: "Aluminum alloy crutches, adjustable height, non-slip foot pads, ergonomic handle, suitable for elderly rehabilitation." 
@@ -180,7 +180,7 @@ const products = [
         originalPrice: 109.00,
         category: "medical",
         subcategory: "inspection_tools",
-        image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Blood+Pressure",
         description: { 
             zh: "全自动电子血压计，大屏幕显示，心律不齐检测，语音播报，双人记忆功能，一键操作。", 
             en: "Fully automatic blood pressure monitor, large screen, arrhythmia detection, voice broadcast, dual user memory." 
@@ -197,7 +197,7 @@ const products = [
         originalPrice: 35.00,
         category: "medical",
         subcategory: "inspection_tools",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Oximeter",
         description: { 
             zh: "便携式指夹血氧仪，实时监测血氧饱和度和脉搏，OLED彩屏显示，一键操作，智能省电。", 
             en: "Portable finger pulse oximeter, real-time SpO2 and pulse monitoring, OLED display, one-button operation." 
@@ -214,7 +214,7 @@ const products = [
         originalPrice: 109.00,
         category: "medical",
         subcategory: "walking_aid",
-        image: "https://images.unsplash.com/photo-1576681339833-6270a307c220?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Walker",
         description: { 
             zh: "可折叠助行器，加宽底盘，防滑脚垫，高度可调，带刹车系统，适合老人康复训练使用。", 
             en: "Foldable walker, widened base, non-slip pads, adjustable height, with brakes, suitable for elderly rehabilitation." 
@@ -231,7 +231,7 @@ const products = [
         originalPrice: 42.00,
         category: "medical",
         subcategory: "inspection_tools",
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Thermometer",
         description: { 
             zh: "红外线体温枪，非接触式测量，秒速测温，高温报警，32组记忆功能，适合家庭使用。", 
             en: "Infrared thermometer, non-contact, instant reading, high temp alarm, 32 readings memory, for home use." 
@@ -249,7 +249,7 @@ const products = [
         originalPrice: 2499.00,
         category: "medical",
         subcategory: "wheelchair",
-        image: "https://images.unsplash.com/photo-1534540328401-02f367d328a9?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Electric+Wheelchair",
         description: { 
             zh: "高端电动轮椅，续航50公里，可折叠设计，智能控制面板，适合重度行动不便者。", 
             en: "Premium electric wheelchair, 50km range, foldable design, smart control panel, for severe mobility impairment." 
@@ -266,7 +266,7 @@ const products = [
         originalPrice: 199.00,
         category: "medical",
         subcategory: "walking_aid",
-        image: "https://images.unsplash.com/photo-1609825488888-3a766db05542?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Rolling+Walker",
         description: { 
             zh: "四轮助行架，带座椅和购物篮，稳固安全，适合老人户外行走和购物使用。", 
             en: "4-wheel walking aid with seat and shopping basket, stable and safe, for elderly outdoor walking and shopping." 
@@ -283,7 +283,7 @@ const products = [
         originalPrice: 65.00,
         category: "medical",
         subcategory: "crutch",
-        image: "https://images.unsplash.com/photo-1584515933487-779824d29609?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Underarm+Crutches",
         description: { 
             zh: "专业医用腋下拐杖，海绵护垫，舒适透气，高度可调，适合术后康复使用。", 
             en: "Professional medical underarm crutches, sponge cushion, breathable, adjustable height, for post-surgery recovery." 
@@ -300,7 +300,7 @@ const products = [
         originalPrice: 85.00,
         category: "medical",
         subcategory: "inspection_tools",
-        image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Glucose+Meter",
         description: { 
             zh: "家用血糖仪套装，包含血糖仪、试纸、采血笔，快速测量，语音播报，大屏显示。", 
             en: "Home blood glucose meter kit, includes meter, test strips, lancing device, fast measurement, voice broadcast." 
@@ -317,7 +317,7 @@ const products = [
         originalPrice: 79.00,
         category: "medical",
         subcategory: "accessory",
-        image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Wheelchair+Cushion",
         description: { 
             zh: "减压凝胶坐垫，预防褥疮，舒适透气，适用于各类轮椅，可水洗重复使用。", 
             en: "Pressure-relief gel cushion, prevents pressure sores, breathable, fits all wheelchairs, washable." 
@@ -334,7 +334,7 @@ const products = [
         originalPrice: 129.00,
         category: "medical",
         subcategory: "equipment",
-        image: "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Nebulizer",
         description: { 
             zh: "家用压缩式雾化器，静音设计，雾化细腻，适合儿童和成人使用，治疗呼吸道疾病。", 
             en: "Home compressor nebulizer, quiet design, fine mist, suitable for children and adults, treats respiratory diseases." 
@@ -352,7 +352,7 @@ const products = [
         originalPrice: 55.00,
         category: "hardware",
         subcategory: "tools",
-        image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Multi-tool+Pliers",
         description: { 
             zh: "12合1多功能工具钳，不锈钢材质，包含钳子、刀、螺丝刀、开瓶器等，便携实用。", 
             en: "12-in-1 multi-tool pliers, stainless steel, includes pliers, knife, screwdriver, bottle opener." 
@@ -369,7 +369,7 @@ const products = [
         originalPrice: 109.00,
         category: "hardware",
         subcategory: "tool_set",
-        image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Tool+Set+28pcs",
         description: { 
             zh: "家用工具套装，包含扳手、螺丝刀、锤子、卷尺等28件常用工具，专业收纳箱包装。", 
             en: "Home tool set with 28 pieces including wrenches, screwdrivers, hammer, tape measure, in storage box." 
@@ -386,7 +386,7 @@ const products = [
         originalPrice: 129.00,
         category: "hardware",
         subcategory: "power_tools",
-        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Impact+Drill",
         description: { 
             zh: "家用冲击钻，可调速正反转，LED照明，配多种钻头，适合木材、金属、混凝土。", 
             en: "Home impact drill, variable speed with reverse, LED light, multiple drill bits included." 
@@ -403,7 +403,7 @@ const products = [
         originalPrice: 12.00,
         category: "hardware",
         subcategory: "measuring",
-        image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Measuring+Tape",
         description: { 
             zh: "专业测量卷尺，5米长度，双面刻度，自动回卷，锁扣设计，耐磨外壳。", 
             en: "Professional measuring tape, 5m length, dual scale, auto-retract, lock button, durable." 
@@ -420,7 +420,7 @@ const products = [
         originalPrice: 79.00,
         category: "hardware",
         subcategory: "wrench",
-        image: "https://images.unsplash.com/photo-1580402427914-a6cc60d3c544?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Wrench+Set",
         description: { 
             zh: "开口扳手套装，12件套，铬钒钢材质，双向开口，规格齐全6-22mm。", 
             en: "Open-end wrench set, 12 pieces, chrome vanadium steel, sizes 6-22mm." 
@@ -437,7 +437,7 @@ const products = [
         originalPrice: 28.00,
         category: "hardware",
         subcategory: "measuring",
-        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Spirit+Level",
         description: { 
             zh: "铝合金水平尺，3气泡设计（水平、垂直、45度），高精度，带磁吸功能。", 
             en: "Aluminum spirit level, 3 bubbles (horizontal, vertical, 45°), high precision, magnetic." 
@@ -454,7 +454,7 @@ const products = [
         originalPrice: 199.00,
         category: "hardware",
         subcategory: "power_tools",
-        image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Cordless+Drill",
         description: { 
             zh: "20V锂电充电式电钻，双电池配置，无级调速，LED工作灯，轻便强劲。", 
             en: "20V lithium cordless drill, dual battery, variable speed, LED work light, lightweight powerful." 
@@ -471,7 +471,7 @@ const products = [
         originalPrice: 45.00,
         category: "hardware",
         subcategory: "tools",
-        image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Screwdriver+Set",
         description: { 
             zh: "32件磁性螺丝刀套装，CR-V钢材质，强力磁性头，专业收纳盒，适合各种螺丝拆卸。", 
             en: "32-piece magnetic screwdriver set, CR-V steel, strong magnetic tip, professional case." 
@@ -488,7 +488,7 @@ const products = [
         originalPrice: 399.00,
         category: "hardware",
         subcategory: "power_tools",
-        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Hammer+Drill",
         description: { 
             zh: "专业级电锤冲击钻，强劲电机，三种模式（平钻、冲击钻、凿击），建筑工程首选。", 
             en: "Professional electric hammer drill, powerful motor, 3 modes (drill, hammer, chisel), construction preferred." 
@@ -505,7 +505,7 @@ const products = [
         originalPrice: 65.00,
         category: "hardware",
         subcategory: "safety",
-        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=250&fit=crop",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Safety+Gear",
         description: { 
             zh: "DIY安全防护套装，包含护目镜、防噪耳罩、防护手套、口罩，全方位保护。", 
             en: "DIY safety protection kit includes safety goggles, ear protection, gloves, mask, full protection." 
@@ -513,6 +513,179 @@ const products = [
         specs: {
             zh: { "护目镜": "防雾防冲击", "耳罩": "降噪30dB", "手套": "防滑耐磨", "口罩": "N95防护" },
             en: { "Goggles": "Anti-fog", "Earmuffs": "30dB Noise Reduction", "Gloves": "Anti-slip", "Mask": "N95 Protection" }
+        }
+    },
+    // ========== 额外产品 - 医疗辅助类 ==========
+    {
+        id: 31,
+        title: { zh: "轮椅带坐便器", en: "Wheelchair with Commode" },
+        price: 249.00,
+        originalPrice: 329.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Wheelchair+Commode",
+        description: { 
+            zh: "多功能轮椅带坐便器设计，可拆卸马桶，方便行动不便者使用，适合家庭和医院。", 
+            en: "Multi-functional wheelchair with removable commode, convenient for disabled patients, suitable for home and hospital." 
+        },
+        specs: {
+            zh: { "材质": "钢管", "承重": "120kg", "特点": "带坐便器、可折叠" },
+            en: { "Material": "Steel", "Capacity": "120kg", "Features": "With Commode, Foldable" }
+        }
+    },
+    {
+        id: 32,
+        title: { zh: "护理床 手动升降", en: "Manual Nursing Bed" },
+        price: 599.00,
+        originalPrice: 799.00,
+        category: "medical",
+        subcategory: "equipment",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Nursing+Bed",
+        description: { 
+            zh: "手动护理床，可调节背部、腿部高度，护栏设计，适合卧床病人和老人护理。", 
+            en: "Manual nursing bed, adjustable back and leg rest, with guardrails, for patient and elderly care." 
+        },
+        specs: {
+            zh: { "尺寸": "200x90cm", "承重": "150kg", "功能": "背部升降、腿部升降" },
+            en: { "Size": "200x90cm", "Capacity": "150kg", "Features": "Back/Leg Adjustment" }
+        }
+    },
+    {
+        id: 33,
+        title: { zh: "吸痰器 家用电动", en: "Suction Machine Home" },
+        price: 189.00,
+        originalPrice: 259.00,
+        category: "medical",
+        subcategory: "equipment",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Suction+Machine",
+        description: { 
+            zh: "家用电动吸痰器，负压可调，配备一次性吸痰管，适用于家庭护理和医疗机构。", 
+            en: "Home electric suction machine, adjustable negative pressure, with disposable suction tubes." 
+        },
+        specs: {
+            zh: { "功率": "120W", "负压": "0-0.08MPa", "噪音": "≤65dB" },
+            en: { "Power": "120W", "Suction": "0-0.08MPa", "Noise": "≤65dB" }
+        }
+    },
+    {
+        id: 34,
+        title: { zh: "制氧机 3L医用级", en: "Oxygen Concentrator 3L" },
+        price: 899.00,
+        originalPrice: 1199.00,
+        category: "medical",
+        subcategory: "equipment",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Oxygen+Concentrator",
+        description: { 
+            zh: "3L医用制氧机，93%高氧浓度，雾化功能一体，适合家庭氧疗和呼吸疾病患者。", 
+            en: "3L medical oxygen concentrator, 93% oxygen concentration, with nebulizer function." 
+        },
+        specs: {
+            zh: { "流量": "3L/min", "氧浓度": "93%±3%", "功率": "350W" },
+            en: { "Flow": "3L/min", "O2": "93%±3%", "Power": "350W" }
+        }
+    },
+    {
+        id: 35,
+        title: { zh: "急救箱 家用套装", en: "First Aid Kit Home" },
+        price: 49.00,
+        originalPrice: 69.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=First+Aid+Kit",
+        description: { 
+            zh: "家用急救箱，100件套，包含创可贴、消毒液、绷带等常见急救用品。", 
+            en: "Home first aid kit, 100 pieces including band-aids, antiseptic, bandages, etc." 
+        },
+        specs: {
+            zh: { "件数": "100件", "材质": "ABS塑料箱", "尺寸": "30x20x15cm" },
+            en: { "Pieces": "100", "Material": "ABS Case", "Size": "30x20x15cm" }
+        }
+    },
+    // ========== 额外产品 - 电子产品类 ==========
+    {
+        id: 36,
+        title: { zh: "Nintendo Switch OLED 游戏机", en: "Nintendo Switch OLED" },
+        price: 349.00,
+        originalPrice: 429.00,
+        category: "electronics",
+        subcategory: "gaming",
+        image: "https://placehold.co/280x250/1a1a2e/FFF?text=Nintendo+Switch",
+        description: { 
+            zh: "Nintendo Switch OLED版，7英寸OLED屏幕，自带支架，适合家庭娱乐和便携游戏。", 
+            en: "Nintendo Switch OLED, 7-inch OLED screen, built-in stand, for home entertainment and portable gaming." 
+        },
+        specs: {
+            zh: { "屏幕": "7英寸OLED", "存储": "64GB", "续航": "4.5-9小时" },
+            en: { "Display": "7 inch OLED", "Storage": "64GB", "Battery": "4.5-9 hours" }
+        }
+    },
+    {
+        id: 37,
+        title: { zh: "PlayStation 5 光驱版", en: "PlayStation 5 Disc Edition" },
+        price: 499.00,
+        originalPrice: 599.00,
+        category: "electronics",
+        subcategory: "gaming",
+        image: "https://placehold.co/280x250/1a1a2e/FFF?text=PlayStation+5",
+        description: { 
+            zh: "Sony PlayStation 5游戏机，光驱版，4K分辨率，120fps高速游戏体验。", 
+            en: "Sony PlayStation 5, disc edition, 4K resolution, 120fps gaming experience." 
+        },
+        specs: {
+            zh: { "存储": "825GB SSD", "分辨率": "4K", "帧率": "120fps" },
+            en: { "Storage": "825GB SSD", "Resolution": "4K", "Frame Rate": "120fps" }
+        }
+    },
+    {
+        id: 38,
+        title: { zh: "智能手表 Apple Watch Series 9", en: "Apple Watch Series 9" },
+        price: 399.00,
+        originalPrice: 499.00,
+        category: "electronics",
+        subcategory: "wearable",
+        image: "https://placehold.co/280x250/1a1a2e/FFF?text=Apple+Watch",
+        description: { 
+            zh: "Apple Watch Series 9，45mm表壳，全天候视网膜显示屏，健康监测功能强大。", 
+            en: "Apple Watch Series 9, 45mm case, always-on retina display, powerful health monitoring." 
+        },
+        specs: {
+            zh: { "屏幕": "45mm", "防水": "50米", "电池": "18小时" },
+            en: { "Display": "45mm", "Water": "50m", "Battery": "18 hours" }
+        }
+    },
+    // ========== 额外产品 - 五金产品类 ==========
+    {
+        id: 39,
+        title: { zh: "电锯 充电式 12V", en: "Cordless Chainsaw 12V" },
+        price: 199.00,
+        originalPrice: 279.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Cordless+Chainsaw",
+        description: { 
+            zh: "12V充电式电锯，轻便强劲，适合修剪树枝和家庭DIY使用。", 
+            en: "12V cordless chainsaw, lightweight and powerful, for tree trimming and home DIY." 
+        },
+        specs: {
+            zh: { "电压": "12V", "锯链长度": "10cm", "电池": "2.0Ah" },
+            en: { "Voltage": "12V", "Bar Length": "10cm", "Battery": "2.0Ah" }
+        }
+    },
+    {
+        id: 40,
+        title: { zh: "角磨机 充电式 20V", en: "Cordless Angle Grinder 20V" },
+        price: 169.00,
+        originalPrice: 229.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Angle+Grinder",
+        description: { 
+            zh: "20V充电式角磨机，100mm砂轮片，安全护罩，适合金属加工和石材切割。", 
+            en: "20V cordless angle grinder, 100mm disc, safety guard, for metal and stone cutting." 
+        },
+        specs: {
+            zh: { "电压": "20V", "砂轮直径": "100mm", "转速": "8500rpm" },
+            en: { "Voltage": "20V", "Disc Diameter": "100mm", "Speed": "8500rpm" }
         }
     }
 ];
@@ -579,26 +752,26 @@ const categoryTranslations = {
 
 // ========== 热门产品池 - 模拟其他平台热销产品 ==========
 const hotProductsPool = [
-    // 手机类 - 参考1688/京东价格，加8-15%
-    { id: 101, title: { zh: "iPhone 16 Pro Max", en: "iPhone 16 Pro Max" }, price: 1299, originalPrice: 1599, category: "electronics", subcategory: "phone", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=300&h=250&fit=crop", description: { zh: "最新iPhone 16 Pro Max，A18 Pro芯片，钛金属设计。", en: "Latest iPhone 16 Pro Max, A18 Pro chip, titanium design." }, sales: 12500, specs: { zh: { "存储": "256GB", "芯片": "A18 Pro", "屏幕": "6.9英寸" }, en: { "Storage": "256GB", "Chip": "A18 Pro", "Display": "6.9 inch" } } },
-    { id: 102, title: { zh: "Google Pixel 9 Pro", en: "Google Pixel 9 Pro" }, price: 899, originalPrice: 1099, category: "electronics", subcategory: "phone", image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&h=250&fit=crop", description: { zh: "Google Pixel 9 Pro，Tensor G4芯片，AI摄影功能强大。", en: "Google Pixel 9 Pro, Tensor G4 chip, powerful AI camera." }, sales: 8200, specs: { zh: { "存储": "128GB", "芯片": "Tensor G4", "屏幕": "6.7英寸" }, en: { "Storage": "128GB", "Chip": "Tensor G4", "Display": "6.7 inch" } } },
-    { id: 103, title: { zh: "OnePlus 12", en: "OnePlus 12" }, price: 699, originalPrice: 899, category: "electronics", subcategory: "phone", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=250&fit=crop", description: { zh: "OnePlus 12，Snapdragon 8 Gen 3，100W超级快充。", en: "OnePlus 12, Snapdragon 8 Gen 3, 100W fast charging." }, sales: 6800, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 3", "屏幕": "6.82英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 3", "Display": "6.82 inch" } } },
-    { id: 104, title: { zh: "OPPO Find X7 Pro", en: "OPPO Find X7 Pro" }, price: 749, originalPrice: 949, category: "electronics", subcategory: "phone", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=250&fit=crop", description: { zh: "OPPO Find X7 Pro，天玑9300芯片，哈苏影像系统。", en: "OPPO Find X7 Pro, Dimensity 9300, Hasselblad camera." }, sales: 5500, specs: { zh: { "存储": "256GB", "芯片": "Dimensity 9300", "屏幕": "6.78英寸" }, en: { "Storage": "256GB", "Chip": "Dimensity 9300", "Display": "6.78 inch" } } },
+    // 手机类
+    { id: 101, title: { zh: "iPhone 16 Pro Max", en: "iPhone 16 Pro Max" }, price: 1299, originalPrice: 1599, category: "electronics", subcategory: "phone", image: "https://placehold.co/280x250/1a1a2e/FFF?text=iPhone+16+Pro", description: { zh: "最新iPhone 16 Pro Max，A18 Pro芯片，钛金属设计。", en: "Latest iPhone 16 Pro Max, A18 Pro chip, titanium design." }, sales: 12500, specs: { zh: { "存储": "256GB", "芯片": "A18 Pro", "屏幕": "6.9英寸" }, en: { "Storage": "256GB", "Chip": "A18 Pro", "Display": "6.9 inch" } } },
+    { id: 102, title: { zh: "Google Pixel 9 Pro", en: "Google Pixel 9 Pro" }, price: 899, originalPrice: 1099, category: "electronics", subcategory: "phone", image: "https://placehold.co/280x250/1a1a2e/FFF?text=Pixel+9+Pro", description: { zh: "Google Pixel 9 Pro，Tensor G4芯片，AI摄影功能强大。", en: "Google Pixel 9 Pro, Tensor G4 chip, powerful AI camera." }, sales: 8200, specs: { zh: { "存储": "128GB", "芯片": "Tensor G4", "屏幕": "6.7英寸" }, en: { "Storage": "128GB", "Chip": "Tensor G4", "Display": "6.7 inch" } } },
+    { id: 103, title: { zh: "OnePlus 12", en: "OnePlus 12" }, price: 699, originalPrice: 899, category: "electronics", subcategory: "phone", image: "https://placehold.co/280x250/1a1a2e/FFF?text=OnePlus+12", description: { zh: "OnePlus 12，Snapdragon 8 Gen 3，100W超级快充。", en: "OnePlus 12, Snapdragon 8 Gen 3, 100W fast charging." }, sales: 6800, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 3", "屏幕": "6.82英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 3", "Display": "6.82 inch" } } },
+    { id: 104, title: { zh: "OPPO Find X7 Pro", en: "OPPO Find X7 Pro" }, price: 749, originalPrice: 949, category: "electronics", subcategory: "phone", image: "https://placehold.co/280x250/1a1a2e/FFF?text=Find+X7+Pro", description: { zh: "OPPO Find X7 Pro，天玑9300芯片，哈苏影像系统。", en: "OPPO Find X7 Pro, Dimensity 9300, Hasselblad camera." }, sales: 5500, specs: { zh: { "存储": "256GB", "芯片": "Dimensity 9300", "屏幕": "6.78英寸" }, en: { "Storage": "256GB", "Chip": "Dimensity 9300", "Display": "6.78 inch" } } },
     // 平板类
-    { id: 105, title: { zh: "Samsung Galaxy Tab S9 Ultra", en: "Samsung Galaxy Tab S9 Ultra" }, price: 1199, originalPrice: 1499, category: "electronics", subcategory: "tablet", image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=250&fit=crop", description: { zh: "三星Galaxy Tab S9 Ultra，14.6英寸超大屏幕，S Pen手写笔。", en: "Samsung Galaxy Tab S9 Ultra, 14.6 inch display, S Pen included." }, sales: 4800, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 2", "屏幕": "14.6英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 2", "Display": "14.6 inch" } } },
-    { id: 106, title: { zh: "Xiaomi Pad 6S Pro", en: "Xiaomi Pad 6S Pro" }, price: 599, originalPrice: 799, category: "electronics", subcategory: "tablet", image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=250&fit=crop", description: { zh: "小米平板6S Pro，12.4英寸3K屏幕，120W快充。", en: "Xiaomi Pad 6S Pro, 12.4 inch 3K display, 120W charging." }, sales: 3600, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 2", "屏幕": "12.4英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 2", "Display": "12.4 inch" } } },
+    { id: 105, title: { zh: "Samsung Galaxy Tab S9 Ultra", en: "Samsung Galaxy Tab S9 Ultra" }, price: 1199, originalPrice: 1499, category: "electronics", subcategory: "tablet", image: "https://placehold.co/280x250/1a1a2e/FFF?text=Galaxy+Tab+S9", description: { zh: "三星Galaxy Tab S9 Ultra，14.6英寸超大屏幕，S Pen手写笔。", en: "Samsung Galaxy Tab S9 Ultra, 14.6 inch display, S Pen included." }, sales: 4800, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 2", "屏幕": "14.6英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 2", "Display": "14.6 inch" } } },
+    { id: 106, title: { zh: "Xiaomi Pad 6S Pro", en: "Xiaomi Pad 6S Pro" }, price: 599, originalPrice: 799, category: "electronics", subcategory: "tablet", image: "https://placehold.co/280x250/1a1a2e/FFF?text=Xiaomi+Pad+6S", description: { zh: "小米平板6S Pro，12.4英寸3K屏幕，120W快充。", en: "Xiaomi Pad 6S Pro, 12.4 inch 3K display, 120W charging." }, sales: 3600, specs: { zh: { "存储": "256GB", "芯片": "Snapdragon 8 Gen 2", "屏幕": "12.4英寸" }, en: { "Storage": "256GB", "Chip": "Snapdragon 8 Gen 2", "Display": "12.4 inch" } } },
     // 电脑类
-    { id: 107, title: { zh: "ASUS ROG Zephyrus G16", en: "ASUS ROG Zephyrus G16" }, price: 1899, originalPrice: 2399, category: "electronics", subcategory: "computer", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=300&h=250&fit=crop", description: { zh: "华硕ROG Zephyrus G16，RTX 4080显卡，240Hz高刷屏。", en: "ASUS ROG Zephyrus G16, RTX 4080, 240Hz display." }, sales: 3200, specs: { zh: { "芯片": "Intel i9-13900H", "显卡": "RTX 4080", "内存": "32GB", "屏幕": "16英寸240Hz" }, en: { "Chip": "Intel i9-13900H", "Graphics": "RTX 4080", "Memory": "32GB", "Display": "16 inch 240Hz" } } },
-    { id: 108, title: { zh: "Lenovo ThinkPad X1 Carbon", en: "Lenovo ThinkPad X1 Carbon" }, price: 1599, originalPrice: 1999, category: "electronics", subcategory: "computer", image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=300&h=250&fit=crop", description: { zh: "联想ThinkPad X1 Carbon，轻薄商务本，14英寸OLED。", en: "Lenovo ThinkPad X1 Carbon, lightweight business laptop, 14 inch OLED." }, sales: 4100, specs: { zh: { "芯片": "Intel i7-1365U", "内存": "16GB", "存储": "512GB SSD", "屏幕": "14英寸OLED" }, en: { "Chip": "Intel i7-1365U", "Memory": "16GB", "Storage": "512GB SSD", "Display": "14 inch OLED" } } },
+    { id: 107, title: { zh: "ASUS ROG Zephyrus G16", en: "ASUS ROG Zephyrus G16" }, price: 1899, originalPrice: 2399, category: "electronics", subcategory: "computer", image: "https://placehold.co/280x250/1a1a2e/FFF?text=ROG+Zephyrus", description: { zh: "华硕ROG Zephyrus G16，RTX 4080显卡，240Hz高刷屏。", en: "ASUS ROG Zephyrus G16, RTX 4080, 240Hz display." }, sales: 3200, specs: { zh: { "芯片": "Intel i9-13900H", "显卡": "RTX 4080", "内存": "32GB", "屏幕": "16英寸240Hz" }, en: { "Chip": "Intel i9-13900H", "Graphics": "RTX 4080", "Memory": "32GB", "Display": "16 inch 240Hz" } } },
+    { id: 108, title: { zh: "Lenovo ThinkPad X1 Carbon", en: "Lenovo ThinkPad X1 Carbon" }, price: 1599, originalPrice: 1999, category: "electronics", subcategory: "computer", image: "https://placehold.co/280x250/1a1a2e/FFF?text=ThinkPad+X1", description: { zh: "联想ThinkPad X1 Carbon，轻薄商务本，14英寸OLED。", en: "Lenovo ThinkPad X1 Carbon, lightweight business laptop, 14 inch OLED." }, sales: 4100, specs: { zh: { "芯片": "Intel i7-1365U", "内存": "16GB", "存储": "512GB SSD", "屏幕": "14英寸OLED" }, en: { "Chip": "Intel i7-1365U", "Memory": "16GB", "Storage": "512GB SSD", "Display": "14 inch OLED" } } },
     // 耳机/配件
-    { id: 109, title: { zh: "AirPods Max", en: "AirPods Max" }, price: 399, originalPrice: 499, category: "electronics", subcategory: "accessory", image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=300&h=250&fit=crop", description: { zh: "苹果AirPods Max，头戴式降噪耳机，空间音频。", en: "Apple AirPods Max, over-ear noise cancelling headphones, spatial audio." }, sales: 7800, specs: { zh: { "类型": "头戴式", "降噪": "主动降噪", "续航": "20小时" }, en: { "Type": "Over-ear", "Noise Cancellation": "Active", "Battery": "20 hours" } } },
-    { id: 110, title: { zh: "Samsung Galaxy Watch 6", en: "Samsung Galaxy Watch 6" }, price: 299, originalPrice: 399, category: "electronics", subcategory: "wearable", image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=300&h=250&fit=crop", description: { zh: "三星Galaxy Watch 6，健康监测，Wear OS系统。", en: "Samsung Galaxy Watch 6, health monitoring, Wear OS." }, sales: 6200, specs: { zh: { "屏幕": "1.4英寸", "电池": "300mAh", "防水": "5ATM" }, en: { "Display": "1.4 inch", "Battery": "300mAh", "Water Resistance": "5ATM" } } },
+    { id: 109, title: { zh: "AirPods Max", en: "AirPods Max" }, price: 399, originalPrice: 499, category: "electronics", subcategory: "accessory", image: "https://placehold.co/280x250/1a1a2e/FFF?text=AirPods+Max", description: { zh: "苹果AirPods Max，头戴式降噪耳机，空间音频。", en: "Apple AirPods Max, over-ear noise cancelling headphones, spatial audio." }, sales: 7800, specs: { zh: { "类型": "头戴式", "降噪": "主动降噪", "续航": "20小时" }, en: { "Type": "Over-ear", "Noise Cancellation": "Active", "Battery": "20 hours" } } },
+    { id: 110, title: { zh: "Samsung Galaxy Watch 6", en: "Samsung Galaxy Watch 6" }, price: 299, originalPrice: 399, category: "electronics", subcategory: "wearable", image: "https://placehold.co/280x250/1a1a2e/FFF?text=Galaxy+Watch", description: { zh: "三星Galaxy Watch 6，健康监测，Wear OS系统。", en: "Samsung Galaxy Watch 6, health monitoring, Wear OS." }, sales: 6200, specs: { zh: { "屏幕": "1.4英寸", "电池": "300mAh", "防水": "5ATM" }, en: { "Display": "1.4 inch", "Battery": "300mAh", "Water Resistance": "5ATM" } } },
     // 医疗辅助
-    { id: 111, title: { zh: "电动轮椅 PRO-2000", en: "Electric Wheelchair PRO-2000" }, price: 1999, originalPrice: 2799, category: "medical", subcategory: "wheelchair", image: "https://images.unsplash.com/photo-1534540328401-02f367d328a9?w=300&h=250&fit=crop", description: { zh: "高端电动轮椅，续航50公里，可折叠设计。", en: "Premium electric wheelchair, 50km range, foldable design." }, sales: 890, specs: { zh: { "续航": "50公里", "承重": "150kg", "充电时间": "6小时" }, en: { "Range": "50km", "Load": "150kg", "Charging": "6 hours" } } },
-    { id: 112, title: { zh: "智能血压计 BP-500", en: "Smart Blood Pressure Monitor BP-500" }, price: 89, originalPrice: 129, category: "medical", subcategory: "monitor", image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=250&fit=crop", description: { zh: "智能血压计，大屏幕显示，心律不齐检测。", en: "Smart blood pressure monitor, large display, arrhythmia detection." }, sales: 3200, specs: { zh: { "精度": "±3mmHg", "存储": "99组数据", "电源": "4节AA电池" }, en: { "Accuracy": "±3mmHg", "Storage": "99 readings", "Power": "4x AA batteries" } } },
+    { id: 111, title: { zh: "电动轮椅 PRO-2000", en: "Electric Wheelchair PRO-2000" }, price: 1999, originalPrice: 2799, category: "medical", subcategory: "wheelchair", image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Electric+Wheelchair", description: { zh: "高端电动轮椅，续航50公里，可折叠设计。", en: "Premium electric wheelchair, 50km range, foldable design." }, sales: 890, specs: { zh: { "续航": "50公里", "承重": "150kg", "充电时间": "6小时" }, en: { "Range": "50km", "Load": "150kg", "Charging": "6 hours" } } },
+    { id: 112, title: { zh: "智能血压计 BP-500", en: "Smart Blood Pressure Monitor BP-500" }, price: 89, originalPrice: 129, category: "medical", subcategory: "monitor", image: "https://placehold.co/280x250/e8f5e9/1b5e20?text=Blood+Pressure+Monitor", description: { zh: "智能血压计，大屏幕显示，心律不齐检测。", en: "Smart blood pressure monitor, large display, arrhythmia detection." }, sales: 3200, specs: { zh: { "精度": "±3mmHg", "存储": "99组数据", "电源": "4节AA电池" }, en: { "Accuracy": "±3mmHg", "Storage": "99 readings", "Power": "4x AA batteries" } } },
     // 五金产品
-    { id: 113, title: { zh: "专业电动工具套装", en: "Professional Power Tool Set" }, price: 399, originalPrice: 559, category: "hardware", subcategory: "tools", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=300&h=250&fit=crop", description: { zh: "20V锂电工具套装，含电钻、角磨机等8件套。", en: "20V lithium tool set, includes drill, angle grinder, 8 pieces." }, sales: 2100, specs: { zh: { "电压": "20V", "配件": "8件套", "电池": "2.0Ah" }, en: { "Voltage": "20V", "Accessories": "8 pieces", "Battery": "2.0Ah" } } },
-    { id: 114, title: { zh: "德力西电钻套装", en: "Delixi Cordless Drill Set" }, price: 169, originalPrice: 239, category: "hardware", subcategory: "tools", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&h=250&fit=crop", description: { zh: "充电式电钻，20V双电池，多档扭矩调节。", en: "Cordless drill, 20V dual batteries, multi-torque adjustment." }, sales: 4500, specs: { zh: { "电压": "20V", "电池": "2x2.0Ah", "最大扭矩": "45Nm" }, en: { "Voltage": "20V", "Battery": "2x2.0Ah", "Max Torque": "45Nm" } } },
+    { id: 113, title: { zh: "专业电动工具套装", en: "Professional Power Tool Set" }, price: 399, originalPrice: 559, category: "hardware", subcategory: "tools", image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Power+Tool+Set", description: { zh: "20V锂电工具套装，含电钻、角磨机等8件套。", en: "20V lithium tool set, includes drill, angle grinder, 8 pieces." }, sales: 2100, specs: { zh: { "电压": "20V", "配件": "8件套", "电池": "2.0Ah" }, en: { "Voltage": "20V", "Accessories": "8 pieces", "Battery": "2.0Ah" } } },
+    { id: 114, title: { zh: "德力西电钻套装", en: "Delixi Cordless Drill Set" }, price: 169, originalPrice: 239, category: "hardware", subcategory: "tools", image: "https://placehold.co/280x250/fff3e0/ff6f00?text=Cordless+Drill+Set", description: { zh: "充电式电钻，20V双电池，多档扭矩调节。", en: "Cordless drill, 20V dual batteries, multi-torque adjustment." }, sales: 4500, specs: { zh: { "电压": "20V", "电池": "2x2.0Ah", "最大扭矩": "45Nm" }, en: { "Voltage": "20V", "Battery": "2x2.0Ah", "Max Torque": "45Nm" } } },
 ];
 
 // 动态产品更新功能
