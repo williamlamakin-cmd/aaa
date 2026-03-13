@@ -686,6 +686,1033 @@ const products = [
             zh: { "电压": "21V", "电池": "4.0Ah锂电", "夹头": "13mm", "功能": "冲击功能、无刷电机" },
             en: { "Voltage": "21V", "Battery": "4.0Ah Lithium", "Chuck": "13mm", "Features": "Impact Function, Brushless Motor" }
         }
+    },
+    // ========== 更多电子产品 (来自 products.json) ==========
+    {
+        id: 41,
+        title: { zh: "Canon 麦克风 835", en: "Canon Microphone 835" },
+        price: 7147.00,
+        originalPrice: 8576.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852268402901008~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Canon推出的麦克风，高性能，高品质，满足日常使用需求。", 
+            en: "Canon microphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "158g", "功率": "18W", "颜色": "白色" },
+            en: { "Material": "Plastic", "Weight": "158g", "Power": "18W", "Color": "White" }
+        }
+    },
+    {
+        id: 42,
+        title: { zh: "HP 麦克风 372", en: "HP Microphone 372" },
+        price: 9840.00,
+        originalPrice: 11808.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852216864997387~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "HP推出的麦克风，高性能，高品质，满足日常使用需求。", 
+            en: "HP microphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "980g", "功率": "18W", "颜色": "黑色" },
+            en: { "Material": "Plastic", "Weight": "980g", "Power": "18W", "Color": "Black" }
+        }
+    },
+    {
+        id: 43,
+        title: { zh: "Sony 移动电源 124", en: "Sony Power Bank 124" },
+        price: 9725.00,
+        originalPrice: 11670.00,
+        category: "electronics",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/910059778591948874~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Sony推出的移动电源，高性能，高品质，满足日常使用需求。", 
+            en: "Sony power bank, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "902g", "功率": "17W", "颜色": "黑色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "902g", "Power": "17W", "Color": "Black" }
+        }
+    },
+    {
+        id: 44,
+        title: { zh: "Nikon 智能手机 724", en: "Nikon Smartphone 724" },
+        price: 2495.00,
+        originalPrice: 2994.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1055067701506736188~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Nikon推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "Nikon smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.7英寸", "存储": "64GB", "摄像头": "2300万像素", "电池": "4233mAh" },
+            en: { "Screen": "6.7 inch", "Storage": "64GB", "Camera": "23MP", "Battery": "4233mAh" }
+        }
+    },
+    {
+        id: 45,
+        title: { zh: "Microsoft 智能手表 273", en: "Microsoft Smartwatch 273" },
+        price: 5330.00,
+        originalPrice: 6396.00,
+        category: "electronics",
+        subcategory: "wearable",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968519935774294097~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Microsoft推出的智能手表，高性能，高品质，满足日常使用需求。", 
+            en: "Microsoft smartwatch, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "942g", "功率": "14W", "颜色": "银色" },
+            en: { "Material": "Plastic", "Weight": "942g", "Power": "14W", "Color": "Silver" }
+        }
+    },
+    {
+        id: 46,
+        title: { zh: "HP 智能音箱 743", en: "HP Smart Speaker 743" },
+        price: 5076.00,
+        originalPrice: 6091.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/919257829013848146~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "HP推出的智能音箱，高性能，高品质，满足日常使用需求。", 
+            en: "HP smart speaker, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "541g", "功率": "19W", "颜色": "银色" },
+            en: { "Material": "Plastic", "Weight": "541g", "Power": "19W", "Color": "Silver" }
+        }
+    },
+    {
+        id: 47,
+        title: { zh: "三星 鼠标 759", en: "Samsung Mouse 759" },
+        price: 1578.00,
+        originalPrice: 1894.00,
+        category: "electronics",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852268402901008~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "三星推出的鼠标，高性能，高品质，满足日常使用需求。", 
+            en: "Samsung mouse, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "180g", "功率": "19W", "颜色": "蓝色" },
+            en: { "Material": "Plastic", "Weight": "180g", "Power": "19W", "Color": "Blue" }
+        }
+    },
+    {
+        id: 48,
+        title: { zh: "Nikon 鼠标 309", en: "Nikon Mouse 309" },
+        price: 1012.00,
+        originalPrice: 1214.00,
+        category: "electronics",
+        subcategory: "accessory",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852216864997387~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Nikon推出的鼠标，高性能，高品质，满足日常使用需求。", 
+            en: "Nikon mouse, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "866g", "功率": "15W", "颜色": "银色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "866g", "Power": "15W", "Color": "Silver" }
+        }
+    },
+    {
+        id: 49,
+        title: { zh: "Google 智能手表 297", en: "Google Smartwatch 297" },
+        price: 6286.00,
+        originalPrice: 7543.00,
+        category: "electronics",
+        subcategory: "wearable",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/910059778591948874~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Google推出的智能手表，高性能，高品质，满足日常使用需求。", 
+            en: "Google smartwatch, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "253g", "功率": "8W", "颜色": "蓝色" },
+            en: { "Material": "Plastic", "Weight": "253g", "Power": "8W", "Color": "Blue" }
+        }
+    },
+    {
+        id: 50,
+        title: { zh: "联想 耳机 349", en: "Lenovo Headphones 349" },
+        price: 6430.00,
+        originalPrice: 7716.00,
+        category: "electronics",
+        subcategory: "audio",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1055067701506736188~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "联想推出的耳机，高性能，高品质，满足日常使用需求。", 
+            en: "Lenovo headphones, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "1086g", "功率": "11W", "颜色": "黑色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "1086g", "Power": "11W", "Color": "Black" }
+        }
+    },
+    // ========== 医疗辅助产品 (来自 products.json) ==========
+    {
+        id: 51,
+        title: { zh: "罗氏助听器41", en: "Roche Hearing Aid 41" },
+        price: 12381.00,
+        originalPrice: 14857.00,
+        category: "medical",
+        subcategory: "hearing_aid",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903168761265127465~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "罗氏生产的助听器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Roche hearing aid, medical grade, reliable quality, comfortable to wear." 
+        },
+        specs: {
+            zh: { "类型": "耳背式", "电源": "电池式", "通道": "8通道", "特点": "隐形设计" },
+            en: { "Type": "Behind-ear", "Power": "Battery", "Channels": "8", "Features": "Invisible Design" }
+        }
+    },
+    {
+        id: 52,
+        title: { zh: "斯达克血压计67", en: "Starkey Blood Pressure Monitor 67" },
+        price: 6430.00,
+        originalPrice: 7716.00,
+        category: "medical",
+        subcategory: "inspection_tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1050916967685947407~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "斯达克生产的血压计，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Starkey blood pressure monitor, medical grade, reliable quality." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "5088g", "尺寸": "19x13cm", "颜色": "蓝色" },
+            en: { "Material": "Plastic", "Weight": "5088g", "Size": "19x13cm", "Color": "Blue" }
+        }
+    },
+    {
+        id: 53,
+        title: { zh: "优利康护理床53", en: "Unitron Nursing Bed 53" },
+        price: 2425.00,
+        originalPrice: 2910.00,
+        category: "medical",
+        subcategory: "equipment",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817573953601545~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "优利康生产的护理床，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Unitron nursing bed, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "4524g", "尺寸": "23x13cm", "颜色": "灰色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "4524g", "Size": "23x13cm", "Color": "Gray" }
+        }
+    },
+    {
+        id: 54,
+        title: { zh: "罗氏助行器35", en: "Roche Walker 35" },
+        price: 12041.00,
+        originalPrice: 14449.00,
+        category: "medical",
+        subcategory: "walking_aid",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968256757358264347~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "罗氏生产的助行器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Roche walker, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "可调节": true, "高度范围": "115-136cm", "特点": "防滑底座" },
+            en: { "Material": "Aluminum Alloy", "Adjustable": true, "Height Range": "115-136cm", "Features": "Anti-slip Base" }
+        }
+    },
+    {
+        id: 55,
+        title: { zh: "瑞声达助行器63", en: "Resound Walker 63" },
+        price: 10750.00,
+        originalPrice: 12900.00,
+        category: "medical",
+        subcategory: "walking_aid",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817616889905160~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "瑞声达生产的助行器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Resound walker, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "可调节": true, "高度范围": "106-141cm", "特点": "防滑底座" },
+            en: { "Material": "Stainless Steel", "Adjustable": true, "Height Range": "106-141cm", "Features": "Anti-slip Base" }
+        }
+    },
+    {
+        id: 56,
+        title: { zh: "欧姆龙坐便器44", en: "Omron Toilet Seat 44" },
+        price: 7191.00,
+        originalPrice: 8629.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/image/33ea65e717631e0d5cb98a0001ba826c~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "欧姆龙生产的坐便器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Omron toilet seat, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "3477g", "尺寸": "12x16cm", "颜色": "灰色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "3477g", "Size": "12x16cm", "Color": "Gray" }
+        }
+    },
+    {
+        id: 57,
+        title: { zh: "斯达克洗澡椅90", en: "Starkey Shower Chair 90" },
+        price: 1894.00,
+        originalPrice: 2273.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903168761265127465~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "斯达克生产的洗澡椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Starkey shower chair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "硅胶", "重量": "2514g", "尺寸": "7x17cm", "颜色": "灰色" },
+            en: { "Material": "Silicone", "Weight": "2514g", "Size": "7x17cm", "Color": "Gray" }
+        }
+    },
+    {
+        id: 58,
+        title: { zh: "优利康医用手套95", en: "Unitron Medical Gloves 95" },
+        price: 14630.00,
+        originalPrice: 17556.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1050916967685947407~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "优利康生产的医用手套，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Unitron medical gloves, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "硅胶", "重量": "2306g", "尺寸": "22x13cm", "颜色": "黑色" },
+            en: { "Material": "Silicone", "Weight": "2306g", "Size": "22x13cm", "Color": "Black" }
+        }
+    },
+    {
+        id: 59,
+        title: { zh: "鱼跃医用手套68", en: "Yuyue Medical Gloves 68" },
+        price: 7091.00,
+        originalPrice: 8509.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817573953601545~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "鱼跃生产的医用手套，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Yuyue medical gloves, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "3533g", "尺寸": "21x22cm", "颜色": "灰色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "3533g", "Size": "21x22cm", "Color": "Gray" }
+        }
+    },
+    {
+        id: 60,
+        title: { zh: "瑞声达洗澡椅83", en: "Resound Shower Chair 83" },
+        price: 1944.00,
+        originalPrice: 2333.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968256757358264347~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "瑞声达生产的洗澡椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Resound shower chair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "2011g", "尺寸": "12x14cm", "颜色": "白色" },
+            en: { "Material": "Aluminum Alloy", "Weight": "2011g", "Size": "12x14cm", "Color": "White" }
+        }
+    },
+    // ========== 更多医疗辅助产品 ==========
+    {
+        id: 61,
+        title: { zh: "Siemens助听器29", en: "Siemens Hearing Aid 29" },
+        price: 13489.00,
+        originalPrice: 16187.00,
+        category: "medical",
+        subcategory: "hearing_aid",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817616889905160~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Siemens生产的助听器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Siemens hearing aid, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "类型": "耳背式", "电源": "充电式", "通道": "9通道", "特点": "降噪、无线" },
+            en: { "Type": "Behind-ear", "Power": "Rechargeable", "Channels": "9", "Features": "Noise Reduction, Wireless" }
+        }
+    },
+    {
+        id: 62,
+        title: { zh: "邦福尿壶80", en: "Bangfu Urinal 80" },
+        price: 13327.00,
+        originalPrice: 15992.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/image/33ea65e717631e0d5cb98a0001ba826c~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "邦福生产的尿壶，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Bangfu urinal, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "1183g", "尺寸": "20x10cm", "颜色": "白色" },
+            en: { "Material": "Stainless Steel", "Weight": "1183g", "Size": "20x10cm", "Color": "White" }
+        }
+    },
+    {
+        id: 63,
+        title: { zh: "峰力医用手套3", en: "Phonak Medical Gloves 3" },
+        price: 1743.00,
+        originalPrice: 2092.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903168761265127465~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "峰力生产的医用手套，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Phonak medical gloves, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "3805g", "尺寸": "15x12cm", "颜色": "白色" },
+            en: { "Material": "Stainless Steel", "Weight": "3805g", "Size": "15x12cm", "Color": "White" }
+        }
+    },
+    {
+        id: 64,
+        title: { zh: "鱼跃助行器20", en: "Yuyue Walker 20" },
+        price: 4765.00,
+        originalPrice: 5718.00,
+        category: "medical",
+        subcategory: "walking_aid",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1050916967685947407~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "鱼跃生产的助行器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Yuyue walker, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "可调节": true, "高度范围": "115-142cm", "特点": "防滑底座" },
+            en: { "Material": "Aluminum Alloy", "Adjustable": true, "Height Range": "115-142cm", "Features": "Anti-slip Base" }
+        }
+    },
+    {
+        id: 65,
+        title: { zh: "瑞声达电动轮椅16", en: "Resound Electric Wheelchair 16" },
+        price: 9133.00,
+        originalPrice: 10960.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817573953601545~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "瑞声达生产的电动轮椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Resound electric wheelchair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "重量": "45kg", "承重": "103kg", "可折叠": true },
+            en: { "Material": "Aluminum Alloy", "Weight": "45kg", "Capacity": "103kg", "Foldable": true }
+        }
+    },
+    {
+        id: 66,
+        title: { zh: "互邦理疗仪12", en: "Hubang Therapy Device 12" },
+        price: 12972.00,
+        originalPrice: 15566.00,
+        category: "medical",
+        subcategory: "equipment",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968256757358264347~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "互邦生产的理疗仪，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Hubang therapy device, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "硅胶", "重量": "4535g", "尺寸": "19x20cm", "颜色": "黑色" },
+            en: { "Material": "Silicone", "Weight": "4535g", "Size": "19x20cm", "Color": "Black" }
+        }
+    },
+    {
+        id: 67,
+        title: { zh: "斯达克坐便器77", en: "Starkey Toilet Seat 77" },
+        price: 5915.00,
+        originalPrice: 7098.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817616889905160~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "斯达克生产的坐便器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Starkey toilet seat, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "硅胶", "重量": "2821g", "尺寸": "11x17cm", "颜色": "黑色" },
+            en: { "Material": "Silicone", "Weight": "2821g", "Size": "11x17cm", "Color": "Black" }
+        }
+    },
+    {
+        id: 68,
+        title: { zh: "邦福血糖仪83", en: "Bangfu Blood Glucose Meter 83" },
+        price: 4502.00,
+        originalPrice: 5402.00,
+        category: "medical",
+        subcategory: "inspection_tools",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/image/33ea65e717631e0d5cb98a0001ba826c~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "邦福生产的血糖仪，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Bangfu blood glucose meter, medical grade, reliable quality." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "3493g", "尺寸": "24x9cm", "颜色": "白色" },
+            en: { "Material": "Stainless Steel", "Weight": "3493g", "Size": "24x9cm", "Color": "White" }
+        }
+    },
+    {
+        id: 69,
+        title: { zh: "三诺便盆53", en: "Sannuo Bedpan 53" },
+        price: 14922.00,
+        originalPrice: 17906.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903168761265127465~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "三诺生产的便盆，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Sannuo bedpan, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "重量": "4041g", "尺寸": "11x22cm", "颜色": "黑色" },
+            en: { "Material": "Plastic", "Weight": "4041g", "Size": "11x22cm", "Color": "Black" }
+        }
+    },
+    {
+        id: 70,
+        title: { zh: "三诺成人纸尿裤66", en: "Sannuo Adult Diaper 66" },
+        price: 1894.00,
+        originalPrice: 2273.00,
+        category: "medical",
+        subcategory: "accessory",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1050916967685947407~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "三诺生产的成人纸尿裤，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Sannuo adult diaper, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "2292g", "尺寸": "7x24cm", "颜色": "蓝色" },
+            en: { "Material": "Stainless Steel", "Weight": "2292g", "Size": "7x24cm", "Color": "Blue" }
+        }
+    },
+    // ========== 更多五金产品 (来自 products.json) ==========
+    {
+        id: 71,
+        title: { zh: "小强锯子41", en: "Xiaoqiang Saw 41" },
+        price: 364.00,
+        originalPrice: 437.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815347074203652~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "小强生产的锯子，高品质，耐用，适用于各种工作场景。", 
+            en: "Xiaoqiang saw, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "4548g", "尺寸": "8cm", "表面处理": "氧化处理" },
+            en: { "Material": "Stainless Steel", "Weight": "4548g", "Size": "8cm", "Finish": "Oxidation Treatment" }
+        }
+    },
+    {
+        id: 72,
+        title: { zh: "艾威博尔板牙40", en: "Iviper Threading Die 40" },
+        price: 1733.00,
+        originalPrice: 2080.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004814754467020866~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "艾威博尔生产的板牙，高品质，耐用，适用于各种工作场景。", 
+            en: "Iviper threading die, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "2967g", "尺寸": "7cm", "表面处理": "氧化处理" },
+            en: { "Material": "Stainless Steel", "Weight": "2967g", "Size": "7cm", "Finish": "Oxidation Treatment" }
+        }
+    },
+    {
+        id: 73,
+        title: { zh: "得伟电钻39", en: "DeWalt Drill 39" },
+        price: 1670.00,
+        originalPrice: 2004.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/920609841768955921~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "得伟生产的电钻，高品质，耐用，适用于各种工作场景。", 
+            en: "DeWalt drill, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "功率": "883W", "转速": "3984rpm", "夹头": "13mm", "功能": "无刷电机、双速" },
+            en: { "Power": "883W", "Speed": "3984rpm", "Chuck": "13mm", "Features": "Brushless Motor, Dual Speed" }
+        }
+    },
+    {
+        id: 74,
+        title: { zh: "东成扳手1", en: "Dongcheng Wrench 1" },
+        price: 526.00,
+        originalPrice: 631.00,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815295632900252~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "东成生产的扳手，高品质，耐用，适用于各种工作场景。", 
+            en: "Dongcheng wrench, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "CR-V合金钢", "件数": "1件套", "类型": "梅花+开口两用", "手柄": "PP+TPR双色" },
+            en: { "Material": "CR-V Alloy Steel", "Pieces": "1-piece Set", "Type": "Ring+Open End", "Handle": "PP+TPR Dual Color" }
+        }
+    },
+    {
+        id: 75,
+        title: { zh: "日立工具箱26", en: "Hitachi Tool Box 26" },
+        price: 1481.00,
+        originalPrice: 1777.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1017633780165771342~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "日立生产的工具箱，高品质，耐用，适用于各种工作场景。", 
+            en: "Hitachi tool box, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "CR-V合金钢", "重量": "4305g", "尺寸": "8cm", "表面处理": "喷砂镀铬" },
+            en: { "Material": "CR-V Alloy Steel", "Weight": "4305g", "Size": "8cm", "Finish": "Sandblasted Chrome" }
+        }
+    },
+    {
+        id: 76,
+        title: { zh: "捷科电焊机39", en: "Jieke Welding Machine 39" },
+        price: 2038.00,
+        originalPrice: 2446.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004814745885474825~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "捷科生产的电焊机，高品质，耐用，适用于各种工作场景。", 
+            en: "Jieke welding machine, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "CR-V合金钢", "重量": "4424g", "尺寸": "9cm", "表面处理": "发黑处理" },
+            en: { "Material": "CR-V Alloy Steel", "Weight": "4424g", "Size": "9cm", "Finish": "Blackening Treatment" }
+        }
+    },
+    {
+        id: 77,
+        title: { zh: "老A钳子48", en: "LaoA Pliers 48" },
+        price: 847.00,
+        originalPrice: 1016.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815347074203652~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "老A生产的钳子，高品质，耐用，适用于各种工作场景。", 
+            en: "LaoA pliers, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "高碳钢", "重量": "2453g", "尺寸": "27cm", "表面处理": "喷砂镀铬" },
+            en: { "Material": "High Carbon Steel", "Weight": "2453g", "Size": "27cm", "Finish": "Sandblasted Chrome" }
+        }
+    },
+    {
+        id: 78,
+        title: { zh: "卡夫威尔板牙71", en: "Kawfee Threading Die 71" },
+        price: 900.00,
+        originalPrice: 1080.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004814754467020866~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "卡夫威尔生产的板牙，高品质，耐用，适用于各种工作场景。", 
+            en: "Kawfee threading die, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "4753g", "尺寸": "33cm", "表面处理": "发黑处理" },
+            en: { "Material": "Stainless Steel", "Weight": "4753g", "Size": "33cm", "Finish": "Blackening Treatment" }
+        }
+    },
+    {
+        id: 79,
+        title: { zh: "博世扳手77", en: "Bosch Wrench 77" },
+        price: 1151.00,
+        originalPrice: 1381.00,
+        category: "hardware",
+        subcategory: "wrench",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/920609841768955921~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "博世生产的扳手，高品质，耐用，适用于各种工作场景。", 
+            en: "Bosch wrench, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "CR-V合金钢", "件数": "8件套", "类型": "十字+一字", "手柄": "PP+TPR双色" },
+            en: { "Material": "CR-V Alloy Steel", "Pieces": "8-piece Set", "Types": "Phillips+Flathead", "Handle": "PP+TPR Dual Color" }
+        }
+    },
+    {
+        id: 80,
+        title: { zh: "绿林丝锥32", en: "Lvlin Tap 32" },
+        price: 513.00,
+        originalPrice: 616.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815295632900252~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "绿林生产的丝锥，高品质，耐用，适用于各种工作场景。", 
+            en: "Lvlin tap, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "不锈钢", "重量": "3728g", "尺寸": "13cm", "表面处理": "喷砂镀铬" },
+            en: { "Material": "Stainless Steel", "Weight": "3728g", "Size": "13cm", "Finish": "Sandblasted Chrome" }
+        }
+    },
+    // ========== 更多电子产品 ==========
+    {
+        id: 81,
+        title: { zh: "小米智能手机 158", en: "Xiaomi Smartphone 158" },
+        price: 3567.00,
+        originalPrice: 4280.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/919257829013848146~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "小米推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "Xiaomi smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.7英寸", "存储": "128GB", "摄像头": "6400万像素", "电池": "5000mAh" },
+            en: { "Screen": "6.7 inch", "Storage": "128GB", "Camera": "64MP", "Battery": "5000mAh" }
+        }
+    },
+    {
+        id: 82,
+        title: { zh: "OPPO智能手机 282", en: "OPPO Smartphone 282" },
+        price: 4123.00,
+        originalPrice: 4948.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852216864997387~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "OPPO推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "OPPO smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.5英寸", "存储": "256GB", "摄像头": "5000万像素", "电池": "4500mAh" },
+            en: { "Screen": "6.5 inch", "Storage": "256GB", "Camera": "50MP", "Battery": "4500mAh" }
+        }
+    },
+    {
+        id: 83,
+        title: { zh: "vivo智能手机 391", en: "vivo Smartphone 391" },
+        price: 3890.00,
+        originalPrice: 4668.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852268402901008~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "vivo推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "vivo smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.6英寸", "存储": "128GB", "摄像头": "4800万像素", "电池": "4600mAh" },
+            en: { "Screen": "6.6 inch", "Storage": "128GB", "Camera": "48MP", "Battery": "4600mAh" }
+        }
+    },
+    {
+        id: 84,
+        title: { zh: "一加智能手机 445", en: "OnePlus Smartphone 445" },
+        price: 4567.00,
+        originalPrice: 5480.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1055067701506736188~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "一加推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "OnePlus smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.8英寸", "存储": "256GB", "摄像头": "5000万像素", "电池": "5000mAh" },
+            en: { "Screen": "6.8 inch", "Storage": "256GB", "Camera": "50MP", "Battery": "5000mAh" }
+        }
+    },
+    {
+        id: 85,
+        title: { zh: "realme智能手机 567", en: "realme Smartphone 567" },
+        price: 2789.00,
+        originalPrice: 3347.00,
+        category: "electronics",
+        subcategory: "phone",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/910059778591948874~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "realme推出的智能手机，高性能，高品质，满足日常使用需求。", 
+            en: "realme smartphone, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "6.4英寸", "存储": "128GB", "摄像头": "6400万像素", "电池": "4500mAh" },
+            en: { "Screen": "6.4 inch", "Storage": "128GB", "Camera": "64MP", "Battery": "4500mAh" }
+        }
+    },
+    {
+        id: 86,
+        title: { zh: "联想笔记本电脑 678", en: "Lenovo Laptop 678" },
+        price: 7234.00,
+        originalPrice: 8681.00,
+        category: "electronics",
+        subcategory: "computer",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968519935774294097~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "联想推出的笔记本电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Lenovo laptop, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "15.6英寸", "处理器": "Intel i7", "内存": "16GB", "存储": "512GB SSD" },
+            en: { "Display": "15.6 inch", "Processor": "Intel i7", "Memory": "16GB", "Storage": "512GB SSD" }
+        }
+    },
+    {
+        id: 87,
+        title: { zh: "华硕笔记本电脑 789", en: "Asus Laptop 789" },
+        price: 6543.00,
+        originalPrice: 7852.00,
+        category: "electronics",
+        subcategory: "computer",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/919257829013848146~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "华硕推出的笔记本电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Asus laptop, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "14英寸", "处理器": "AMD R7", "内存": "16GB", "存储": "512GB SSD" },
+            en: { "Display": "14 inch", "Processor": "AMD R7", "Memory": "16GB", "Storage": "512GB SSD" }
+        }
+    },
+    {
+        id: 88,
+        title: { zh: "Acer笔记本电脑 891", en: "Acer Laptop 891" },
+        price: 5432.00,
+        originalPrice: 6518.00,
+        category: "electronics",
+        subcategory: "computer",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852268402901008~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Acer推出的笔记本电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Acer laptop, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "15.6英寸", "处理器": "Intel i5", "内存": "8GB", "存储": "256GB SSD" },
+            en: { "Display": "15.6 inch", "Processor": "Intel i5", "Memory": "8GB", "Storage": "256GB SSD" }
+        }
+    },
+    {
+        id: 89,
+        title: { zh: "华为平板电脑 902", en: "Huawei Tablet 902" },
+        price: 3456.00,
+        originalPrice: 4147.00,
+        category: "electronics",
+        subcategory: "tablet",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/963852216864997387~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "华为推出的平板电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Huawei tablet, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "10.4英寸", "处理器": "麒麟820", "内存": "6GB", "存储": "128GB" },
+            en: { "Display": "10.4 inch", "Processor": "Kirin 820", "Memory": "6GB", "Storage": "128GB" }
+        }
+    },
+    {
+        id: 90,
+        title: { zh: "荣耀平板电脑 013", en: "Honor Tablet 013" },
+        price: 2987.00,
+        originalPrice: 3584.00,
+        category: "electronics",
+        subcategory: "tablet",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/910059778591948874~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "荣耀推出的平板电脑，高性能，高品质，满足日常使用需求。", 
+            en: "Honor tablet, high performance, high quality, meets daily needs." 
+        },
+        specs: {
+            zh: { "屏幕": "11英寸", "处理器": "骁龙8+", "内存": "8GB", "存储": "256GB" },
+            en: { "Display": "11 inch", "Processor": "Snapdragon 8+", "Memory": "8GB", "Storage": "256GB" }
+        }
+    },
+    // ========== 更多医疗辅助产品 ==========
+    {
+        id: 91,
+        title: { zh: "鱼跃轮椅 201", en: "Yuyue Wheelchair 201" },
+        price: 1234.00,
+        originalPrice: 1481.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817573953601545~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "鱼跃生产的轮椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Yuyue wheelchair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "承重": "100kg", "重量": "15kg", "可折叠": true },
+            en: { "Material": "Aluminum Alloy", "Capacity": "100kg", "Weight": "15kg", "Foldable": true }
+        }
+    },
+    {
+        id: 92,
+        title: { zh: "互邦轮椅 305", en: "Hubang Wheelchair 305" },
+        price: 1567.00,
+        originalPrice: 1880.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/968256757358264347~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "互邦生产的轮椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Hubang wheelchair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "钢管", "承重": "120kg", "重量": "18kg", "可折叠": true },
+            en: { "Material": "Steel", "Capacity": "120kg", "Weight": "18kg", "Foldable": true }
+        }
+    },
+    {
+        id: 93,
+        title: { zh: "凯驰轮椅 408", en: "Kaichi Wheelchair 408" },
+        price: 2134.00,
+        originalPrice: 2561.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/966817616889905160~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "凯驰生产的轮椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Kaichi wheelchair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "承重": "110kg", "重量": "14kg", "可折叠": true },
+            en: { "Material": "Aluminum Alloy", "Capacity": "110kg", "Weight": "14kg", "Foldable": true }
+        }
+    },
+    {
+        id: 94,
+        title: { zh: "邦福电动轮椅 512", en: "Bangfu Electric Wheelchair 512" },
+        price: 8765.00,
+        originalPrice: 10518.00,
+        category: "medical",
+        subcategory: "wheelchair",
+        image: "https://p3-doubao-search-sign.byteimg.com/labis/image/33ea65e717631e0d5cb98a0001ba826c~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "邦福生产的电动轮椅，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Bangfu electric wheelchair, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "材质": "铝合金", "承重": "120kg", "电池": "20Ah锂电池", "续航": "30km" },
+            en: { "Material": "Aluminum Alloy", "Capacity": "120kg", "Battery": "20Ah Lithium", "Range": "30km" }
+        }
+    },
+    {
+        id: 95,
+        title: { zh: "Aipower助听器 615", en: "Aipower Hearing Aid 615" },
+        price: 3456.00,
+        originalPrice: 4147.00,
+        category: "medical",
+        subcategory: "hearing_aid",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903168761265127465~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "Aipower生产的助听器，适用于医疗辅助，质量可靠，使用舒适。", 
+            en: "Aipower hearing aid, medical grade, reliable quality, comfortable." 
+        },
+        specs: {
+            zh: { "类型": "耳背式", "电源": "充电式", "通道": "12通道", "特点": "智能降噪" },
+            en: { "Type": "Behind-ear", "Power": "Rechargeable", "Channels": "12", "Features": "Smart Noise Reduction" }
+        }
+    },
+    // ========== 更多五金产品 ==========
+    {
+        id: 96,
+        title: { zh: "得力工具箱 718", en: "Deli Tool Box 718" },
+        price: 234.00,
+        originalPrice: 281.00,
+        category: "hardware",
+        subcategory: "tools",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004814754467020866~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "得力生产的工具箱，高品质，耐用，适用于各种工作场景。", 
+            en: "Deli tool box, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "材质": "塑料", "尺寸": "40x25x20cm", "特点": "防水防尘" },
+            en: { "Material": "Plastic", "Size": "40x25x20cm", "Features": "Waterproof, Dustproof" }
+        }
+    },
+    {
+        id: 97,
+        title: { zh: "世达电烙铁 821", en: "Sata Soldering Iron 821" },
+        price: 189.00,
+        originalPrice: 227.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/920609841768955921~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "世达生产的电烙铁，高品质，耐用，适用于各种工作场景。", 
+            en: "Sata soldering iron, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "功率": "60W", "温度范围": "200-450℃", "特点": "恒温发热" },
+            en: { "Power": "60W", "Temperature Range": "200-450℃", "Features": "Constant Temperature Heating" }
+        }
+    },
+    {
+        id: 98,
+        title: { zh: "田岛卷尺 924", en: "Tajima Tape Measure 924" },
+        price: 45.00,
+        originalPrice: 54.00,
+        category: "hardware",
+        subcategory: "measuring",
+        image: "https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004815347074203652~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "田岛生产的卷尺，高品质，耐用，适用于各种工作场景。", 
+            en: "Tajima tape measure, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "长度": "5米", "材质": "钢带", "特点": "自动回卷" },
+            en: { "Length": "5m", "Material": "Steel Blade", "Features": "Auto Retract" }
+        }
+    },
+    {
+        id: 99,
+        title: { zh: "史丹利水平尺 027", en: "Stanley Spirit Level 027" },
+        price: 156.00,
+        originalPrice: 187.00,
+        category: "hardware",
+        subcategory: "measuring",
+        image: "https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1004814754467020866~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "史丹利生产的水平尺，高品质，耐用，适用于各种工作场景。", 
+            en: "Stanley spirit level, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "长度": "60cm", "材质": "铝合金", "气泡数": "3个" },
+            en: { "Length": "60cm", "Material": "Aluminum Alloy", "Bubbles": "3" }
+        }
+    },
+    {
+        id: 100,
+        title: { zh: "牧田角磨机 130", en: "Makita Angle Grinder 130" },
+        price: 567.00,
+        originalPrice: 680.00,
+        category: "hardware",
+        subcategory: "power_tools",
+        image: "https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/1017633780165771342~tplv-be4g95zd3a-image.jpeg",
+        description: { 
+            zh: "牧田生产的角磨机，高品质，耐用，适用于各种工作场景。", 
+            en: "Makita angle grinder, high quality, durable, suitable for various work scenarios." 
+        },
+        specs: {
+            zh: { "功率": "900W", "转速": "8500rpm", "砂轮直径": "100mm" },
+            en: { "Power": "900W", "Speed": "8500rpm", "Disc Diameter": "100mm" }
+        }
     }
 ];
 
