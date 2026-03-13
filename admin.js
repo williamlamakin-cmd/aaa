@@ -75,7 +75,7 @@ function loadDashboard() {
 function loadProducts() {
     document.getElementById('products-table').innerHTML = products.map(product => `
         <tr>
-            <td><img src="${product.image}" alt="${product.title}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" onerror="this.src='https://via.placeholder.com/50x50'"></td>
+            <td><img src="https://picsum.photos/seed/${product.id}/100/100" alt="${product.title}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;"></td>
             <td>${product.title}</td>
             <td>${getCategoryText(product.category)}</td>
             <td>$${product.price.toFixed(2)}</td>
