@@ -97,7 +97,7 @@ function renderProducts() {
         const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
         return `
         <div class="product-card" onclick="showProductDetail(${product.id})">
-            <img src="${product.image}" alt="${title}" class="product-image" onerror="this.src='https://via.placeholder.com/280x250/eeeeee/999999?text=No+Image'">
+            <img src="${product.image}" alt="${title}" class="product-image" loading="lazy" onerror="this.onerror=null; this.src='https://picsum.photos/seed/"+ product.id +"/400/300'">
             <div class="product-info">
                 <h3 class="product-title">${title}</h3>
                 <div class="product-meta">
