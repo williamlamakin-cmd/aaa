@@ -97,7 +97,7 @@ function renderProducts() {
         const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
         return `
         <div class="product-card" onclick="showProductDetail(${product.id})">
-            <img src="https://picsum.photos/seed/${product.id}/400/300" alt="${title}" class="product-image" loading="lazy">
+            <img src="https://placehold.co/400x250/1976D2/ffffff?text=${encodeURIComponent(title)}" alt="${title}" class="product-image">
             <div class="product-info">
                 <h3 class="product-title">${title}</h3>
                 <div class="product-meta">
@@ -141,7 +141,7 @@ function showProductDetail(productId) {
     detailContent.innerHTML = `
         <div class="product-detail">
             <div class="product-detail-header">
-                <img src="https://picsum.photos/seed/${product.id}/600/600" alt="${title}" class="product-detail-image">
+                <img src="https://placehold.co/600x500/1976D2/ffffff?text=${encodeURIComponent(title)}" alt="${title}" class="product-detail-image">
                 <div class="product-detail-info">
                     <h1>${title}</h1>
                     <div class="product-detail-price">
