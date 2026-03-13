@@ -57,6 +57,14 @@ body {
     top: 0;
     z-index: 1000;
     padding: 0.75rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+body.loaded .navbar {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-container {
@@ -528,7 +536,13 @@ body {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    background: #f0f0f0;
+    background: #e8e8e8;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.product-image.loaded {
+    opacity: 1;
 }
 
 .product-info {
@@ -1290,6 +1304,14 @@ body {
     color: var(--white);
     padding: 3rem 2rem 1rem;
     margin-top: 4rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+body.loaded .footer {
+    opacity: 1;
+    visibility: visible;
 }
 
 .footer-content {
@@ -1323,6 +1345,14 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+body.loaded .chat-widget {
+    opacity: 1;
+    visibility: visible;
 }
 
 .chat-button {
