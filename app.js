@@ -1,6 +1,6 @@
 // 初始化 - 使用 setTimeout 延迟初始化，避免页面闪烁
 document.addEventListener('DOMContentLoaded', () => {
-    // 延迟50ms后执行初始化，让页面先完成首次渲染
+    // 延迟100ms后执行初始化，让页面先完成首次渲染
     setTimeout(() => {
         // 第一步：只初始化语言（不做DOM更新）
         initLanguage();
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             window.isAdminLoggedIn = true;
         }
 
-        // 第四步：初始化产品自动更新
-        initProductAutoUpdate();
+        // 第四步：初始化产品自动更新（禁用）
+        // initProductAutoUpdate(); // 已禁用，避免闪烁
 
         // 第五步：初始化全局货币
         initGlobalCurrency();
@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCount();
         renderCart();
         renderOrders();
-    }, 50);
+
+        // 第七步：显示页面（在所有内容渲染完成后）
+        document.body.classList.add('loaded');
+    }, 100);
 });
 
 // 初始化全局货币
@@ -77,7 +80,7 @@ function showPage(pageName) {
     }
 }
 
-// 产品相关函数
+// 产品相关函数 - 防止闪烁版本
 function renderProducts() {
     const container = document.getElementById('products-grid');
     if (!container) return;
@@ -104,7 +107,13 @@ function renderProducts() {
     filteredProducts = filteredProducts.slice(0, maxDisplayProducts);
 
     const lang = currentLanguage;
-    container.innerHTML = filteredProducts.map(product => {
+
+    // 先隐藏容器避免闪烁
+    container.style.opacity = '0';
+    container.style.transition = 'opacity 0.15s ease-out';
+
+    // 构建HTML
+    const html = filteredProducts.map(product => {
         const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
         return `
         <div class="product-card" onclick="showProductDetail(${product.id})">
@@ -128,6 +137,14 @@ function renderProducts() {
             </div>
         </div>
     `}).join('');
+
+    // 一次性更新DOM
+    container.innerHTML = html;
+
+    // 使用 requestAnimationFrame 延迟显示，避免闪烁
+    requestAnimationFrame(() => {
+        container.style.opacity = '1';
+    });
 }
 
 function filterProducts() {
