@@ -8,13 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // 第二步：初始化认证
         initAuth();
 
-        // 第三步：初始化产品自动更新
+        // 第三步：检查管理员登录状态
+        const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+        if (isAdminLoggedIn) {
+            window.isAdminLoggedIn = true;
+        }
+
+        // 第四步：初始化产品自动更新
         initProductAutoUpdate();
 
-        // 第四步：初始化全局货币
+        // 第五步：初始化全局货币
         initGlobalCurrency();
 
-        // 第五步：渲染内容
+        // 第六步：渲染内容
         renderProducts();
         updateCartCount();
         renderCart();
@@ -33,6 +39,16 @@ function initGlobalCurrency() {
 
 // 页面切换
 function showPage(pageName) {
+    // 后台管理页面访问控制 - 只有知道密码的员工才能访问
+    if (pageName === 'admin') {
+        const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+        if (!isAdminLoggedIn) {
+            // 未登录，显示登录模态框而非直接跳转
+            showAdminLoginModal();
+            return;
+        }
+    }
+
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
     });
@@ -82,6 +98,10 @@ function renderProducts() {
         }
         return true;
     });
+
+    // 限制显示产品数量，最多显示12个，防止闪烁
+    const maxDisplayProducts = 12;
+    filteredProducts = filteredProducts.slice(0, maxDisplayProducts);
 
     const lang = currentLanguage;
     container.innerHTML = filteredProducts.map(product => {
@@ -911,20 +931,66 @@ function adminLogin() {
     const password = document.getElementById('admin-password').value;
     if (password === ADMIN_PASSWORD) {
         isAdminLoggedIn = true;
+        localStorage.setItem('adminLoggedIn', 'true'); // 保存登录状态
         document.getElementById('admin-login-section').style.display = 'none';
         document.getElementById('admin-content').style.display = 'block';
         renderAdminDashboard();
-        showToast('管理员登录成功！');
+        showToast(currentLanguage === 'zh' ? '管理员登录成功！' : 'Admin login successful!');
     } else {
-        showToast('密码错误，请重试');
+        showToast(currentLanguage === 'zh' ? '密码错误，请重试' : 'Incorrect password, please try again');
     }
 }
 
 function adminLogout() {
     isAdminLoggedIn = false;
+    localStorage.removeItem('adminLoggedIn'); // 清除登录状态
     document.getElementById('admin-login-section').style.display = 'block';
     document.getElementById('admin-content').style.display = 'none';
     document.getElementById('admin-password').value = '';
+    // 跳转到首页
+    showPage('home');
+}
+
+// 显示管理员登录模态框
+function showAdminLoginModal() {
+    const lang = currentLanguage;
+    const title = lang === 'zh' ? '管理员登录' : 'Admin Login';
+    const content = `
+        <div style="text-align: center;">
+            <p style="margin-bottom: 1rem; color: #666;">
+                ${lang === 'zh' ? '请输入管理员密码' : 'Please enter admin password'}
+            </p>
+            <input type="password" id="admin-password-modal" placeholder="${lang === 'zh' ? '管理员密码' : 'Admin password'}"
+                style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+            <button onclick="adminLoginFromModal()" class="cta-button" style="width: 100%;">
+                ${lang === 'zh' ? '登录' : 'Login'}
+            </button>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">
+                ${lang === 'zh' ? '仅供内部员工使用' : 'For internal staff only'}
+            </p>
+        </div>
+    `;
+    showCustomModal(title, content);
+}
+
+function adminLoginFromModal() {
+    const password = document.getElementById('admin-password-modal').value;
+    if (password === ADMIN_PASSWORD) {
+        isAdminLoggedIn = true;
+        localStorage.setItem('adminLoggedIn', 'true');
+        closeCustomModal();
+        // 显示后台管理页面
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById('page-admin').classList.add('active');
+        document.getElementById('admin-login-section').style.display = 'none';
+        document.getElementById('admin-content').style.display = 'block';
+        renderAdminDashboard();
+        showToast(currentLanguage === 'zh' ? '管理员登录成功！' : 'Admin login successful!');
+    } else {
+        showToast(currentLanguage === 'zh' ? '密码错误，请重试' : 'Incorrect password, please try again');
+    }
 }
 
 function renderAdminDashboard() {
