@@ -1,34 +1,18 @@
-// 初始化 - 使用 setTimeout 延迟初始化，避免页面闪烁
+// 初始化
 document.addEventListener('DOMContentLoaded', () => {
-    // 延迟100ms后执行初始化，让页面先完成首次渲染
-    setTimeout(() => {
-        // 第一步：只初始化语言（不做DOM更新）
-        initLanguage();
+    initLanguage();
+    initAuth();
+    initGlobalCurrency();
+    renderProducts();
+    updateCartCount();
+    renderCart();
+    renderOrders();
 
-        // 第二步：初始化认证
-        initAuth();
-
-        // 第三步：检查管理员登录状态
-        const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
-        if (isAdminLoggedIn) {
-            window.isAdminLoggedIn = true;
-        }
-
-        // 第四步：初始化产品自动更新（禁用）
-        // initProductAutoUpdate(); // 已禁用，避免闪烁
-
-        // 第五步：初始化全局货币
-        initGlobalCurrency();
-
-        // 第六步：渲染内容
-        renderProducts();
-        updateCartCount();
-        renderCart();
-        renderOrders();
-
-        // 第七步：显示页面（在所有内容渲染完成后）
-        document.body.classList.add('loaded');
-    }, 100);
+    // 检查管理员登录状态
+    const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+    if (isAdminLoggedIn) {
+        window.isAdminLoggedIn = true;
+    }
 });
 
 // 初始化全局货币
