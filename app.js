@@ -108,10 +108,6 @@ function renderProducts() {
 
     const lang = currentLanguage;
 
-    // 先隐藏容器避免闪烁
-    container.style.opacity = '0';
-    container.style.transition = 'opacity 0.15s ease-out';
-
     // 构建HTML
     const html = filteredProducts.map(product => {
         const title = typeof product.title === 'object' ? (product.title[lang] || product.title.en) : product.title;
@@ -142,11 +138,6 @@ function renderProducts() {
 
     // 一次性更新DOM
     container.innerHTML = html;
-
-    // 使用 requestAnimationFrame 延迟显示，避免闪烁
-    requestAnimationFrame(() => {
-        container.style.opacity = '1';
-    });
 }
 
 function filterProducts() {

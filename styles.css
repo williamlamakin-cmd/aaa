@@ -516,6 +516,9 @@ body.loaded .navbar {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
+    /* 启用 GPU 加速防止滚动闪烁 */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .product-card {
@@ -525,6 +528,8 @@ body.loaded .navbar {
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    /* 启用 GPU 加速 */
+    transform: translateZ(0);
 }
 
 .product-card:hover {
@@ -537,12 +542,8 @@ body.loaded .navbar {
     height: 250px;
     object-fit: cover;
     background: #e8e8e8;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-}
-
-.product-image.loaded {
-    opacity: 1;
+    display: block;
+    /* 简单的加载效果 */
 }
 
 .product-info {
